@@ -218,8 +218,9 @@
 (MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id1 proper_q ?lbl11 ?arg02 ?rstr1 ?body2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id ?mrsCon1 ?lbl3  ?arg09 ?arg22)
 (MRS_info ?rel                             ?id1 named ?lbl6 ?arg33 ?v)
-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id def_explicit_q ?lbl1 ?arg01 ?rstr2 ?body)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id def_explicit_q ?lbl1 ?arg01 ?rstr2 ?body)
 =>
+(retract ?f)
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2  " ?id " poss " ?lbl3 " " ?arg0 " " ?arg09 " " ?arg33 ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values RaRTI-viSeRaNapropn MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2  " ?id " poss " ?lbl3 " " ?arg0 " " ?arg09 " " ?arg33 ")"crlf)
 
