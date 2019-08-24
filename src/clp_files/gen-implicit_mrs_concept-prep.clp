@@ -26,12 +26,12 @@
 )
 
 ;
-(defrule in_p_temp
+(defrule in_p_temp_month
 (mofy  ?mahInA    ?month)
 (id-concept_label ?id	?mahInA) 
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?id 1) " _in_p_temp)"crlf)
-(printout ?*defdbug* "(rule-rel-values on_p_temp  id-MRS_concept " (+ ?id 1) " _in_p_temp)"crlf)
+(printout ?*defdbug* "(rule-rel-values in_p_temp_month  id-MRS_concept " (+ ?id 1) " _in_p_temp)"crlf)
 )
 
 ;Written by sakshi yadav date -13.06.19
