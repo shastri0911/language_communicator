@@ -173,6 +173,7 @@
 (defrule yearsofcenturies
 (id-concept_label ?id ?num)
 (rel_name-ids kriyA-k7t ?kri  ?id&:(numberp ?id))
+(not (id-concept_label  ?k-id   ?hiConcept&kahAz_1|kaba_1|Aja_1|kala_1|kala_2))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " proper_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  yearsofcenturies id-MRS_concept "?id " proper_q)"crlf)

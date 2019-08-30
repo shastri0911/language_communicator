@@ -33,12 +33,14 @@
 ?f<-(MRS_info ?rel1 ?id1 ?endsWith_q ?lbl1 ?x ?rstr $?vars)
 (MRS_info ?rel2 ?id2 ?mrsCon ?lbl2 ?ARG_0 $?v)
 (test (neq ?endsWith_q ?mrsCon))
-;(test (neq ?endsWith_q def_implicit_q))
+(test (neq ?endsWith_q def_implicit_q))
+(test (neq ?endsWith_q def_explicit_q))
 (test (eq (sub-string 1 1 (implode$ (create$ ?id1))) (sub-string 1 1 (implode$ (create$ ?id2)))))
 (test (eq (sub-string (- (str-length ?endsWith_q) 1) (str-length ?endsWith_q) ?endsWith_q) "_q"))
 (test (neq (sub-string (- (str-length ?mrsCon) 1) (str-length ?mrsCon) ?mrsCon) "_p"))
 =>
 (retract ?f)
+;(retract ?f1)
 (printout ?*rstr-rstd* "(Restr-Restricted     "?rstr  "  " ?lbl2 ")"crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values mrs-info_q  Restr-Restricted  "?rstr"  "?lbl2 ")"crlf)
 
@@ -84,6 +86,7 @@
 ; written by sakshi yadav (NIT Raipur) date- 02.06.19
 ;want to bind RSTR of def_explicit_q  with LBL of poss
 (defrule defexpq
+;(declare (salience 1000))
 (rel_name-ids viSeRya-r6	?id  ?id1)
 (MRS_info ?rel1 ?id poss ?lbl2 ?ARG_0 ?ARG1 ?ARG2)
 ?f<-(MRS_info ?rel2 ?id def_explicit_q ?lbl1 ?x ?rstr $?v)

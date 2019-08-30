@@ -8,7 +8,7 @@
 (defrule mrsPrep
 (rel_name-ids ?rel ?kri ?k-id)
 (Karaka_Relation-Preposition    ?karaka  ?prep)
-(not (id-concept_label	?k-id	?hiConcept&kahAz_1|somavAra|janavarI|ParavarI|mArca|aprELa|maI|jUna|juLAI|agaswa|siwaMbara|aktUbara|navaMbara|xisaMbara|maMgalavAra|buXavAra|guruvAra|SukravAra|SanivAra|ravivAra)) 
+(not (id-concept_label	?k-id	?hiConcept&kahAz_1|kaba_1|somavAra|janavarI|ParavarI|mArca|aprELa|maI|jUna|juLAI|agaswa|siwaMbara|aktUbara|navaMbara|xisaMbara|maMgalavAra|buXavAra|guruvAra|SukravAra|SanivAra|ravivAra|Aja_1|kala_1|kala_2)) 
 (test (eq (sub-string (+ (str-index "-" ?rel)1) (str-length ?rel) ?rel) (implode$ (create$ ?karaka))))
 =>
 (bind ?myprep (str-cat "_" ?prep "_p"))
@@ -39,9 +39,10 @@
 (defrule in_p_temp
 (id-concept_label	?k-id  ?num)
 (rel_name-ids kriyA-k7t	?kri ?k-id)
+(not (id-concept_label  ?k-id   ?hiConcept&kahAz_1|kaba_1|Aja_1|kala_1|kala_2))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?k-id 1) " _in_p_temp)"crlf)
-(printout ?*defdbug* "(rule-rel-values on_p_temp  id-MRS_concept " (+ ?k-id 1) " _in_p_temp)"crlf)
+(printout ?*defdbug* "(rule-rel-values in_p_temp  id-MRS_concept " (+ ?k-id 1) " _in_p_temp)"crlf)
 )
 
 ;Written by Shastri --date-- 12/06/19
