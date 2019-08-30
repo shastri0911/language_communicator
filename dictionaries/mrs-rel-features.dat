@@ -4,6 +4,7 @@
 (MRS_concept-label-feature_values _grass_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _school_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _read_v_1 LBL: h* ARG0: e* ARG1: x* ARG2: x*)
+(MRS_concept-label-feature_values _give_v_1 LBL: h* ARG0: e* ARG1: x* ARG2: x* ARG3: x*)
 (MRS_concept-label-feature_values _sleep_v_1 LBL: h* ARG0: e* ARG1: x* )
 (MRS_concept-label-feature_values _a_q LBL: h* ARG0: x* RSTR: h* BODY: h*)
 (MRS_concept-label-feature_values _book_n_of LBL: h* ARG0: x* ARG1: i*)
