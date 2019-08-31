@@ -24,14 +24,13 @@ flag = 0
 for l in flst:
     if "INPUT_SENTENCE: " in l:
         print
-        print l[16:-32]
-        print
-    if 'gnp labels' in l:
+        print l[:16]
+    if l.startswith('Creating  /home/'):
         flag = 1
 
     if '         CLIPS (Cypher Beta' in l or l.startswith('NOTE: '):
         flag = 0
 
-    if flag == 1 and "['" not in l and  'gnp labels' not in l :
+    if flag == 1 and "The fact was already deleted" not in l and 'Creating  /home/' not in l:
         print l,
 

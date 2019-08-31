@@ -63,6 +63,23 @@
 (printout ?*rstr-dbug* "(rule-rel-values v-k2  MRS_info "?rel_name " " ?kriyA " " ?mrsCon " " ?lbl " " ?arg1 " " ?argma_0 " "(implode$ (create$ $?v))")"crlf)
 )
 
+;Rule for verb and its arguments(when  karta, karma and sampradaan are present),Replace ARG3 value of kriyA with ARG0 value of sampradaan and ARG2 value of kriyA with ARG0 value of karma
+(defrule v-k4
+(rel_name-ids	kriyA-k4       	?kriyA ?k4)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 ?arg3 )
+(MRS_info ?rel2 ?k4 ?mrsCon2 ?lbl2 ?argk4_0 $?vars1)
+(test (eq (str-index _q ?mrsCon2) FALSE))
+(test (neq ?arg2 ?argk4_0))
+(not (arg3_bind ?arg3))
+=>
+(retract ?f)
+(assert (arg3_bind ?argk4_0 ))
+(assert (MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3  ?kriyA  ?mrsCon  ?lbl ?arg0 ?arg1 ?arg2 ?argk4_0  ))
+(printout ?*rstr-dbug* "(rule-rel-values v-k4  MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3  " ?kriyA " " ?mrsCon " " ?lbl " " ?arg0 " " ?arg1 " " ?arg2 " " ?argk4_0 ")"crlf)
+)
+
+
+
 
 ;Rule for preposition for noun : for (kriyA-k*/r* ?1 ?2) and (id-MRS_Rel ?2 k*/r* corresponding prep_rel from dic)
 ;Replace ARG1 value of prep_rel with ARG0 value of ?1 and ARG2 value of prep_rel with ARG0 value of ?2)
