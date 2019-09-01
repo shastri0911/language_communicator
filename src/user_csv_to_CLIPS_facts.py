@@ -126,16 +126,21 @@ for i in range(len(intraChunkRels)):
 for i in range(len(interChunkRels)):
     if interChunkRels[i] != '':
         idsRels = re.split('[@~\*]?', interChunkRels[i])
-        for j in range(len(idsRels)):
-            idrel = idsRels[j].split(':')
-            kriId = str(int(float(idrel[0]))*10000)
-            karakaId = str((i+1)*10000)
-            if 'r6' in idrel:
-                 myrel = 'rel_name-ids viSeRya-' + idrel[1].replace('-', '_')
-                 ans.write('('+ myrel + '\t' + kriId + '\t' + karakaId + ')\n')
-            else:
-                myrel = 'rel_name-ids kriyA-' + idrel[1].replace('-', '_')
-                ans.write('('+ myrel + '\t' + kriId + '\t' + karakaId + ')\n')
+        if 'samAnAXi' in idsRels: # Assmption: there would be only two occurences of samAnAXi in a sentence. This part of program would generate two samAnAXi facts, one of them would be duplicate which will be deleted automatically by CLIPS while loading the facts' file.
+             sam1 = [i for i, n in enumerate(interChunkRels) if n == 'samAnAXi'][0]
+             sam2 = [i for i, n in enumerate(interChunkRels) if n == 'samAnAXi'][1]
+             ans.write('(rel_name-ids\tsamAnAXi\t' + str(((sam1+1)*10000)) + '  ' + str(((sam2+1)*10000)) + ')\n' )
+        else:     
+            for j in range(len(idsRels)):
+                idrel = idsRels[j].split(':')
+                kriId = str(int(float(idrel[0]))*10000)
+                karakaId = str((i+1)*10000)
+                if 'r6' in idrel:
+                     myrel = 'rel_name-ids viSeRya-' + idrel[1].replace('-', '_')
+                     ans.write('('+ myrel + '\t' + kriId + '\t' + karakaId + ')\n')
+                else:
+                    myrel = 'rel_name-ids kriyA-' + idrel[1].replace('-', '_')
+                    ans.write('('+ myrel + '\t' + kriId + '\t' + karakaId + ')\n')
 
 # Writing emphetic information
 for i in range(len(discorseRel)):

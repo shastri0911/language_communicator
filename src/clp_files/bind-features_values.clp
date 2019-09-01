@@ -31,6 +31,24 @@
 )
 
 
+;Rule for predicative adjective (samAnAXi) : for (kriyA-k1 ? ?) and  (kriyA-k2 ? ?) is not present
+;    replace ARG1 of adjective with ARG0 of non-adjective
+;ex INPUT: rAma acCA hE. OUTPUT: Rama is good.
+(defrule samAnAXi
+;(declare (salience 10))
+(rel_name-ids	samAnAXi	?non-adj ?adj)
+?f<-(MRS_info ?rel_name ?adj ?mrsCon ?lbl ?arg0 ?arg1 $?v)
+(MRS_info ?rel1 ?non-adj ?mrsCon1 ?lbl1 ?nonadjarg_0 $?vars)
+(test (eq (str-index _q ?mrsCon1) FALSE))
+(test (neq ?arg1 ?nonadjarg_0))
+(not (modified_samAnAXi ?nonadjarg_0))
+=>
+(retract ?f)
+(assert (modified_samAnAXi ?nonadjarg_0))
+(assert (MRS_info  ?rel_name ?adj ?mrsCon ?lbl ?arg0 ?nonadjarg_0 $?v))
+(printout ?*rstr-dbug* "(rule-rel-values samAnAXi  MRS_info "?rel_name " " ?adj " " ?mrsCon " " ?lbl " " ?nonadjarg_0 " "(implode$ (create$ $?v))")"crlf)
+)
+
 ;Rule for verb when only karta is present : for (kriyA-k1 ? ?) and  (kriyA-k2 ? ?) is not present
 ;    replace ARG2 of kriyA with ARG0 of karwA
 (defrule v-k1
@@ -466,6 +484,21 @@ then
     (printout ?*rstr-dbug* "(rule-rel-values v-LTOP LTOP-INDEX h0 "?arg0 ")"crlf))  
 )     
 )
+;generates LTOP and INDEX values for predicative adjective(s).
+;ex. rAma acCA hE.
+(defrule samAnAXi-LTOP
+;(declare (salience 100))
+(id-concept_label       ?v   state)
+(id-guNavAcI    ?id_adj   yes)
+(rel_name-ids   samAnAXi        ?id  ?id_adj)
+(MRS_info ?rel ?id_adj ?mrsCon ?lbl ?arg0 $?vars)
+;(rule-rel-values mrs-info MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20000 _good_a_at-for-of h8 e9 x10 i11)
+=>
+    (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
+    (printout ?*rstr-dbug* "(rule-rel-values samAnAXi-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
+)  
+     
+
 
 (defrule printFacts
 (declare (salience -9000))

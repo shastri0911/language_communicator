@@ -10,9 +10,11 @@ files.sort()
 commands.getoutput('rm my_temp.txt')
 for f in files :
     fw = open('my_temp.txt', 'a')
-    fw.write("\nINPUT_SENTENCE: " + f)
+    fw.write("\nINPUT_SENTENCE: " + f +'\n')
     cmd = 'bash lc.sh ' + dire + '/' + f + ' jnk'
-#    cmd = 'bash lc.sh ' + dire + '/' + f + ' jnk >>my_out'
+    sent = 'head -n 1 ' + dire + '/' + f 
+    inpSent = commands.getoutput(sent)
+    fw.write(inpSent + '\t')
     myout = commands.getoutput(cmd)
     fw.write(myout)
     fw.close()
@@ -24,13 +26,11 @@ flag = 0
 for l in flst:
     if "INPUT_SENTENCE: " in l:
         print
-        print l[:16]
-    if l.startswith('Creating  /home/'):
         flag = 1
 
     if '         CLIPS (Cypher Beta' in l or l.startswith('NOTE: '):
         flag = 0
 
-    if flag == 1 and "The fact was already deleted" not in l and 'Creating  /home/' not in l:
-        print l,
+    if flag == 1 and "The fact was already deleted" not in l and 'Creating  /home/' not in l and 'INPUT_SENTENCE:' not in l:
+        print  l,
 
