@@ -1,10 +1,10 @@
-#mere_liye_juMgala_se_Pala_lAo
-#mEM_ke_liye,jaMgala_se,Pala_0,lA-o,.
-mEM,jaMgala_1,Pala_1,lA_1-o_1
-1,2,3,4
-pron,def,,
-[- sg u],[- sg a],[- pl a],
-,,,
-4:rt,4:k5,4:k2,
-,,,
-imperative
+#rAvana mArA gayA.
+#rAvaNa_0,mAra-yA_gayA,.
+rAvaNa,mAra_1-yA_gayA_1
+1,2
+propn,
+[- sg a],
+,
+2:k2,
+,
+pass-assertive

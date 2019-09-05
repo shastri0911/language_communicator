@@ -1,11 +1,10 @@
-#ve calacciwra xeKa rahe hEM.
-#vaha_0,calacciwra_0,xeKa-0_rahA_hE,.
-vaha_1,calacciwra_1,xeKa_1-0_rahA_hE_1
+#rAma acCA hE.
+#rAma_0,acCA_0,hE,.
+rAma,acCA_1,state-pres
 1,2,3
-pron,,
-[m pl a],[- sg a],
+propn,guNavAcI,
+[- sg a],,
 ,,
-3:k1,3:k2,
+samAnAXi,samAnAXi,
 ,,
 assertive
-

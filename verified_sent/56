@@ -1,10 +1,10 @@
-#mEM_usase_eka_kiwAba_le_rahA_hUz
-#mEM_0,vaha_se,eka~kiwAba_0,le-0_rahA_hE,.
-mEM_1,vaha_1,eka_1~kiwAba_1,le_1-0_rahA_hE_1
+#merA xoswa bagIce meM Kela rahA hE.
+#mEM_kA,xoswa_0,bagIcA_meM,Kela-0_rahA_hE,.
+mEM,xoswa_1,bagIcA_1,Kela_1-0_rahA_hE_1
 1,2,3,4
-pron,pron,,
-[m sg u],[m sg a],[- sg a],
-,,3.2:saMKyA-viSeRaNa,
-4:k1,4:k5,4:k2,
+pron,,def,
+[- sg u],[- sg a],[- sg a],
+,,,
+2:r6,4:k1,4:k7p,
 ,,,
 assertive

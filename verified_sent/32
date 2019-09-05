@@ -1,10 +1,10 @@
-#mEM Gara A rahA hUz.
-#mEM_0,Gara_0,A-0_rahA_hE,.
-mEM_1,Gara_1,A_1-0_rahA_hE_1
+#mEM kala AUzgA.
+#mEM_0,kala_0,A-gA,.
+mEM_1,kala_2,A_1-gA_1
 1,2,3
 pron,,
-[- sg u],[- sg -],
+[- sg u],,
 ,,
-3:k1,3:k2,
+3:k1,3:k7t
 ,,
 assertive

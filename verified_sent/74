@@ -1,10 +1,10 @@
-#wuma_kelA_KA_rahe_ho
-#wuma_0,kelA_0,KA-0_rahA_hE,.
-wuma,kelA_1,KA_1-0_rahA_hE_1
+#rAma dAktara hE.
+#rAma_0,dAktara_0,hE,.
+rAma,dAktara_1,state-pres
 1,2,3
-pron,,
-[- - m],[- pl a],
+propn,,
+[m sg a],[- sg a],
 ,,
-3:k1,3:k2,
+samAnAXi,samAnAXi,
 ,,
 assertive

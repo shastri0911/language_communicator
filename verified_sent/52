@@ -1,10 +1,10 @@
-#mEM_Sahara_meM_eka_vixyAlaya_gayA
-#mEM_0,Sahara_meM,eka~vixyAlaya_meM,jA-yA,.
-mEM,Sahara_1,vixyAlaya_1,jA_1-yA_1
+#mEM usake lie Sahara se AyA.
+#mEM_0,vaha_ke_lie,Sahara_se,A-yA,.
+mEM,vaha,Sahara_1,A_1-yA_1
 1,2,3,4
-pron,def,,
-[- sg u],[- sg a],[- sg a],
+pron,pron,def,
+[- sg u],[m sg a],[- sg a],
 ,,,
-4:k1,4:k7p,4:k2p,
+4:k1,4:rt,4:k5,
 ,,,
 assertive

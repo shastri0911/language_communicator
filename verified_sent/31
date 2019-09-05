@@ -1,10 +1,10 @@
-#mEM_A_rahA_hUz.
-#mEM_0,A-0_rahA_hE,.
-mEM,A_1-0_rahA_hE_1
-1,2
-pron,
-[- sg u],
-,
-2:k1,
-,
+#mEM john ke lie Sahara se AyA.
+#mEM_0,John_ke_lie,Sahara_se,A-yA,.
+mEM,John,Sahara_1,A_1-yA_1
+1,2,3,4
+pron,propn,def,
+[- sg u],[- sg a],[- sg a],
+,,,
+4:k1,4:rt,4:k5,
+,,,
 assertive

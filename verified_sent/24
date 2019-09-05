@@ -1,10 +1,10 @@
-#ladakA vixyAlaya meM bagIce meM kiwAba paDa rahA hE.
-#ladakA_0,vixyAlaya_meM,bagIce_meM,kiwAba_0,paDa-0_rahA_hE,.
-ladakA_1,vixyAlaya_1,bagIcA_1,kiwAba_1,paDa_2-0_rahA_hE_1
-1,2,3,4,5
-def,def,def,,
-[m sg a],[- sg a],[- sg a],[- sg a],
-,,,,
-5:k1,5:k7p,5:k7p,5:k2,
-,,,,
-assertive
+#ladake ke liye jaMgala se Pala lAo!
+#ladakA_ke_liye,jaMgala_se,Pala_0,lA-o,!
+ladakA_1,jaMgala_1,Pala_1,lA_1-o_1
+1,2,3,4
+def,def,,
+[- sg a],[- sg a],[- pl a],
+,,,
+4:rt,4:k5,4:k2,
+,,,
+imperative

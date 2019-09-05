@@ -1,10 +1,10 @@
-#mEMne_nayI_kiwAba_paDI
-#mEM_ne,nayA~kiwAba_0,paDa-yA,.
-mEM,nayA_1~kiwAba_1,paDa_2-yA_1
+#mEM Sahara jA rahA hUz.
+#mEM_0,Sahara_0,jA-0_rahA_hE,.
+mEM,Sahara_1,jA_1-0_rahA_hE_1
 1,2,3
-pron,,
+pron,def,
 [- sg u],[- sg a],
-,2.2:viSeRaNa,
-3:k1,3:k2,
+,,
+3:k1,3:k2p,
 ,,
 assertive

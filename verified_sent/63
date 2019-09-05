@@ -1,10 +1,10 @@
-#rAma xo kiwAba paDa rahA hE.
-#rAma_0,xo@kiwAba_0,paDa-0_rahA_hE,.
-rAma,xo_1@kiwAba_1,paDa_2-0_rahA_hE_1
-1,2,3
-propn,,
-[- sg a],[- pl a],
-,2.2:saMKyA-viSeRaNa,
-3:k1,3:k2,
-,,
-assertive
+#Sera ne yuxXa ke liye jaMgala meM saBA bulAI.
+#Sera_ne,yuxXa_ke_liye,jaMgala_meM,saBA_0,bulA-yA,.
+Sera_1,yuxXa_1,jaMgala_1,saBA_1,bulA_1-yA_1
+1,2,3,4,5
+def,def,def,def,
+[m sg a],[- sg a],[- sg a],[- sg a],
+,,,,
+5:k1,5:rt,5:k7p,5:k2,
+,,,,
+assertive 

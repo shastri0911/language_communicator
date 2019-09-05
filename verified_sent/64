@@ -1,10 +1,10 @@
-#rAvana_mArA_gayA
-#rAvaNa_0,mAra-yA_gayA,.
-rAvaNa,mAra_1-yA_gayA_1
-1,2
-propn,
-[- sg a],
-,
-2:k2,
-,
-pass-assertive
+#unhone Kewa meM bIja bo xiye.
+#vaha_ne,Kewa_meM,bIja_0,bo-0_xiyA,.
+vaha,Kewa_1,bIja_1,bo_1-0_xiyA_1
+1,2,3,4
+pron,def,,
+[m pl a],[- sg a],[- pl a],
+,,,
+4:k1,4:k7p,4:k2,
+,,,
+assertive

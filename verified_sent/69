@@ -1,10 +1,11 @@
-#usane_KAnA_nahIM_KAyA
-#vaha_ne,KAnA_0,KA-yA,nahIM,.
-vaha,KAnA_2,KA_1-yA_1,nahIM_1
-1,2,3,4
-pron,mass,,
-[f sg a],[- sg a],,
-,,,
-3:k1,3:k2,,
-,,,3:neg
-negation
+#ve calacciwra xeKa rahe hEM.
+#vaha_0,calacciwra_0,xeKa-0_rahA_hE,.
+vaha_1,calacciwra_1,xeKa_1-0_rahA_hE_1
+1,2,3
+pron,,
+[m pl a],[- sg a],
+,,
+3:k1,3:k2,
+,,
+assertive
+

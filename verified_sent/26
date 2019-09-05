@@ -1,10 +1,10 @@
-#ladake_ke_liye_juMgala_se_Pala_lAo
-#ladakA_ke_liye,jaMgala_se,Pala_0,lA-o,.
-ladakA_1,jaMgala_1,Pala_1,lA_1-o_1
-1,2,3,4
-def,def,,
-[- sg a],[- sg a],[- pl a],
-,,,
-4:rt,4:k5,4:k2,
-,,,
-imperative
+#ladake ne nayI kiwAba paDI.
+#ladakA_ne,nayA~kiwAba_0,paDa-yA,.
+ladakA_1,nayA_1~kiwAba_1,paDa_2-yA_1
+1,2,3
+def,,
+[m sg a],[- sg a],
+,2.2:viSeRaNa,
+3:k1,3:k2,
+,,
+assertive

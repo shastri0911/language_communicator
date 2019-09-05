@@ -1,10 +1,10 @@
-#mEM XIre calawA hUz.
-#mEM_0,XIre_0,cala-wA_hE,.
-mEM,XIre_1,cala_4-wA_hE_1
-1,2,3
-pron,,
-[- sg u],,
-,,
-3:k1,3:kriyA-viSeRaNa,
-,,
+#rAma john ke liye Sahara se AyA.
+#rAma_0,John_ke_lie,Sahara_se,A-yA,.
+rAma,John,Sahara_1,A_1-yA_1
+1,2,3,4
+propn,propn,def,
+[- sg a],[- sg a],[- sg a],
+,,,
+4:k1,4:rt,4:k5,
+,,,
 assertive

@@ -1,10 +1,10 @@
-#mEM_usase_kiwAba_le_rahA_hUz
-#mEM_0,vaha_se,kiwAba_0,le-0_rahA_hE,.
-mEM_1,vaha_1,kiwAba_1,le_1-0_rahA_hE_1
+#mere liye juMgala se Pala lAo!
+#mEM_ke_liye,jaMgala_se,Pala_0,lA-o,.
+mEM,jaMgala_1,Pala_1,lA_1-o_1
 1,2,3,4
-pron,pron,,
-[m sg u],[m sg a],[- sg a],
+pron,def,,
+[- sg u],[- sg a],[- pl a],
 ,,,
-4:k1,4:k5,4:k2,
+4:rt,4:k5,4:k2,
 ,,,
-assertive
+imperative

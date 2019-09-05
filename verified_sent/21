@@ -1,10 +1,10 @@
-#ladakA kiwAbeM paDa rahA hE.
-#ladakA_0,kiwAba_0,paDa-0_rahA_hE,.
-ladakA_1,kiwAba_1,paDa_2-0_rahA_hE_1
+#ladakA Sahara se AyA hE.
+#ladakA_0,Sahara_se,A-yA_hE,.
+ladakA_1,Sahara_1,A_1-yA_hE_1
 1,2,3
-def,,
-[m sg a],[- pl a],
+def,def,
+[m sg a],[- sg a],
 ,,
-3:k1,3:k2,
-,,,
+3:k1,3:k5,
+,,
 assertive

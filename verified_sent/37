@@ -1,10 +1,10 @@
-#mEM_ladake_ke_lie_Sahara_se_AyA
-#mEM_0,ladakA_ke_lie,Sahara_se,A-yA,.
-mEM,ladakA_1,Sahara_1,A_1-yA_1
-1,2,3,4
-pron,def,def,
-[- sg u],[m sg a],[- sg a],
-,,,
-4:k1,4:rt,4:k5,
-,,,
+#mEMne acCI kiwAba paDI hE.
+#mEM_ne,acCA~kiwAba_0,paDa-yA,.
+mEM,acCA_1~kiwAba_1,paDa_2-yA_1
+1,2,3
+pron,,
+[- sg u],[- sg a],
+,2.2:viSeRaNa,
+3:k1,3:k2,
+,,
 assertive

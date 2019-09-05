@@ -1,10 +1,10 @@
-#ladakA vixyAlaya meM paDawA hE.
-#ladakA_0,vixyAlaya_meM,paDa-wA_hE,.
-ladakA_1,vixyAlaya_1,paDa_3-wA_hE_1
-1,2,3
-def,,
-[m sg a],[- sg a],
-,,
-3:k1,3:k7p,
-,,
-assertive
+#ladake ne KAnA nahIM KAyA.
+#ladakA_ne,KAnA_0,KA-yA,nahIM,.
+ladakA_1,KAnA_2,KA_1-yA_1,nahIM_1
+1,2,3,4
+def,mass,,
+[m sg a],[- - a],,
+,,,
+3:k1,3:k2,,
+,,,3:neg
+negation

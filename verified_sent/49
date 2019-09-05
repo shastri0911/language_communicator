@@ -1,10 +1,10 @@
-#mEMne pahalI kiwAba paDI.
-#mEM_ne,pahalA@kiwAba_0,paDa-yA,.
-mEM,pahalA_1@kiwAba_1,paDa_2-yA_1
-1,2,3
-pron,def,
-[- sg u],[- sg a],
-,2.2:kramavAcI-viSeRaNa,
-3:k1,3:k2,
-,,
+#mEM Sahara meM eka vixyAlaya gayA.
+#mEM_0,Sahara_meM,eka~vixyAlaya_meM,jA-yA,.
+mEM,Sahara_1,vixyAlaya_1,jA_1-yA_1
+1,2,3,4
+pron,def,,
+[- sg u],[- sg a],[- sg a],
+,,,
+4:k1,4:k7p,4:k2p,
+,,,
 assertive
