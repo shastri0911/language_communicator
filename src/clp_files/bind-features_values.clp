@@ -37,6 +37,7 @@
 (defrule samAnAXi
 ;(declare (salience 10))
 (rel_name-ids	samAnAXi	?non-adj ?adj)
+(id-guNavAcI    ?adj   yes)
 ?f<-(MRS_info ?rel_name ?adj ?mrsCon ?lbl ?arg0 ?arg1 $?v)
 (MRS_info ?rel1 ?non-adj ?mrsCon1 ?lbl1 ?nonadjarg_0 $?vars)
 (test (eq (str-index _q ?mrsCon1) FALSE))
@@ -48,6 +49,27 @@
 (assert (MRS_info  ?rel_name ?adj ?mrsCon ?lbl ?arg0 ?nonadjarg_0 $?v))
 (printout ?*rstr-dbug* "(rule-rel-values samAnAXi  MRS_info "?rel_name " " ?adj " " ?mrsCon " " ?lbl " " ?nonadjarg_0 " "(implode$ (create$ $?v))")"crlf)
 )
+
+;Rule for copulative (samAnAXi) : for binding ARG1 & ARG2 of the stative verb with the entities of copulative(samAnAXi)
+;    replace ARG1 of verb with ARG0 of 1st samAnAXi & ARG2 of verb with ARG0 of 2nd samAnAXi.
+;ex INPUT: rAma dAktara hE. OUTPUT: Rama is a doctor.
+(defrule samAnAXi-noun
+;(declare (salience 10))
+(id-concept_label       ?v_id   state)
+(rel_name-ids	samAnAXi	?id1 ?id2)
+?f<-(MRS_info ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 )
+(MRS_info ?rel1 ?id1 ?mrsCon1 ?lbl1 ?id1_arg0 $?vars)
+(MRS_info ?rel2 ?id2 ?mrsCon2 ?lbl2 ?id2_arg0 $?var)
+(test (eq (str-index _q ?mrsCon1) FALSE))
+(test (neq ?arg1 ?id1_arg0))
+(not (modified_samAnAXi ?id1))
+=>
+(retract ?f)
+(assert (modified_samAnAXi ?id1))
+(assert (MRS_info  ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?id1_arg0 ?id2_arg0 ))
+(printout ?*rstr-dbug* "(rule-rel-values samAnAXi-noun  MRS_info "?rel_name " " ?v_id " " ?mrsCon " " ?lbl " " ?id1_arg0 " " ?id2_arg0 ")"crlf)
+)
+
 
 ;Rule for verb when only karta is present : for (kriyA-k1 ? ?) and  (kriyA-k2 ? ?) is not present
 ;    replace ARG2 of kriyA with ARG0 of karwA
@@ -472,6 +494,7 @@
 (defrule v-LTOP
 ;(declare (salience 100))
 (MRS_info ?rel ?kri_id ?mrsCon ?lbl ?arg0 $?vars)
+(not(id-guNavAcI    ?id_adj   yes))
 =>
 (if (or (neq (str-index possible_ ?mrsCon) FALSE) (neq (str-index sudden_ ?mrsCon) FALSE))
 then
@@ -497,8 +520,6 @@ then
     (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
     (printout ?*rstr-dbug* "(rule-rel-values samAnAXi-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
 )  
-     
-
 
 (defrule printFacts
 (declare (salience -9000))

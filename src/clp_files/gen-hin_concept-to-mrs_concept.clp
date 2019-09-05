@@ -5,10 +5,31 @@
 
 ;(matches concept from hin-clips-facts.dat)
 (defrule mrs-rels
-?f <-(id-concept_label ?id ?conLabel)
+;(declare (salience 100))
+(id-concept_label       ?id   ?conLabel)
 (concept_label-concept_in_Eng-MRS_concept ?conLabel ?enCon ?mrsConcept)
 =>
+(assert (id-hin_concept-MRS_concept ?id ?conLabel ?mrsConcept))
+)
+;Deletes the MRS concept fact of stative verb "be" if Predicative adjective exists.
+;e.g #rAma acCA hE. (Rama is good).
+(defrule del-state-adj
+(id-concept_label       ?id   state)
+(id-guNavAcI    ?id1   yes)
+?f<-(id-hin_concept-MRS_concept ?id ?conLabel ?mrsConcept)
+=>
 (retract ?f)
-(printout ?*mrs-dbug* "gen-hin_concept-to-mrs_concept: ")
+;(printout ?*mrsCon* "(id-hin_concept-MRS_concept "?id " " ?conLabel " " ?mrsConcept ")"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values del-state-adj id-hin_concept-MRS_concept "?id " " ?conLabel " " ?mrsConcept ")"crlf))
+
+(defrule print-mrs-rels
+;(declare (salience 100))
+?f<-(id-hin_concept-MRS_concept ?id ?conLabel ?mrsConcept)
+=>
+(retract ?f)
 (printout ?*mrsCon* "(id-hin_concept-MRS_concept "?id " " ?conLabel " " ?mrsConcept ")"crlf)
-(printout ?*mrs-dbug* "(rule-rel-values mrs-rels id-hin_concept-MRS_concept "?id " " ?conLabel " " ?mrsConcept ")"crlf))
+(printout ?*mrs-dbug* "(rule-rel-values print-mrs-rel id-hin_concept-MRS_concept "?id " " ?conLabel " " ?mrsConcept ")"crlf)
+)
+
+
+
