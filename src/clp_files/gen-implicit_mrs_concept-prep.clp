@@ -35,6 +35,15 @@
 (printout ?*defdbug* "(rule-rel-values in_p_temp_month  id-MRS_concept " (+ ?id 1) " _in_p_temp)"crlf)
 )
 
+;Generates MRS concept "_in_p" for AXAra.
+;Ex. Rama is in Delhi.
+(defrule in_p_AXAra_AXeya
+(rel_name-ids   AXAra-AXeya     ?AXAra_id  ?AXeya_id)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?AXAra_id 1) " _in_p)"crlf)
+(printout ?*defdbug* "(rule-rel-values in_p_AXAra_AXeya  id-MRS_concept " (+ ?AXAra_id 1) " _in_p)"crlf)
+)
+
 ;Written by sakshi yadav date -13.06.19
 ;Ex-Rama reads two books in 2019.
 (defrule in_p_temp

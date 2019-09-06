@@ -70,6 +70,27 @@
 (printout ?*rstr-dbug* "(rule-rel-values samAnAXi-noun  MRS_info "?rel_name " " ?v_id " " ?mrsCon " " ?lbl " " ?id1_arg0 " " ?id2_arg0 ")"crlf)
 )
 
+;Rule for Existential(AXAra-AXeya) : for binding ARG1 & ARG2 of the existential verb with the ARG0 values of AXAra and AXEya)
+;replace ARG1 of existential verb with ARG0 of AXeya & ARG2 of verb with ARG0 of AXAra.
+;ex INPUT: ladakA xillI meM hE. OUTPUT: The boy is in Delhi.
+(defrule existential
+(id-concept_label       ?v_id   state)
+(rel_name-ids	AXAra-AXeya	?id1 ?id2)
+?f<-(MRS_info ?rel_name ?id ?endsWith_p ?lbl ?arg0 ?arg1 ?arg2 )
+(MRS_info ?rel1 ?id1 ?mrsCon1 ?lbl1 ?id1_arg0 $?vars)
+(MRS_info ?rel2 ?id2 ?mrsCon2 ?lbl2 ?id2_arg0 $?var)
+(test (eq (+ ?id1 1) ?id ))
+(test (neq ?arg1 ?id1_arg0))
+(not (modified_existential ?arg2))
+=>
+(retract ?f)
+(assert (modified_existential ?id1_arg0))
+(assert (MRS_info  ?rel_name ?id ?endsWith_p ?lbl ?arg0 ?id2_arg0 ?id1_arg0 ))
+(printout ?*rstr-dbug* "(rule-rel-values existential  MRS_info "?rel_name " " ?id " " ?endsWith_p " " ?lbl " " ?arg0 " " ?id2_arg0 " " ?id1_arg0 ")"crlf)
+)
+
+
+
 
 ;Rule for verb when only karta is present : for (kriyA-k1 ? ?) and  (kriyA-k2 ? ?) is not present
 ;    replace ARG2 of kriyA with ARG0 of karwA
@@ -494,7 +515,7 @@
 (defrule v-LTOP
 ;(declare (salience 100))
 (MRS_info ?rel ?kri_id ?mrsCon ?lbl ?arg0 $?vars)
-(not(id-guNavAcI    ?id_adj   yes))
+(not(id-guNavAcI    ?id_adj   yes))	;this condition stops generating LTOP-INDEX for predicative adjectives. E.g. Rama is good.
 =>
 (if (or (neq (str-index possible_ ?mrsCon) FALSE) (neq (str-index sudden_ ?mrsCon) FALSE))
 then
@@ -521,6 +542,21 @@ then
     (printout ?*rstr-dbug* "(rule-rel-values samAnAXi-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
 )  
 
+;generates LTOP and INDEX values for existential verb(s).
+;ex. ladakA xilli meM hE.
+(defrule Existential-LTOP
+;(declare (salience 100))
+(id-concept_label       ?v   state)
+?f<-(rel_name-ids   AXAra-AXeya        ?id1  ?id2)
+(rel_name-ids   AXAra-AXeya        ?id1  ?id2)
+(MRS_info ?rel ?id3 ?endsWith_p ?lbl ?arg0 ?arg1 ?arg2)
+(test (eq (sub-string (- (str-length ?endsWith_p) 1) (str-length ?endsWith_p) ?endsWith_p) "_p"))
+=>
+(retract ?f)
+    (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
+    (printout ?*rstr-dbug* "(rule-rel-values Existential-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
+) 
+ 
 (defrule printFacts
 (declare (salience -9000))
 (MRS_info ?rel ?kri ?mrsCon $?vars)

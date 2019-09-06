@@ -29,7 +29,8 @@ for i in range(len(fr1)):
                     fr2copy.remove(fr2[j]) 
                     fw.write(fr1[i])
                 except:
-                    print('The fact was already deleted')
+                    pass
+		#print('The fact was already deleted')
     else:
         fw.write(fr1[i])
 

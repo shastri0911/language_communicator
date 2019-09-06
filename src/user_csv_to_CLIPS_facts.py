@@ -130,6 +130,12 @@ for i in range(len(interChunkRels)):
              sam1 = [i for i, n in enumerate(interChunkRels) if n == 'samAnAXi'][0]
              sam2 = [i for i, n in enumerate(interChunkRels) if n == 'samAnAXi'][1]
              ans.write('(rel_name-ids\tsamAnAXi\t' + str(((sam1+1)*10000)) + '  ' + str(((sam2+1)*10000)) + ')\n' )
+        elif 'AXAra' in idsRels: #
+             AXAra = [i for i, n in enumerate(interChunkRels) if n == 'AXAra'][0]
+             AXeya = [i for i, n in enumerate(interChunkRels) if n == 'AXeya'][0]
+             ans.write('(rel_name-ids\tAXAra-AXeya\t' + str(((AXAra+1)*10000)) + '  ' + str(((AXeya+1)*10000)) + ')\n' )
+        elif 'AXeya' in idsRels:
+             pass
         else:     
             for j in range(len(idsRels)):
                 idrel = idsRels[j].split(':')
