@@ -1,10 +1,10 @@
-#rAma ne muJe kiwAba xI
-#rAma_ne,mEM_ko,kiwAba_0,xe-yA,.
-rAma,mEM,kiwAba_1,xe_1-yA_1
-1,2,3,4
-propn,pron,def,
-[m sg a],[- sg u],[- sg a],
-,,,
-4:k1,4:k4,4:k2,
-,,,
+#rAma xillI meM rahawA hE.
+#rAma_0,xillI_meM,raha-wA_hE,.
+rAma,xillI,raha_1-wA_hE_1
+1,2,3
+propn,propn,
+[m sg a],[- sg a],
+,,
+3:k1,3:k7p,
+,,
 assertive

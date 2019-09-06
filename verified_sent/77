@@ -1,10 +1,10 @@
-#rAma acCA hE.
-#rAma_0,acCA_0,hE,.
-rAma,acCA_1,state-pres
+#ladakA xillI meM hE.
+#ladakA_0,xillI_meM,hE,.
+ladakA_1,xillI,state-pres
 1,2,3
-propn,guNavAcI,
-[- sg a],,
+def,propn,
+[m sg a],[- sg a],
 ,,
-samAnAXi,samAnAXi,
+AXeya,AXAra,
 ,,
 assertive
