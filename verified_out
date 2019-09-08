@@ -685,7 +685,6 @@ Rama is a doctor.
 Rama is a good doctor.
 
 #rAma xillI meM rahawA hE.	76
-/home/shastri/language_communicator/tmp_dir/76  directory does not exist 
 Rama lives in Xilli.
 In Xilli lives Rama.
 Rama lives in Xilli.
@@ -697,9 +696,17 @@ The boy is in Xilli.
 #rAma bagIce meM hE.	78
 Rama is in a garden.
 
+#rAma xillI meM hE.	79
+/home/shastri/language_communicator/tmp_dir/79  directory does not exist 
+Rama is in Xilli.
+
 #bacce somavAra ko Pala KAwe hEM.	8
 Babies eat fruits, on Monday.
 Babies eat fruits on Monday.
+
+#mEM xillI meM hE.	80
+/home/shastri/language_communicator/tmp_dir/80  directory does not exist 
+I am in Xilli.
 
 #bacce Pala KAwe hEM.	9
 Babies eat fruits.
