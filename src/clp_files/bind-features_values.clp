@@ -293,7 +293,7 @@
 (defrule RaRTI-viSeRaNapropn
 (rel_name-ids viSeRya-r6	?id	?id1)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id poss ?lbl8 ?arg0 ?arg1 ?arg2)
-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id1 proper_q ?lbl11 ?arg02 ?rstr1 ?body2)
+;(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id1 named ?lbl11 ?arg02 ?rstr1 ?body2)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id ?mrsCon1 ?lbl3  ?arg09 ?arg22)
 (MRS_info ?rel                             ?id1 named ?lbl6 ?arg33 ?v)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id def_explicit_q ?lbl1 ?arg01 ?rstr2 ?body)

@@ -8,8 +8,8 @@
 (defrule mrsPron_yes
 (id-pron  ?id  yes)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " pronoun_q )"crlf)
-(printout ?*defdbug* "(rule-rel-values mrsPron_yes id-MRS_concept "?id " pronoun_q )"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" pronoun_q )"crlf)
+(printout ?*defdbug* "(rule-rel-values mrsPron_yes id-MRS_concept "(+ ?id 10)" pronoun_q )"crlf)
 
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " pron )"crlf)
 (printout ?*defdbug* "(rule-rel-values mrsPron_yes id-MRS_concept "?id " pron )"crlf)

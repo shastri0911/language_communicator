@@ -48,7 +48,7 @@
 (id-mass ?id yes)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values  mrs_mass_notDef implicit_mrs_concept id-MRS_concept "?id " udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values  mrs_mass_notDef implicit_mrs_concept id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
 )
 
 ;Rule for negation : if (kriya-NEG ?id1 ?id2) is present, generate (id-MRS_Rel ?id _udef_q)
@@ -63,8 +63,8 @@
 (defrule mrs_propn
 (id-propn  ?id yes)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " proper_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_propn  id-MRS_concept "?id " proper_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " proper_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_propn  id-MRS_concept "(+ ?id 10)" proper_q)"crlf)
 
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " named)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_propn  id-MRS_concept "?id " named)"crlf)
