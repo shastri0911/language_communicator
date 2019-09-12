@@ -136,6 +136,12 @@ for i in range(len(interChunkRels)):
              ans.write('(rel_name-ids\tAXAra-AXeya\t' + str(((AXAra+1)*10000)) + '  ' + str(((AXeya+1)*10000)) + ')\n' )
         elif 'AXeya' in idsRels:
              pass
+        elif 'anuBava' in idsRels: #
+             anuBava = [i for i, n in enumerate(interChunkRels) if n == 'anuBava'][0]
+             anuBAvaka = [i for i, n in enumerate(interChunkRels) if n == 'anuBAvaka'][0]
+             ans.write('(rel_name-ids\tanuBava-anuBAvaka\t' + str(((anuBava+1)*10000)) + '  ' + str(((anuBAvaka+1)*10000)) + ')\n' )
+        elif 'anuBAvaka' in idsRels:
+            pass
         else:     
             for j in range(len(idsRels)):
                 idrel = idsRels[j].split(':')
