@@ -55,7 +55,7 @@
 ;ex INPUT: rAma dAktara hE. OUTPUT: Rama is a doctor.
 (defrule samAnAXi-noun
 ;(declare (salience 10))
-(id-concept_label       ?v_id   state)
+(id-concept_label       ?v_id   state_copula)
 (rel_name-ids	samAnAXi	?id1 ?id2)
 ?f<-(MRS_info ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 )
 (MRS_info ?rel1 ?id1 ?mrsCon1 ?lbl1 ?id1_arg0 $?vars)
@@ -74,7 +74,7 @@
 ;replace ARG1 of existential verb with ARG0 of AXeya & ARG2 of verb with ARG0 of AXAra.
 ;ex INPUT: ladakA xillI meM hE. OUTPUT: The boy is in Delhi.
 (defrule existential
-(id-concept_label       ?v_id   state)
+(id-concept_label       ?v_id   state_existential)
 (rel_name-ids	AXAra-AXeya	?id1 ?id2)
 ?f<-(MRS_info ?rel_name ?id ?endsWith_p ?lbl ?arg0 ?arg1 ?arg2 )
 (MRS_info ?rel1 ?id1 ?mrsCon1 ?lbl1 ?id1_arg0 $?vars)
@@ -87,6 +87,25 @@
 (assert (modified_existential ?id1_arg0))
 (assert (MRS_info  ?rel_name ?id ?endsWith_p ?lbl ?arg0 ?id2_arg0 ?id1_arg0 ))
 (printout ?*rstr-dbug* "(rule-rel-values existential  MRS_info "?rel_name " " ?id " " ?endsWith_p " " ?lbl " " ?arg0 " " ?id2_arg0 " " ?id1_arg0 ")"crlf)
+)
+
+;Rule for anuBava-anuBAvaka) : for binding ARG1 & ARG2 of the verb with the ARG0 values of anuBAvaka and anuBava)
+;replace ARG1 of the verb with ARG0 of anuBAvaka & ARG2 of verb with ARG0 of anuBava.
+;ex INPUT: rAma ko buKAra hE. OUTPUT: rAma has fever.
+(defrule anuBava
+(id-concept_label       ?v_id   state_anuBUwi)
+(rel_name-ids   anuBava-anuBAvaka       ?id1  ?id2)
+?f<-(MRS_info ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 )
+(MRS_info ?rel1 ?id1 ?mrsCon1 ?lbl1 ?id1_arg0 $?vars)
+(MRS_info ?rel2 ?id2 ?mrsCon2 ?lbl2 ?id2_arg0 $?var)
+(test (eq (str-index _q ?mrsCon1) FALSE))
+(test (neq ?arg1 ?id1_arg0))
+(not (modified_anuBava ?id1))
+=>
+(retract ?f)
+(assert (modified_anuBava ?id1))
+(assert (MRS_info  ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?id2_arg0 ?id1_arg0 ))
+(printout ?*rstr-dbug* "(rule-rel-values anuBava  MRS_info "?rel_name " " ?v_id " " ?mrsCon " " ?lbl " " ?id2_arg0 " " ?id1_arg0 ")"crlf)
 )
 
 
@@ -532,7 +551,7 @@ then
 ;ex. rAma acCA hE.
 (defrule samAnAXi-LTOP
 ;(declare (salience 100))
-(id-concept_label       ?v   state)
+(id-concept_label       ?v   state_copula)
 (id-guNavAcI    ?id_adj   yes)
 (rel_name-ids   samAnAXi        ?id  ?id_adj)
 (MRS_info ?rel ?id_adj ?mrsCon ?lbl ?arg0 $?vars)
@@ -546,7 +565,7 @@ then
 ;ex. ladakA xilli meM hE.
 (defrule Existential-LTOP
 ;(declare (salience 100))
-(id-concept_label       ?v   state)
+(id-concept_label       ?v   state_existential)
 ?f<-(rel_name-ids   AXAra-AXeya        ?id1  ?id2)
 (rel_name-ids   AXAra-AXeya        ?id1  ?id2)
 (MRS_info ?rel ?id3 ?endsWith_p ?lbl ?arg0 ?arg1 ?arg2)
