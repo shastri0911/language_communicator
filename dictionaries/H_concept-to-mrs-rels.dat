@@ -11,6 +11,7 @@
 (concept_label-concept_in_Eng-MRS_concept state_copula state_copula _be_v_id)
 (concept_label-concept_in_Eng-MRS_concept state_existential state_existential _be_v_id)
 (concept_label-concept_in_Eng-MRS_concept state_anuBUwi state_anuBUwi _have_v_1)
+(concept_label-concept_in_Eng-MRS_concept state_possession state_possession _have_v_1)
 (concept_label-concept_in_Eng-MRS_concept bagIcA_1 garden_1 _garden_n_1)
 (concept_label-concept_in_Eng-MRS_concept vixyAlaya_1 school_2 _school_n_1)
 (concept_label-concept_in_Eng-MRS_concept Sahara_1 city_1 _city_n_1)
