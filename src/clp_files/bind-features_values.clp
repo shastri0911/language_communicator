@@ -70,7 +70,7 @@
 (printout ?*rstr-dbug* "(rule-rel-values samAnAXi-noun  MRS_info "?rel_name " " ?v_id " " ?mrsCon " " ?lbl " " ?id1_arg0 " " ?id2_arg0 ")"crlf)
 )
 
-;Rule for Existential(AXAra-AXeya) : for binding ARG1 & ARG2 of the existential verb with the ARG0 values of AXAra and AXEya)
+;Rule for Existential(AXAra-AXeya) : for binding ARG1 & ARG2 of the existential verb with the ARG0 values of AXAra and AXEya.
 ;replace ARG1 of existential verb with ARG0 of AXeya & ARG2 of verb with ARG0 of AXAra.
 ;ex INPUT: ladakA xillI meM hE. OUTPUT: The boy is in Delhi.
 (defrule existential
@@ -89,7 +89,7 @@
 (printout ?*rstr-dbug* "(rule-rel-values existential  MRS_info "?rel_name " " ?id " " ?endsWith_p " " ?lbl " " ?arg0 " " ?id2_arg0 " " ?id1_arg0 ")"crlf)
 )
 
-;Rule for anuBava-anuBAvaka) : for binding ARG1 & ARG2 of the verb with the ARG0 values of anuBAvaka and anuBava)
+;Rule for (anuBava-anuBAvaka) : for binding ARG1 & ARG2 of the verb with the ARG0 values of anuBAvaka and anuBava.
 ;replace ARG1 of the verb with ARG0 of anuBAvaka & ARG2 of verb with ARG0 of anuBava.
 ;ex INPUT: rAma ko buKAra hE. OUTPUT: rAma has fever.
 (defrule anuBava
@@ -106,6 +106,25 @@
 (assert (modified_anuBava ?id1))
 (assert (MRS_info  ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?id2_arg0 ?id1_arg0 ))
 (printout ?*rstr-dbug* "(rule-rel-values anuBava  MRS_info "?rel_name " " ?v_id " " ?mrsCon " " ?lbl " " ?id2_arg0 " " ?id1_arg0 ")"crlf)
+)
+
+;Rule for possessor-possessed : for binding ARG1 & ARG2 of the verb with the ARG0 values of possessor and possessed)
+;replace ARG1 of the verb with ARG0 of possessor & ARG2 of verb with ARG0 of possessed.
+;ex INPUT: rAma ke pAsa kiwAba hE. OUTPUT: rAma has the book.
+(defrule possession
+(id-concept_label       ?v_id   state_possession)
+(rel_name-ids   possessed-possessor       ?id1  ?id2)
+?f<-(MRS_info ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 )
+(MRS_info ?rel1 ?id1 ?mrsCon1 ?lbl1 ?id1_arg0 $?vars)
+(MRS_info ?rel2 ?id2 ?mrsCon2 ?lbl2 ?id2_arg0 $?var)
+(test (eq (str-index _q ?mrsCon1) FALSE))
+(test (neq ?arg1 ?id1_arg0))
+(not (modified_possessed ?id1))
+=>
+(retract ?f)
+(assert (modified_possessed ?id1))
+(assert (MRS_info  ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?id2_arg0 ?id1_arg0 ))
+(printout ?*rstr-dbug* "(rule-rel-values possession  MRS_info "?rel_name " " ?v_id " " ?mrsCon " " ?lbl " " ?id2_arg0 " " ?id1_arg0 ")"crlf)
 )
 
 

@@ -142,6 +142,13 @@ for i in range(len(interChunkRels)):
              ans.write('(rel_name-ids\tanuBava-anuBAvaka\t' + str(((anuBava+1)*10000)) + '  ' + str(((anuBAvaka+1)*10000)) + ')\n' )
         elif 'anuBAvaka' in idsRels:
             pass
+ 
+        elif 'possessed' in idsRels: #
+             possessed = [i for i, n in enumerate(interChunkRels) if n == 'possessed'][0]
+             possessor = [i for i, n in enumerate(interChunkRels) if n == 'possessor'][0]
+             ans.write('(rel_name-ids\tpossessed-possessor\t' + str(((possessed+1)*10000)) + '  ' + str(((possessor+1)*10000)) + ')\n' )
+        elif 'possessor' in idsRels:
+            pass
         else:     
             for j in range(len(idsRels)):
                 idrel = idsRels[j].split(':')
