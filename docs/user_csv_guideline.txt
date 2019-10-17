@@ -24,7 +24,6 @@ This row will be commented out by "#" symbol.
 ------------------------------------------------------
 Row 2 : Grouping 
 ------------------- 
-
 For an introduction of Grouping see Appendix 1.
 For an introduction of TAM and the list of TAM see Appendix 2
 
@@ -128,8 +127,12 @@ For the correct concept id, check the concept dictionary.
 As the TAMs are also considered as concepts and can be ambiguous at times, these too are to be provided with concept ids.
 For the correct concept id, check the TAM dictionary and concept dictionary.
 
-Note: a. For Proper nouns the sense id will always be '1'. 
-      b. No id will be used for pronouns or propernouns.
+Note: a) No id will be used for pronouns or propernouns.
+      b) For stative verbs, write state_existential, state_copula, state_anuBUwi, state_possession according to the nature of the particular stative verb.
+      c) The TAM part of the stative verb(s) will contain pres/past accordingly.
+e.g. राम अच्छा है.
+     The verb-TAM info of है will be as given below:
+      state_copula-pres
 
 Row 3:
 	राम_ने,बस+अड्डा_पर,एक@अच्छा*ही~लड़का_के_साथ,बात+कर-या,.
@@ -170,6 +173,11 @@ Ontological Information about nouns
 ---------
 
 If the noun is a definite noun and not preceeded by a possessive pronoun or a determiner, write 'def'. Otherwise leave it blank as it is. If the noun is a mass noun then write 'mass'.
+
+Ontological Information about predicative adjectives
+--------------
+If the adjective is a predicative adjective then write the suitable Ontological information under it.
+For example: गुणवाची if it denotes गुण.
 
 Row 4:
  	राम_ने,बस+अड्डा_पर,एक@अच्छा*ही~लड़का_के_साथ,बात+कर-या,.
@@ -257,6 +265,33 @@ a. karaka relation between a verb and its participants:
 		कर्ता-समानाधिकरण		k1s
 		कर्म-समानाधिकरण		k2s
 		frequency		k7tf	(e.g. प्रतिदिन)
+
+b. Non-karaka relations between the participants of the sentence.
+i) AXAra-AXeya
+e.g. राम दिल्ली में है (राम - AXeya; दिल्ली - AXAra)
+
+ii) possessor-possessed
+e.g. राम के पास किताब है (राम - possessor; किताब - possessed)
+
+iii) anuBAvaka-anuBava
+e.g. राम को बुखार है (राम - anuBAvaka; बुखार - anuBava)
+
+iv) samAnAXi-samAnAXi
+e.g. राम अच्छा है/राम एक छात्र है (राम, अच्छा both are samAnAXiin the 1st sentence; राम and छात्र are samAnAXi in the second.)
+Note: अच्छा is not in samAnAXi relation with राम in राम एक अच्छा छात्र है as it is an attributive adjective. Only राम and छात्र are in samAnAXi relations with each other.
+
+v) anuBAvaka-anuBAvya-anuBava 
+e.g. राम को श्याम के प्रति प्यार है (राम - anuBAvaka; श्याम - anuBAvya; प्यार - anuBava)
+
+There will be no verb id given for non-karaka relations.
+e.g. Row 1:#rAma xillI meM hE.
+     Row 2:#rAma_0,xillI_meM,hE,.
+     Row 3:rAma,xillI,state_existential-pres
+     Row 4:1,2,3
+     ...
+     Row 8:AXeya,AXAra,
+     ...
+
 Row 8: 	
 	राम_ने,बस+अड्डा_पर,एक@अच्छा*ही~लड़का_के_साथ,बात+कर-या,.
 	राम,बस+अड्डा_1,एक_1@अच्छा_1~लड़का_1,बात+कर_1-या_1
