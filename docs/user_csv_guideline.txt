@@ -345,4 +345,93 @@ Row 10:
 	4:k1,4:k7p,4:ras-k1,
 	,,3.2:emph,
 	assertive
+-------------------------------------------
 
+
+Examples of different types of sentences and USRs
+------------------------
+Stative verbs:
+-----
+i) Copulative
+
+#rAma dAktara hE.
+#rAma_0,dAktara_0,hE,.
+rAma,dAktara_1,state_copula-pres
+1,2,3
+propn,,
+[m sg a],[- sg a],
+,,
+samAnAXi,samAnAXi,
+,,
+assertive
+-----------------------
+
+ii) predicative adjective
+
+#rAma acCA hE.
+#rAma_0,acCA_0,hE,.
+rAma,acCA_1,state_copula-pres
+1,2,3
+propn,guNavAcI,
+[- sg a],,
+,,
+samAnAXi,samAnAXi,
+,,
+assertive
+------------------------
+
+iii) existential
+
+#rAma xillI meM hE.
+#rAma_0,xillI_meM,hE,.
+rAma,xillI,state_existential-pres
+1,2,3
+propn,propn,
+[m sg a],[- sg a],
+,,
+AXeya,AXAra,
+,,
+assertive
+----------------------------
+
+iv) experiencer (anuBAvaka-anuBava relation)
+
+#rAma ko buKAra hE.
+#rAma_ko,buKAra_0,hE,.
+rAma,buKAra_1,state_anuBUwi-pres
+1,2,3
+propn,mass,
+[m sg a],[- sg a],
+,,
+anuBAvaka,anuBava,
+,,
+assertive
+---------------------------------
+
+v) experiencer (anuBAvaka-anuBAvya-anuBava relation)
+
+#rAma ko SyAma se pyAra hE.
+#rAma_ko,SyAma_se,pyAra_0,hE,.
+rAma,SyAma,pyAra_1,state_anuBUwi-pres
+1,2,3,4
+propn,propn,mass,
+[m sg a],[m sg a],[- sg a],
+,,,
+anuBAvaka,anuBAvya,anuBava,
+,,,
+assertive
+--------------------------------------
+
+vi) possession
+
+#rAma ke pAsa kiwAba hE.
+#rAma_ke_pAsa,kiwAba_0,hE.
+rAma,kiwAba_1,state_possession-pres
+1,2,3
+propn,def,
+[m sg a],[- sg a],
+,,
+possessor,possessed,
+,,
+assertive
+-------------------------------------
