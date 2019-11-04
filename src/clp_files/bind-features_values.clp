@@ -419,9 +419,9 @@
 (defrule kri-tam-asser
 (kriyA-TAM ?kri ?tam)
 (sentence_type  assertive|pass-assertive)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense ?tam ?e_tam ?perf ?prog ?tense)
+(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type ?tam ?e_tam ?perf ?prog ?tense ?typ)
 =>
-(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf ")"crlf)
+(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf  ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values kri-tam-asser id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf ")"crlf)
 )
 
@@ -429,7 +429,7 @@
 (defrule kri-tam-neg
 (kriyA-TAM ?kri ?tam)
 (sentence_type  negation)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense ?tam ?e_tam ?perf ?prog ?tense)
+(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type ?tam ?e_tam ?perf ?prog ?tense ?)
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values kri-tam-asser id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf ")"crlf)
@@ -452,7 +452,7 @@
 (defrule kri-tam-imper
 (kriyA-TAM ?kri ?tam)
 (sentence_type  imperative)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense  ?tam ?e_tam ?perf ?prog ?tense)
+(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type  ?tam ?e_tam ?perf ?prog ?tense ?)
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " comm " ?tense " indicative " ?prog " " ?perf ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values kri-tam-imper id-SF-MOOD-PROG-PERF "?kri " comm " ?tense " indicative " ?prog " " ?perf ")"crlf)
@@ -477,7 +477,7 @@
 (defrule kri-tam-q
 (kriyA-TAM ?kri ?tam)
 (sentence_type  question)
-(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense  ?tam ?e_tam ?perf ?prog ?tense)
+(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type  ?tam ?e_tam ?perf ?prog ?tense ?)
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " ques " ?tense " indicative " ?prog " " ?perf ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values kri-tam-q id-SF-TENSE-MOOD-PROG-PERF "?kri " ques " ?tense " indicative " ?prog " " ?perf ")"crlf)
@@ -486,7 +486,8 @@
 ;Rule for LTOP: The LBL value and ARG0 value of *_v_* becomes the value of LTOP and INDEX if the following words are not there in the sentence: "possibly", "suddenly". "not".If they exist, the LTOP value becomes the LBL value of that word and INDEX value is the ARG0 value of *_v_*. For "not" we get a node "neg" in the MRS
 (defrule v-LTOP
 (MRS_info ?rel ?kri_id ?mrsCon ?lbl ?arg0 $?vars)
-(not(id-guNavAcI    ?id_adj   yes))	;this condition stops generating LTOP-INDEX for predicative adjectives. E.g. Rama is good.
+(not (id-guNavAcI    ?id_adj   yes))	;this condition stops generating LTOP-INDEX for predicative adjectives. E.g. Rama is good.
+(not (asserted_LTOP-INDEX-for-modal))
 =>
 (if (or (neq (str-index possible_ ?mrsCon) FALSE) (neq (str-index sudden_ ?mrsCon) FALSE))
 then
@@ -499,6 +500,24 @@ then
     (printout ?*rstr-dbug* "(rule-rel-values v-LTOP LTOP-INDEX h0 "?arg0 ")"crlf))  
 )     
 )
+
+;for modal verb 
+(defrule tam-modal
+(declare (salience 100))
+(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type  ?tam ?e_tam ?perf ?prog ?tense modal)
+(kriyA-TAM ?kri ?tam)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?modalV  ?mrs_modal  ?lbl  ?arg0  ?h)
+(sentence_type  assertive)
+(test (neq (str-index _v_modal ?mrs_modal) FALSE))
+=>
+(assert (asserted_LTOP-INDEX-for-modal))
+(printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
+(printout ?*rstr-dbug* "(rule-rel-values tam-modal  LTOP-INDEX h0 "?arg0 ")"crlf)
+;(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " comm " ?tense " indicative " ?prog " " ?perf ")"crlf)
+;(printout ?*rstr-dbug* "(rule-rel-values tam-modal  id-SF-MOOD-PROG-PERF "?kri " comm " ?tense " indicative " ?prog " " ?perf ")"crlf)
+)
+
+
 ;generates LTOP and INDEX values for predicative adjective(s).
 ;ex. rAma acCA hE.
 (defrule samAnAXi-LTOP

@@ -15,6 +15,7 @@
 (test (neq (sub-string (- (str-length ?noendsq1)    1) (str-length ?noendsq1) ?noendsq1) "_q"))
 (test (neq (sub-string (- (str-length ?noendsq)    1) (str-length ?noendsq) ?noendsq) "_q"))
 (test (< ?id2 ?id1))
+(test (eq (str-index _v_modal ?noendsq) FALSE))
 =>
 (retract ?f1)
 (printout ?*rstr-rstd*   "(MRS_info  "?rel1 " " ?id1 " " ?noendsq " " ?lbl1 " " ?arg " " (implode$ (create$ $?arg1)) ")"crlf)
@@ -103,20 +104,44 @@
 ;;Restrictor for LTOP Restrictor-Restricted default value
 (defrule LTOP-rstd
 (MRS_info ?rel	?id ?mrsCon ?lbl $?vars)
+(test (neq (str-index _v_ ?mrsCon) FALSE))
+(not (Restr-Restricted-fact-generated))
 (not (MRS_info ?rel1 ?id1 neg ?lbl1 $?v))
 =>
-(if (or (neq (str-index possible_ ?mrsCon) FALSE) (neq (str-index sudden_ ?mrsCon) FALSE) )
-then
-  (printout ?*rstr-rstd* "(Restr-Restricted  h0 "?lbl ")" crlf)
-  (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstd Restr-Restricted  h0 "?lbl ")"crlf)
+;(if (or (neq (str-index possible_ ?mrsCon) FALSE) (neq (str-index sudden_ ?mrsCon) FALSE) )
+;then
+;  (printout ?*rstr-rstd* "(Restr-Restricted  h0 "?lbl ")" crlf)
+;  (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstd Restr-Restricted  h0 "?lbl ")"crlf)
 
-else
-        (if (neq (str-index _v_ ?mrsCon) FALSE)
-then
-        (printout ?*rstr-rstd* "(Restr-Restricted  h0  "?lbl ")" crlf)) 
+;else
+ ;       (if (neq (str-index _v_ ?mrsCon) FALSE)
+;then
+        (printout ?*rstr-rstd* "(Restr-Restricted  h0  "?lbl ")" crlf) 
         (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-rstd  Restr-Restricted  h0 "?lbl ")"crlf)
-)     
+;)     
 )
+
+;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20100 _should_v_modal h7 e8 h9)
+;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _sleep_v_1 h10 e11 x2)
+;;Restrictor for LTOP Restrictor-Restricted default value
+(defrule LTOP-modal
+(declare (salience 100))
+(MRS_info ?rel  ?id ?mrsModal  ?lbl ?arg0 ?arg1 $?vars)
+(MRS_info ?rel1  ?id1 ?mrsV ?lbl1 ?arg01 ?arg11 $?var)
+(test (neq (str-index _v_modal ?mrsModal) FALSE))
+(test (neq (str-index _v_ ?mrsV) FALSE))
+(not (MRS_info ?rel1 ?id1 neg ?lbl1 $?v))
+(test (neq ?id ?id1))
+=>
+    (assert (Restr-Restricted-fact-generated))
+    (printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl ")" crlf)
+    (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-modal  Restr-Restricted h0 "?lbl ")"crlf)
+
+    (printout ?*rstr-rstd* "(Restr-Restricted " ?arg1 " "?lbl1 ")" crlf)
+    (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-modal  Restr-Restricted " ?arg1 " "?lbl1 ")"crlf)
+
+)
+
 
 
 (defrule print-sf_etc

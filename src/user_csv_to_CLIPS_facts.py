@@ -136,7 +136,12 @@ for i in range(len(interChunkRels)):
              ans.write('(rel_name-ids\tAXAra-AXeya\t' + str(((AXAra+1)*10000)) + '  ' + str(((AXeya+1)*10000)) + ')\n' )
         elif 'AXeya' in idsRels:
              pass
-        elif 'anuBava' in idsRels: #
+        elif 'anuBAvya' in idsRels: #
+             anuBava = [i for i, n in enumerate(interChunkRels) if n == 'anuBava'][0]
+             anuBAvaka = [i for i, n in enumerate(interChunkRels) if n == 'anuBAvaka'][0]
+             anuBAvya = [i for i, n in enumerate(interChunkRels) if n == 'anuBAvya'][0]
+             ans.write('(rel_name-ids\tanuBava-anuBAvaka-anuBAvya\t' + str(((anuBava+1)*10000)) + '  ' + str(((anuBAvaka+1)*10000)) + ' ' + str(((anuBAvya+1)*10000)) + ')\n' )
+        elif 'anuBava' in idsRels and 'anuBAvya' not in interChunkRels:
              anuBava = [i for i, n in enumerate(interChunkRels) if n == 'anuBava'][0]
              anuBAvaka = [i for i, n in enumerate(interChunkRels) if n == 'anuBAvaka'][0]
              ans.write('(rel_name-ids\tanuBava-anuBAvaka\t' + str(((anuBava+1)*10000)) + '  ' + str(((anuBAvaka+1)*10000)) + ')\n' )
@@ -152,14 +157,17 @@ for i in range(len(interChunkRels)):
         else:     
             for j in range(len(idsRels)):
                 idrel = idsRels[j].split(':')
-                kriId = str(int(float(idrel[0]))*10000)
-                karakaId = str((i+1)*10000)
-                if 'r6' in idrel:
-                     myrel = 'rel_name-ids viSeRya-' + idrel[1].replace('-', '_')
-                     ans.write('('+ myrel + '\t' + kriId + '\t' + karakaId + ')\n')
-                else:
-                    myrel = 'rel_name-ids kriyA-' + idrel[1].replace('-', '_')
-                    ans.write('('+ myrel + '\t' + kriId + '\t' + karakaId + ')\n')
+                try:
+                    kriId = str(int(float(idrel[0]))*10000)
+                    karakaId = str((i+1)*10000)
+                    if 'r6' in idrel:
+                        myrel = 'rel_name-ids viSeRya-' + idrel[1].replace('-', '_')
+                        ans.write('('+ myrel + '\t' + kriId + '\t' + karakaId + ')\n')
+                    else:
+                        myrel = 'rel_name-ids kriyA-' + idrel[1].replace('-', '_')
+                        ans.write('('+ myrel + '\t' + kriId + '\t' + karakaId + ')\n')
+                except:
+                    print('Warning: Value Error')
 
 # Writing emphetic information
 for i in range(len(discorseRel)):

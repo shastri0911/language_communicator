@@ -214,3 +214,15 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " loc_nonsp)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_what  id-MRS_concept "?id " loc_nonsp)"crlf)
 )
+
+;rule for generating  _should_v_modal
+;muJe Gara jAnA cAhie.
+; I should go home.
+(defrule should_v_modal
+(kriyA-TAM	?id  nA_cAhie_1)
+(sentence_type  assertive)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _should_v_modal)"crlf)
+(printout ?*defdbug* "(rule-rel-values  should_v_modal  id-MRS_concept "(+ ?id 100) "  _should_v_modal)"crlf)
+)
+
