@@ -101,3 +101,5 @@
 (MRS_concept-label-feature_values _in_p_temp LBL: h* ARG0: e* ARG1: e* ARG2: x*)
 (MRS_concept-label-feature_values _spoon_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _should_v_modal LBL: h* ARG0: e* ARG1: h*)
+(MRS_concept-label-feature_values _can_v_modal LBL: h* ARG0: e* ARG1: h*)
+(MRS_concept-label-feature_values _might_v_modal LBL: h* ARG0: e* ARG1: h*)
