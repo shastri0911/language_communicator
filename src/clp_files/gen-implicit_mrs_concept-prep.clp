@@ -10,6 +10,7 @@
 (Karaka_Relation-Preposition    ?karaka  ?prep)
 (not (id-concept_label	?k-id	?hiConcept&kahAz_1|kaba_1|somavAra|janavarI|ParavarI|mArca|aprELa|maI|jUna|juLAI|agaswa|siwaMbara|aktUbara|navaMbara|xisaMbara|maMgalavAra|buXavAra|guruvAra|SukravAra|SanivAra|ravivAra|Aja_1|kala_1|kala_2))
 (not (rel_name-ids kriyA-k4 ?kri ?k-id))
+(test (neq (str-index "-" ?rel) FALSE))
 (test (eq (sub-string (+ (str-index "-" ?rel)1) (str-length ?rel) ?rel) (implode$ (create$ ?karaka))))
 =>
 (bind ?myprep (str-cat "_" ?prep "_p"))
