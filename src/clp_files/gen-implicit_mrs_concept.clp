@@ -226,3 +226,29 @@
 (printout ?*defdbug* "(rule-rel-values  should_v_modal  id-MRS_concept "(+ ?id 100) "  _should_v_modal)"crlf)
 )
 
+;rule for generating  _might_v_modal
+;mEM Gara jA sakawA hUz
+;He might go home.
+(defrule might_v_modal
+(kriyA-TAM	?id  0_sakawA_hE_2)
+(sentence_type  assertive)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _might_v_modal)"crlf)
+(printout ?*defdbug* "(rule-rel-values  might_v_modal  id-MRS_concept "(+ ?id 100) "  _might_v_modal)"crlf)
+)
+
+
+;rule for generating  _can_v_modal
+;mEM Gara jA sakawA hUz.
+;I can go home.
+(defrule can_v_modal
+(kriyA-TAM	?id  0_sakawA_hE_1)
+(sentence_type  assertive)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _can_v_modal)"crlf)
+(printout ?*defdbug* "(rule-rel-values  can_v_modal  id-MRS_concept "(+ ?id 100) "  _can_v_modal)"crlf)
+)
+
+
+
+
