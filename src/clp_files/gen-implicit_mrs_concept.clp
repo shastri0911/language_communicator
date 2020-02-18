@@ -22,6 +22,7 @@
 (not(id-pron ?id yes))
 (not(id-propn ?id yes))
 (not (rel_name-ids viSeRya-saMKyA_viSeRaNa ?id $?v))
+(not (rel_name-ids viSeRya-dem ?id $?v1))
 (not (rel_name-ids viSeRya-r6 ?id ?r6))  ;mEM_kA_xoswa_bagIcA_meM_Kela_rahA_hE My friend is playing in the garden.
 (not (id-concept_label	?id	kOna_1)) ;Who won the match?
 (not (id-concept_label	?id	Gara_1))
@@ -35,6 +36,7 @@
 (id-gen-num-pers ?id ?g ?n ?p)
 (not (id-def ?id yes))
 (not (id-mass ?id yes))
+(not (rel_name-ids viSeRya-dem ?id $?v))
 (test (eq ?n pl))
 (not(id-pron ?id yes))
 =>
@@ -50,6 +52,21 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  mrs_mass_notDef implicit_mrs_concept id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
 )
+
+;rule for generating  _this_q_dem
+;mEMne yaha Pala KAyA.
+;I ate this fruit.
+;(defrule this_q_dem
+;(id-concept_label       ?id   yaha_1)
+;((rel_name-ids viSeRya-dem       ?nid   ?demid))
+;(sentence_type  assertive)
+;=>
+;(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _can_v_modal)"crlf)
+;(printout ?*mrsdef* "(MRS_info id-MRS_concept " ?nid "  _this_q_dem)"crlf)
+;(printout ?*defdbug* "(rule-rel-values  can_v_modal  id-MRS_concept "(+ ?id 100) "  _can_v_modal)"crlf)
+;(printout ?*defdbug* "(rule-rel-values  this_q_dem  id-MRS_concept " ?id "  _this_q_dem)"crlf)
+;)
+
 
 ;Rule for negation : if (kriya-NEG ?id1 ?id2) is present, generate (id-MRS_Rel ?id _udef_q)
 (defrule mrs_neg_notDef
@@ -132,15 +149,19 @@
 ;          (id-MRS_concept "?id " loc_nonsp)
 (defrule mrs_kala
 (id-concept_label ?id kala_1|kala_2|Aja_1)
+(rel_name-ids   ?relname        ?id1  ?id2)	;To restrict the generation of "loc_nonsp" when "kala, Aja" are in "samanadhikaran" relation.
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " time_n)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_kala  id-MRS_concept "?id " time_n)"crlf)
 
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " def_implicit_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_kala  id-MRS_concept "?id " def_implicit_q)"crlf)
+(if (neq ?relname samAnAXi) then	;;To restrict the generation of "loc_nonsp" when "kala, Aja" are in "samanadhikaran" relation.e.g Today is Monday.
+ (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " loc_nonsp)"crlf)
+ (printout ?*defdbug* "(rule-rel-values mrs_kala  id-MRS_concept "?id " loc_nonsp)"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " loc_nonsp)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_kala  id-MRS_concept "?id " loc_nonsp)"crlf)
+ 
+)
 )
 
 ;written by sakshi yadav(NIT Raipur) Date-7.06.19
@@ -248,7 +269,6 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _can_v_modal)"crlf)
 (printout ?*defdbug* "(rule-rel-values  can_v_modal  id-MRS_concept "(+ ?id 100) "  _can_v_modal)"crlf)
 )
-
 
 
 

@@ -12,6 +12,7 @@
 (MRS_concept-label-feature_values _sleep_v_1 LBL: h* ARG0: e* ARG1: x* )
 (MRS_concept-label-feature_values _a_q LBL: h* ARG0: x* RSTR: h* BODY: h*)
 (MRS_concept-label-feature_values _book_n_of LBL: h* ARG0: x* ARG1: i*)
+(MRS_concept-label-feature_values _day_n_of LBL: h* ARG0: x* ARG1: i*)
 (MRS_concept-label-feature_values _in_p LBL: h* ARG0: e* ARG1: e* ARG2: x*)
 (MRS_concept-label-feature_values _by_p LBL: h* ARG0: e* ARG1: e* ARG2: x*)
 (MRS_concept-label-feature_values _from_p LBL: h* ARG0: e* ARG1: e* ARG2: x*)
