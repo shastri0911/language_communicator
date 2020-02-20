@@ -15,7 +15,8 @@ The user csv file will contain 10 rows. The rows are
 8: Interchunk Dependency Relations
 9: Discourse Relations
 10: Sentence Types
-The entries of each row is separated with the comma (',').
+
+The entries of each row are separated with the comma (,).
 For a sentence "राम ने बस-अड्डे पर एक अच्छे ही लड़के के साथ बात की", we will build the information of each row as we describe them below
 Row 1: Original sentence without grouping
 ----------------------------------------

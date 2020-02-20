@@ -38,9 +38,10 @@
 
 ;Generate initial MRS info for concepts in "mrs_info.dat"
 (defrule mrs-info-other
-(MRS_info id-MRS_concept ?id  ?mrsCon )
+?f<-(MRS_info id-MRS_concept ?id  ?mrsCon )
 (MRS_concept-label-feature_values ?mrsCon $?vars)
 =>
+(retract ?f )
 	(bind ?val (length$ (create$ $?vars)))
 	(bind ?rel (create$ ))
 	(bind ?v (create$ ))
@@ -63,5 +64,5 @@
 	(bind ?f1 (explode$ (str-cat "id-MRS_concept-"  ?f)))
 
         (printout ?*mrs-fp* "(MRS_info "(implode$ (create$ ?f1))" "?id " "?mrsCon" "(implode$ (create$ ?v))")"crlf)
-        (printout ?*mrs-dbug* "(rule-rel-values mrs-info-other MRS_info-other "(implode$ (create$ ?f1))" "?id " "?mrsCon" "(implode$ (create$ ?v))")"crlf)
+        (printout ?*mrs-dbug* "(rule-rel-values mrs-info-other "(implode$ (create$ ?f1))" "?id " "?mrsCon" "(implode$ (create$ ?v))")"crlf)
 )

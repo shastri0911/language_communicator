@@ -147,8 +147,10 @@
 (MRS_info ?rel2 ?karma ?mrsCon2 ?lbl2 ?argma_0 $?vars1)
 (test (eq (str-index _q ?mrsCon2) FALSE))
 (test (neq ?arg2 ?argma_0))
+(not (modified_k2 ?karma))
 =>
 (retract ?f)
+(assert (modified_k2 ?karma))
 (assert (MRS_info  ?rel_name  ?kriyA  ?mrsCon  ?lbl ?arg0 ?arg1 ?argma_0  $?v))
 ;(printout ?*rstr-fp* "(MRS_info  "?rel_name " " ?kriyA " " ?mrsCon " " ?lbl " " ?arg0 " " ?arg1 " " ?argma_0 " "(implode$ (create$ $?v))")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values v-k2  MRS_info "?rel_name " " ?kriyA " " ?mrsCon " " ?lbl " " ?arg1 " " ?argma_0 " "(implode$ (create$ $?v))")"crlf)
