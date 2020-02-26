@@ -14,6 +14,7 @@
 (bind ?*path* (str-cat ?*path* "/src/clp_files/gen-implicit_mrs_concept.clp"))
 (load ?*path*)
 (load-facts "hin-clips-facts.dat")
+(load-facts "tam_mapping.dat")
 (load-facts "mrs-rel-features.dat")
 (open "implicit_mrs_concept.dat" mrs-def-fp "w")
 (open "implicit_mrs_concept_debug.dat" mrs-def-dbug "w")
