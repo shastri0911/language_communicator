@@ -95,8 +95,8 @@
 (id-concept_label ?id kyA_1)
 (sentence_type  question)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " thing)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_what  id-MRS_concept "?id " thing)"crlf)
+;(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " thing)"crlf)
+;(printout ?*defdbug* "(rule-rel-values mrs_inter_what  id-MRS_concept "?id " thing)"crlf)
 
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " which_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_what  id-MRS_concept "?id " which_q)"crlf)
