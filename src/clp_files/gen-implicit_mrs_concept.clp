@@ -264,7 +264,7 @@
 ;I can go home.
 (defrule can_v_modal
 (kriyA-TAM	?id  0_sakawA_hE_1)
-(sentence_type  assertive)
+(sentence_type  assertive|question|negation)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _can_v_modal)"crlf)
 (printout ?*defdbug* "(rule-rel-values  can_v_modal  id-MRS_concept "(+ ?id 100) "  _can_v_modal)"crlf)

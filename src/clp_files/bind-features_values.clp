@@ -340,6 +340,31 @@
 (printout ?*rstr-dbug* "(rule-rel-values RaRTI-viSeRaNapropn MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY  " ?id " def_explicit_q " ?lbl1 " " ?arg09 " " ?rstr2" " ?body ")"crlf)
 )
 
+;Rule for common noun :
+;Replace LBL of poss with LBL of mrsCon1 and ARG1 of poss with ARG0 of mrsCon1 and ARG2 of poss with ARG0 of proper_q and ARG0 of named wirh ARG0 of proper_q
+;Ex- John's son studies in the school
+;Ex-John's son studies in the school.
+;(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 30000 def_explicit_q h5 x6 h7 h8)
+;(MRS_info id-MRS_concept-LBL-ARG0 30000 _neck_n_1 h23 x24)
+
+;(rel_name-ids viSeRya-r6	30000	20000)
+;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 poss h1 e2 x3 x4)
+;(MRS_info id-MRS_concept-LBL-ARG0 20000 _woman_n_1 h21 x22)
+
+;(defrule r6_common_noun
+;(rel_name-ids viSeRya-r6	?id	?id1)
+;?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id poss ?lbl8 ?arg0 ?arg1 ?arg2)
+;;(MRS_info id-MRS_concept-LBL-ARG0 20000 _woman_n_1 h21 x22)
+;(MRS_info ?rel                             ?id1 ?mrsCon ?lbl6 ?arg00 $?v)
+;=>
+;(retract ?f)
+;(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2  " ?id " poss " ?lbl8 " " ?arg0 " " ?arg1 " " ?arg00 ")"crlf)
+;(printout ?*rstr-dbug* "(rule-rel-values r6_common_noun MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2  " ?id " poss " ?lbl8 " " ?arg0 " " ?arg1 " " ?arg00 ")"crlf)
+;)
+
+
+
+
 
 ;Rule for preposition for pronoun : when (id-pron ? yes) for (kriyA-k*/r* ?1 ?2) and (id-MRS_Rel ?2 k*/r* corresponding prep_rel from dic)
 ;Replace ARG1 value of prep_rel with ARG0 value of ?1 and ARG2 value of prep_rel with ARG0 value of ?2)
@@ -564,14 +589,12 @@ then
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type  ?tam ?e_tam ?perf ?prog ?tense modal)
 (kriyA-TAM ?kri ?tam)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?modalV  ?mrs_modal  ?lbl  ?arg0  ?h)
-(sentence_type  assertive)
+(sentence_type  assertive|question|negation)
 (test (neq (str-index _v_modal ?mrs_modal) FALSE))
 =>
 (assert (asserted_LTOP-INDEX-for-modal))
 (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
 (printout ?*rstr-dbug* "(rule-rel-values tam-modal  LTOP-INDEX h0 "?arg0 ")"crlf)
-;(printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " comm " ?tense " indicative " ?prog " " ?perf ")"crlf)
-;(printout ?*rstr-dbug* "(rule-rel-values tam-modal  id-SF-MOOD-PROG-PERF "?kri " comm " ?tense " indicative " ?prog " " ?perf ")"crlf)
 )
 
 
