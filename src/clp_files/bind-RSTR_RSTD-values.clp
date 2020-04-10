@@ -16,6 +16,7 @@
 (test (neq (sub-string (- (str-length ?noendsq)    1) (str-length ?noendsq) ?noendsq) "_q"))
 (test (< ?id2 ?id1))
 (test (eq (str-index _v_modal ?noendsq) FALSE))
+(test (neq (str-index poss ?noendsq1) FALSE))
 =>
 (retract ?f1)
 (printout ?*rstr-rstd*   "(MRS_info  "?rel1 " " ?id1 " " ?noendsq " " ?lbl1 " " ?arg " " (implode$ (create$ $?arg1)) ")"crlf)
@@ -89,15 +90,15 @@
 (defrule defexpq
 ;(declare (salience 1000))
 (rel_name-ids viSeRya-r6	?id  ?id1)
-(MRS_info ?rel1 ?id poss ?lbl2 ?ARG_0 ?ARG1 ?ARG2)
-?f<-(MRS_info ?rel2 ?id def_explicit_q ?lbl1 ?x ?rstr $?v)
+(MRS_info ?rel1 ?idposs poss ?lbl2 ?ARG_0 ?ARG1 ?ARG2)
+?f<-(MRS_info ?rel2 ?id_q def_explicit_q ?lbl1 ?x ?rstr $?v)
 =>
 (retract ?f)
 (printout ?*rstr-rstd* "(Restr-Restricted     "?rstr  "  " ?lbl2 ")"crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values defexpq Restr-Restricted  "?rstr"  "?lbl2 ")"crlf)
 
-(printout ?*rstr-rstd*   "(MRS_info " ?rel2 " " ?id  " def_explicit_q " ?lbl1 " " ?x " " ?rstr " " (implode$ (create$ $?v)) ")"crlf)
-(printout ?*rstr-rstd-dbg* "(rule-rel-values  defexpq " ?rel2 " " ?id " def_explicit_q  " ?lbl1 " "?x " " ?rstr " " (implode$ (create$ $?v)) ")"crlf)
+(printout ?*rstr-rstd*   "(MRS_info " ?rel2 " " ?id_q  " def_explicit_q " ?lbl1 " " ?x " " ?rstr " " (implode$ (create$ $?v)) ")"crlf)
+(printout ?*rstr-rstd-dbg* "(rule-rel-values  defexpq " ?rel2 " " ?id_q " def_explicit_q  " ?lbl1 " "?x " " ?rstr " " (implode$ (create$ $?v)) ")"crlf)
 )
 
 

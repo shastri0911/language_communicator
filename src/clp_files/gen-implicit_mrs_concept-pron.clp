@@ -31,9 +31,9 @@
 (defrule mrs_poss_pron
 (rel_name-ids viSeRya-r6 ?viSeRya ?r6)
 =>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?viSeRya " def_explicit_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_poss_pron id-MRS_concept "?viSeRya " def_explicit_q)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?viSeRya 10) " def_explicit_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_poss_pron id-MRS_concept "(+ ?viSeRya 10)" def_explicit_q)"crlf)
 
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?viSeRya " poss)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_poss_pron id-MRS_concept "?viSeRya " poss)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?viSeRya 1)" poss)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_poss_pron id-MRS_concept "(+ ?viSeRya 1)" poss)"crlf)
 )

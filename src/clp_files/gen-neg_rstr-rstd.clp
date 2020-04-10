@@ -12,7 +12,7 @@
 (test (neq (str-index neg ?mrsCon) FALSE))
 (test (neq (str-index ?index ?ARG0_2) FALSE))
 =>
-(retract ?f)
+(retract ?f) ;#rAma ne pATa nahIM paDA.
 (printout ?*rstr-rstd* "(Restr-Restricted     "?ARG1  "  " ?lbl2 ")"crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values   neg-rstd  Restr-Restricted  "?ARG1"  "?lbl2")"crlf)
 

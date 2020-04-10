@@ -302,65 +302,28 @@
 (printout ?*rstr-dbug* "(rule-rel-values prep-propn MRS_info "?rel_name " " ?prep " " ?endsWith_p " " ?vlbl " " ?arg0 " " ?varg0 " " ?namedarg0 ")"crlf)
 )
 
-;Rule for possessive pronoun:
-;Ex.My friend is playing in the garden.
-(defrule RaRTI-viSeRaNa
-?f<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id def_explicit_q ?lbl1 ?arg01 ?rstr ?body)
-(MRS_info ?rel_name ?id poss ?lbl ?arg0 ?arg1 ?arg2)
-(MRS_info ?rel1 ?id ?mrsCon1 ?nlbl  ?narg0 $?v)
-(MRS_info ?rel2 ?id1 pron ?plbl ?parg0 $?var)
-(test (neq (str-index "_n_" ?mrsCon1)FALSE))
-=>
-(retract ?f)
-(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?id " def_explicit_q " ?lbl1 " "?narg0 " " ?rstr " " ?body")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values RaRTI-viSeRaNa MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY " ?id " def_explicit_q " ?lbl1 " " ?narg0 " " ?rstr " " ?body")"crlf)
 
-(printout ?*rstr-fp* "(MRS_info  " ?rel_name " " ?id " poss " ?nlbl " " ?arg0 " " ?narg0 " " ?parg0 ")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values RaRTI-viSeRaNa MRS_info " ?rel_name " " ?id " poss " ?nlbl " " ?arg0 " " ?narg0 " " ?parg0 ")"crlf)
-)
-
-;written by sakshi yadav (NIT-Raipur) Date - 27.05.19
-;Rule for proper noun :
-;Replace LBL of poss with LBL of mrsCon1 and ARG1 of poss with ARG0 of mrsCon1 and ARG2 of poss with ARG0 of proper_q and ARG0 of named wirh ARG0 of proper_q
+;Replace LBL and ARG1 values of poss with LBL and ARG0 values of RaRTI_viSeRya and ARG2 with ARG0 of RaRTI_viSeRaNa (r6)
+;Replace ARG0 values of def_explicit_q with the ARG0 value of RaRTI_viSeRya
 ;Ex- John's son studies in the school
-;Ex-John's son studies in the school.
-(defrule RaRTI-viSeRaNapropn
+;Ex. My friend is playing in the garden.
+;Ex. The necklace is in the woman's neck. 
+(defrule r6_common_noun
 (rel_name-ids viSeRya-r6	?id	?id1)
-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id poss ?lbl8 ?arg0 ?arg1 ?arg2)
-;(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id1 named ?lbl11 ?arg02 ?rstr1 ?body2)
-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id ?mrsCon1 ?lbl3  ?arg09 ?arg22)
-(MRS_info ?rel                             ?id1 named ?lbl6 ?arg33 ?v)
-?f<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id def_explicit_q ?lbl1 ?arg01 ?rstr2 ?body)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?idposs poss ?lbl ?arg0 ?arg1 ?arg2)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id_q def_explicit_q ?lbl1 ?arg01 ?rstr ?body)
+(MRS_info ?rel                             ?id ?mrsCon ?lbl6 ?arg00 $?v)  
+(MRS_info ?rel1                             ?id1 ?mrsCon1 ?lbl7 ?arg8 $?v1)  
 =>
-(retract ?f)
-(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2  " ?id " poss " ?lbl3 " " ?arg0 " " ?arg09 " " ?arg33 ")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values RaRTI-viSeRaNapropn MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2  " ?id " poss " ?lbl3 " " ?arg0 " " ?arg09 " " ?arg33 ")"crlf)
+(retract ?f) 
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2  " ?idposs " poss " ?lbl6 " " ?arg0 " " ?arg00 " " ?arg8 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values r6_common_noun MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2  " ?idposs " poss " ?lbl6 " " ?arg0 " " ?arg00 " " ?arg8 ")"crlf)
 
-(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY  " ?id " def_explicit_q " ?lbl1 " " ?arg09 " " ?rstr2 " " ?body ")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values RaRTI-viSeRaNapropn MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY  " ?id " def_explicit_q " ?lbl1 " " ?arg09 " " ?rstr2" " ?body ")"crlf)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY  " ?id_q " def_explicit_q " ?lbl1 " " ?arg00 " " ?rstr " " ?body ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values r6_common_noun MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY  " ?id_q " def_explicit_q " ?lbl1 " " ?arg00 " " ?rstr" " ?body ")"crlf)
 )
 
-;Rule for common noun :
-;Replace LBL of poss with LBL of mrsCon1 and ARG1 of poss with ARG0 of mrsCon1 and ARG2 of poss with ARG0 of proper_q and ARG0 of named wirh ARG0 of proper_q
-;Ex- John's son studies in the school
-;Ex-John's son studies in the school.
-;(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 30000 def_explicit_q h5 x6 h7 h8)
-;(MRS_info id-MRS_concept-LBL-ARG0 30000 _neck_n_1 h23 x24)
 
-;(rel_name-ids viSeRya-r6	30000	20000)
-;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 poss h1 e2 x3 x4)
-;(MRS_info id-MRS_concept-LBL-ARG0 20000 _woman_n_1 h21 x22)
-
-;(defrule r6_common_noun
-;(rel_name-ids viSeRya-r6	?id	?id1)
-;?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id poss ?lbl8 ?arg0 ?arg1 ?arg2)
-;;(MRS_info id-MRS_concept-LBL-ARG0 20000 _woman_n_1 h21 x22)
-;(MRS_info ?rel                             ?id1 ?mrsCon ?lbl6 ?arg00 $?v)
-;=>
-;(retract ?f)
-;(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2  " ?id " poss " ?lbl8 " " ?arg0 " " ?arg1 " " ?arg00 ")"crlf)
-;(printout ?*rstr-dbug* "(rule-rel-values r6_common_noun MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2  " ?id " poss " ?lbl8 " " ?arg0 " " ?arg1 " " ?arg00 ")"crlf)
-;)
 
 
 
