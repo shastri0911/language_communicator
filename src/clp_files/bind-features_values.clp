@@ -218,15 +218,14 @@
 ;written by sakshi yadav (NIT-Raipur) date-27.05.19
 ;Rule for verb and word yesterday,today,tomorrow is present :
 ;Replace LBL of loc_nonsp with LBL of verb and  ARG1 of loc_nonsp with ARG0 of verb and LBL of place_n with LBL of home_p and ARG1 of mrs_time  ,ARG0 of time_n home_p,ARG0 of de_implicit_q with ARG2 of loc_nonsp
-;Ex- i came yesterday, i will come tomorrow, i come today
+;Ex- i came yesterday, i will come tomorrow, i come today. I will play a game today.
 (defrule v-time
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id loc_nonsp ?lbl ?arg0 ?arg1 ?arg2)
-;?f1<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id ?mrs_time ?lbl3 ?arg03 ?arg13)
 (MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id def_implicit_q ?lbl1 ?arg01 ?rstr ?body)
 (MRS_info id-MRS_concept-LBL-ARG0 ?id time_n ?lbl2 ?arg02)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id ?mrs_time ?lbl3 ?arg03 ?arg13)
-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id1 ?v ?lbl4 ?arg04 ?arg14)
-(rel_name-ids   ?relname        ?id2  ?id3)
+(MRS_info ?rel ?id1 ?v ?lbl4 ?arg04 ?arg14 $?vars)
+(rel_name-ids   ?relname        ?id1  ?id)
 (test (neq (str-index "_v_" ?v)FALSE))
 (test (or (eq ?mrs_time _yesterday_a_1) (eq ?mrs_time _today_a_1) (eq ?mrs_time _tomorrow_a_1)))
 =>
