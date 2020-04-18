@@ -131,7 +131,7 @@
 (MRS_info ?rel1  ?id1 ?mrsV ?lbl1 ?arg01 ?arg11 $?var)
 (test (neq (str-index _v_modal ?mrsModal) FALSE))
 (test (neq (str-index _v_ ?mrsV) FALSE))
-(not (MRS_info ?rel1 ?id1 neg ?lbl1 $?v))
+(not (MRS_info ? ? neg $?))
 (test (neq ?id ?id1))
 =>
     (assert (Restr-Restricted-fact-generated))

@@ -8095,7 +8095,7 @@
 (MRS_concept-label-feature_values _stoop_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _stoop_v_1 LBL: h* ARG0: e* ARG1: x*)
 (MRS_concept-label-feature_values _stop_n_1 LBL: h* ARG0: x*)
-(MRS_concept-label-feature_values _stop_v_1 LBL: h* ARG0: e* ARG1: x* ARG2: x*)
+(MRS_concept-label-feature_values _stop_v_1 LBL: h* ARG0: e* ARG1: x* ARG2: p*)
 (MRS_concept-label-feature_values _stop_v_from LBL: h* ARG0: e* ARG1: x* ARG2: x* ARG3: h*)
 (MRS_concept-label-feature_values _store_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _store_v_cause LBL: h* ARG0: e* ARG1: x* ARG2: x*)

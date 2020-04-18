@@ -241,7 +241,6 @@
 ; I should go home.
 (defrule should_v_modal
 (kriyA-TAM	?id  nA_cAhie_1)
-(sentence_type  assertive)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _should_v_modal)"crlf)
 (printout ?*defdbug* "(rule-rel-values  should_v_modal  id-MRS_concept "(+ ?id 100) "  _should_v_modal)"crlf)
@@ -252,7 +251,6 @@
 ;He might go home.
 (defrule might_v_modal
 (kriyA-TAM	?id  0_sakawA_hE_2)
-(sentence_type  assertive)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _might_v_modal)"crlf)
 (printout ?*defdbug* "(rule-rel-values  might_v_modal  id-MRS_concept "(+ ?id 100) "  _might_v_modal)"crlf)
@@ -260,11 +258,10 @@
 
 
 ;rule for generating  _can_v_modal
-;mEM Gara jA sakawA hUz.
-;I can go home.
+;mEM Gara jA sakawA hUz. kyA Apa ruka sakawe hEM? mEM nahIM so sakawA hUz.
+;I can go home.          Can you stop?            I can not sleep.
 (defrule can_v_modal
 (kriyA-TAM	?id  0_sakawA_hE_1)
-(sentence_type  assertive|question|negation)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _can_v_modal)"crlf)
 (printout ?*defdbug* "(rule-rel-values  can_v_modal  id-MRS_concept "(+ ?id 100) "  _can_v_modal)"crlf)

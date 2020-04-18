@@ -150,10 +150,8 @@
 (not (modified_k2 ?karma))
 =>
 (retract ?f)
-;(assert (modified_k2 ?karma))
 (assert (MRS_info  ?rel_name  ?kriyA  ?mrsCon  ?lbl ?arg0 ?arg1 ?argma_0  $?v))
-;(printout ?*rstr-fp* "(MRS_info  "?rel_name " " ?kriyA " " ?mrsCon " " ?lbl " " ?arg0 " " ?arg1 " " ?argma_0 " "(implode$ (create$ $?v))")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values v-k2  MRS_info "?rel_name " " ?kriyA " " ?mrsCon " " ?lbl " " ?arg1 " " ?argma_0 " "(implode$ (create$ $?v))")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values v-k2  MRS_info "?rel_name " " ?kriyA " " ?mrsCon " " ?lbl " "?arg0 " " ?arg1 " " ?argma_0 " "(implode$ (create$ $?v))")"crlf)
 )
 
 ;Rule for verb and its arguments(when  karta, karma and sampradaan are present),Replace ARG3 value of kriyA with ARG0 value of sampradaan and ARG2 value of kriyA with ARG0 value of karma
