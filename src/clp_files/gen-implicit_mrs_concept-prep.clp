@@ -57,13 +57,14 @@
 (printout ?*defdbug* "(rule-rel-values in_p_temp  id-MRS_concept " (+ ?k-id 1) " _in_p_temp)"crlf)
 )
 
+;Commented by Sukhada on 24/04/2020. Because we are getting the output for the given sentence without insertion of '_by_p' but not with the preposition this and many other passive sentences.
 ;Written by Shastri --date-- 12/06/19
 ;Rule for inserting MRS concept "_by_p" when karwA is present in passive sentences.
 ;e.x. rAvaNa rAma ke xvArA mArA gayA.
-(defrule passive_by
-(rel_name-ids kriyA-k1 ?kri ?k1)
-(sentence_type  pass-assertive)
-=>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?k1 1) " _by_p)"crlf)
-(printout ?*defdbug* "(rule-rel-values passive_by id-MRS_concept "  (+ ?k1 1) " _by_p)"crlf)
-)
+;(defrule passive_by
+;(rel_name-ids kriyA-k1 ?kri ?k1)
+;(sentence_type  pass-assertive)
+;=>
+;(printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?k1 1) " _by_p)"crlf)
+;(printout ?*defdbug* "(rule-rel-values passive_by id-MRS_concept "  (+ ?k1 1) " _by_p)"crlf)
+;)

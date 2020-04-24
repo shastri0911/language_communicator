@@ -146,6 +146,7 @@
 ?f<-(MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 $?v)
 (MRS_info ?rel2 ?karma ?mrsCon2 ?lbl2 ?argma_0 $?vars1)
 (test (eq (str-index _q ?mrsCon2) FALSE))
+(test (neq (str-index _v_ ?mrsCon) FALSE))
 (test (neq ?arg2 ?argma_0))
 (not (modified_k2 ?karma))
 =>
@@ -174,16 +175,16 @@
 ;Ex. Sera_ne_yuxXa_ke_liye_jaMgala_meM_saBA_bulAI
 (defrule prep-noun
 (rel_name-ids ?relp ?kriyA ?karak)
-;(MRS_info ?rel_name ?karak ?endsWith_p ?lbl ?arg0 ?arg1 $?v)
-(MRS_info ?rel_name ?prep ?endsWith_p ?lbl ?arg0 ?arg1 $?v)
+?f<-(MRS_info ?rel_name ?prep ?endsWith_p ?lbl ?arg0 ?arg1 $?v)
 (MRS_info ?rel1 ?kriyA ?mrsCon1 ?lbl1 ?argv_0 $?vars)
 (MRS_info ?rel2 ?karak ?mrsCon2 ?lbl2 ?argn_0 $?varss)
 (test (eq (sub-string 1 1 (str-cat ?prep)) (sub-string 1 1 (str-cat ?karak))))
 (test (eq (sub-string (- (str-length ?endsWith_p) 1) (str-length ?endsWith_p) ?endsWith_p) "_p"))
 (test (neq (str-index "_n_" ?mrsCon2)FALSE))
 =>
+(retract ?f)
 (printout ?*rstr-fp* "(MRS_info  " ?rel_name " " ?prep " " ?endsWith_p " " ?lbl1 " " ?arg0 " " ?argv_0 " " ?argn_0 ")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values prep-noun MRS_info "?rel_name " " ?prep " " ?endsWith_p " " ?lbl " " ?arg0 " " ?argv_0 " " ?argn_0 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values prep-noun MRS_info "?rel_name " " ?prep " " ?endsWith_p " " ?lbl1" " ?arg0 " " ?argv_0 " " ?argn_0 ")"crlf)
 )
 
 ;written by sakshi yadav (NIT-Raipur)
@@ -305,7 +306,7 @@
 ;Ex- John's son studies in the school
 ;Ex. My friend is playing in the garden.
 ;Ex. The necklace is in the woman's neck. 
-(defrule r6_common_noun
+(defrule r6
 (rel_name-ids viSeRya-r6	?id	?id1)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?idposs poss ?lbl ?arg0 ?arg1 ?arg2)
 ?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id_q def_explicit_q ?lbl1 ?arg01 ?rstr ?body)
@@ -314,16 +315,11 @@
 =>
 (retract ?f) 
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2  " ?idposs " poss " ?lbl6 " " ?arg0 " " ?arg00 " " ?arg8 ")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values r6_common_noun MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2  " ?idposs " poss " ?lbl6 " " ?arg0 " " ?arg00 " " ?arg8 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values r6 MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2  " ?idposs " poss " ?lbl6 " " ?arg0 " " ?arg00 " " ?arg8 ")"crlf)
 
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY  " ?id_q " def_explicit_q " ?lbl1 " " ?arg00 " " ?rstr " " ?body ")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values r6_common_noun MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY  " ?id_q " def_explicit_q " ?lbl1 " " ?arg00 " " ?rstr" " ?body ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values r6 MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY  " ?id_q " def_explicit_q " ?lbl1 " " ?arg00 " " ?rstr" " ?body ")"crlf)
 )
-
-
-
-
-
 
 
 ;Rule for preposition for pronoun : when (id-pron ? yes) for (kriyA-k*/r* ?1 ?2) and (id-MRS_Rel ?2 k*/r* corresponding prep_rel from dic)
@@ -477,17 +473,19 @@
 (printout ?*rstr-dbug* "(rule-rel-values kri-tam-asser id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf ")"crlf)
 )
 
+;Modified by Sukhada on 24/04/2020 for 'Ravana was killed by Rama'.
 ; written by sakshi yadav (NIT-Raipur) Date - 10.06.19
 ;Rule for verb - passive sentences . 
 ;Replace LBL of parg_d with LBL of v and ARG1 of parg_d with ARG0 of verb 
 ;Ex. rAvana mArA gayA.
 (defrule pargd
-(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id parg_d ?lbl ?arg2 ?arg4 $?vr)
-(MRS_info ?rel ?id ?v ?lbl1 ?arg01 $?var)
+?f<-(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id parg_d ?lbl ?arg0 ?arg1 ?arg2) 
+(MRS_info ?rel ?id ?v ?lblv ?arg0v ?arg1v ?arg2v)
 (test (neq (str-index "_v_" ?v)FALSE))
 =>
-(printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id" parg_d "?lbl1" " ?arg2 " " ?arg01 " " (implode$ (create$ $?vr)) ")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values pargd id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id" parg_d " ?lbl1 " " ?arg2 " " ?arg01 " " (implode$ (create$ $?vr)) ")"crlf)
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info  id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id" parg_d "?lblv" " ?arg0 " " ?arg0v " "?arg2v")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values pargd id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id" parg_d " ?lblv " " ?arg0 " " ?arg0v " " ?arg2v ")"crlf)
 )
 
 ;for imperative sentence information

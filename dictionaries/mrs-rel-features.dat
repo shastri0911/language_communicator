@@ -4586,7 +4586,7 @@
 (MRS_concept-label-feature_values _kidnapper_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _kid_v_1 LBL: h* ARG0: e* ARG1: x*)
 (MRS_concept-label-feature_values _killing_n_1 LBL: h* ARG0: x*)
-(MRS_concept-label-feature_values _kill_v_1 LBL: h* ARG0: e* ARG1: i* ARG2: x*)
+(MRS_concept-label-feature_values _kill_v_1 LBL: h* ARG0: e* ARG1: x* ARG2: x*)
 (MRS_concept-label-feature_values _kilogram_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _kilometer_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _kind_a_1 LBL: h* ARG0: e* ARG1: x*)
@@ -9579,3 +9579,4 @@
 (MRS_concept-label-feature_values _telephone_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _holder_n_of LBL: h* ARG0: x* ARG1: i*)
 (MRS_concept-label-feature_values _hose_n_1 LBL: h* ARG0: x*)
+(MMMMMMMMMRS_concept-label-feature_values _of_p LBL: h* ARG0: e* ARG1: x* ARG2: x*)
