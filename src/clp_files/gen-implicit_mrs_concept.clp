@@ -256,6 +256,15 @@
 (printout ?*defdbug* "(rule-rel-values  might_v_modal  id-MRS_concept "(+ ?id 100) "  _might_v_modal)"crlf)
 )
 
+;rule for generating  _may_v_modal
+;mEM Kela sakawA hUz.
+;I may play.
+(defrule may_v_modal
+(kriyA-TAM	?id  0_sakawA_hE_3)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _may_v_modal)"crlf)
+(printout ?*defdbug* "(rule-rel-values  may_v_modal  id-MRS_concept "(+ ?id 100) "  _may_v_modal)"crlf)
+)
 
 ;rule for generating  _can_v_modal
 ;mEM Gara jA sakawA hUz. kyA Apa ruka sakawe hEM? mEM nahIM so sakawA hUz.
@@ -268,4 +277,12 @@
 )
 
 
-
+;rule for generating  _must_v_modal
+;bacce ko Pala KAnA cAhie.
+;child must eat fruit.
+(defrule must_v_modal
+(kriyA-TAM	?id  nA_cAhie_2 | nA_hogA_1 | nA_pafegA_1)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _must_v_modal)"crlf)
+(printout ?*defdbug* "(rule-rel-values  can_v_modal  id-MRS_concept "(+ ?id 100) "  _must_v_modal)"crlf)
+)

@@ -30,6 +30,7 @@
 ;rule for possesive pronoun :if ((rel_name-ids r6 ?id) is present, generate (id-MRS_concept ?id def_explicit_q) and (id-MRS_concept ?id poss)
 (defrule mrs_poss_pron
 (rel_name-ids viSeRya-r6 ?viSeRya ?r6)
+;(id-pron	?r6	yes)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?viSeRya 10) " def_explicit_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_poss_pron id-MRS_concept "(+ ?viSeRya 10)" def_explicit_q)"crlf)

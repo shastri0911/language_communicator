@@ -7,13 +7,161 @@ Where do you live?
 The sons sowed the seed, in the field.
 The sons sowed the seed in the field.
 
+#mEM rUsI nahIM bola sakawA hUz.	100
+I can not speak to Rusi.
+I can not speak Rusi.
+I cannot speak to Rusi.
+I can't speak to Rusi.
+I cannot speak Rusi.
+I can't speak Rusi.
+
+#Apa kahAz raha sakawe ho?	101
+Where can you live?
+Where can you live?
+
+#rAma ko Pala KAnA hogA.	102
+Rama must eat a fruit.
+
+#betoM ko Kewa meM bIja bonA cAhie.	103
+The sons must sow the seed, in the field.
+The sons must sow the seed in the field.
+
+#ladake ko nayI kiwAba paDanI cAhie.	104
+The boy must read the new book.
+
+#ladake ko vixyAlaya meM paDanA cAhie.	105
+The boy must study in a school.
+The boy must study, in a school.
+
+#muJe kala AnA hogA.	106
+I must come tomorrow.
+I must come, tomorrow.
+I must come tomorrow.
+
+#mEM rUsI bola sakawA hUz.	107
+I might speak to Rusi.
+I might speak Rusi.
+
+#kyA mEM ApakI sahAyawA kara sakawA hUz?	108
+I might help you?
+I might help yourselves?
+I might help yourself?
+Might I help you?
+Might I help yourselves?
+Might I help yourself?
+
+#Apa kahAz raha sakawe ho?	109
+Where might you live?
+Where might you live?
+
 #gAyeM GAsa KawIM hEM.	11
 Cows eat grass.
+
+#vaha Gara nahIM jA sakawA hE.	110
+He might not go home.
+He might not go home.
+He might not go, home.
+
+#mEM Kela Kela sakawA hUz.	111
+I may play a game.
+
+#mEM JUTa bola sakawA hUz.	112
+I may speak to a lie.
+I may speak a lie.
+
+#kyA mEM ApakI sahAyawA kara sakawA hUz?	113
+I may help you?
+May I help you?
+I may help yourselves?
+I may help yourself?
+May we help you?
+May I help yourselves?
+May I help yourself?
+May we help yourselves?
+May we help yourself?
+We may help you?
+We may help yourselves?
+We may help yourself?
+
+#kyA mEM jA sakawA hUz?	114
+May I go?
+May we go?
+I may go?
+We may go?
+
+#kyA mEM kala Gara jA sakawA hUz?	115
+I may go tomorrow, home?
+I may go home tomorrow?
+May I go tomorrow, home?
+May I go home tomorrow?
+I may go tomorrow, home?
+I may go home, tomorrow?
+May I go home, tomorrow?
+May I go tomorrow, home?
+I may go, tomorrow, home?
+I may go tomorrow home?
+May I go tomorrow home?
+I may go tomorrow home?
+I may go home, tomorrow?
+I may go home tomorrow?
+May I go, tomorrow, home?
+May I go tomorrow home?
+May I go home, tomorrow?
+May I go home tomorrow?
+I may go, tomorrow home?
+I may go, home, tomorrow?
+I may go, home tomorrow?
+May I go, tomorrow home?
+May I go, home, tomorrow?
+May I go, home tomorrow?
+
+#vaha Gara nahIM jA sakawA hE.	116
+He may not go home.
+He may not go home.
+He may not go, home.
+
+#muJe xOdZanA cAhie.	117
+I must run.
+
+#kyA muJe jAnA cAhie?	118
+I should go?
+Should I go?
+
+#use Gara nahIM jAnA cAhie.	119
+He should not go home.
+He should not go home.
+He should not go, home.
+He shouldn't go home.
+He shouldn't go home.
+He shouldn't go, home.
 
 #jAnavara saBA meM Aye.	12
 The animals came to the meeting.
 The animals came, to the meeting.
 The animals came to the meeting.
+
+#muJe sonA cAhie.	120
+I should sleep.
+
+#amiwa ko Gara jAnA cAhie.	121
+Amit should go home.
+Amit should go home.
+Amit should go, home.
+
+#vaha so sakawA hE.	122
+He can sleep.
+
+#mEM kala Kela KelUMgA.	123
+I will play a game, tomorrow.
+I will play a game tomorrow.
+
+#kyA wuma keloge?	124
+Will you play?
+You will play?
+
+#Apa kala KeleMge.	125
+You will play tomorrow.
+You will play, tomorrow.
 
 #John kA betA vixyAlaya meM paDawA hE	13
 John's son studies in the school.
@@ -349,7 +497,6 @@ Babies eat fruits on Tuesday.
 Ravana was killed.
 
 #rAvaNa rAma ke xvArA mArA gayA.	61
-Ravana was killed, by Rama.
 Ravana was killed by Rama.
 
 #Sahara jAo!	62
@@ -506,3 +653,12 @@ Monday is the first day.
 
 #hAra mahilA ke gale meM hE	98
 The necklace is in the woman's neck.
+
+#kyA wuma nahIM keloge?	99
+You will not play?
+Won't you play?
+Will you not play?
+You won't play?
+Will you not play?
+You will not play?
+
