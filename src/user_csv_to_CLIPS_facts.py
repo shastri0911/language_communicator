@@ -176,7 +176,7 @@ for i in range(len(discorseRel)):
         if idrel[1] == 'neg':
             kriId = str(int(float(idrel[0]))*10000)
             negId = str((i+1)*10000)
-            ans.write('(kriyA-NEG\t' + kriId + '\t' + negId + ')\n')
+            ans.write('(rel_name-ids kriyA-neg\t' + kriId + '\t' + negId + ')\n')
         elif idrel[1] == 'co-ref':
             kriId = str(int(float(idrel[0]))*10000)
             corefId = str((i+1)*10000)

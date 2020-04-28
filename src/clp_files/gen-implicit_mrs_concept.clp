@@ -68,9 +68,9 @@
 ;)
 
 
-;Rule for negation : if (kriya-NEG ?id1 ?id2) is present, generate (id-MRS_Rel ?id _udef_q)
+;rAma dAktara nahIM hE.	 rAma xillI meM nahIM hE. #usane KAnA nahIM KAyA. #use Gara nahIM jAnA cAhie.
 (defrule mrs_neg_notDef
-(kriyA-NEG  ?kid ?negid)
+(rel_name-ids kriyA-neg  ?kid ?negid)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?negid " neg)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_neg_notDef implicit_mrs_concept id-MRS_concept "?negid " neg)"crlf)
