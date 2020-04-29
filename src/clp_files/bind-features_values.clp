@@ -11,6 +11,9 @@
 (rel_name-ids viSeRya-viSeRaNa ?viya ?viNa)
 (MRS_info ?rel1 ?viya ?c ?lbl1 ?arg0_viya  $?var)
 (MRS_info ?rel2 ?viNa ?co ?lbl2 ?arg0_viNa ?arg1_viNa $?vars)
+(not (id-concept_label	?viNa	prawyeka_3)) ;prawyeka baccA Kela rahe hEM.
+(not (id-concept_label	?viNa	saBI_1))     ;saBI bacce Kela rahe hEM.
+(not (id-concept_label	?viNa	hara_8))     ;hara baccA Kela rahe hEM.
 =>
 (printout ?*rstr-fp* "(MRS_info  "?rel2 " " ?viNa " " ?co " " ?lbl1 " " ?arg0_viNa " " ?arg0_viya " "(implode$ (create$ $?vars)) ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values viya-viNa  MRS_info  "?rel2 " " ?viNa " " ?co " " ?lbl1 " " ?arg0_viNa " " ?arg0_viya " "(implode$ (create$ $?vars)) ")"crlf)

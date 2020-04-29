@@ -9582,4 +9582,6 @@
 (MRS_concept-label-feature_values _holder_n_of LBL: h* ARG0: x* ARG1: i*)
 (MRS_concept-label-feature_values _hose_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _must_v_modal LBL: h* ARG0: e* ARG1: h*)
+(MRS_concept-label-feature_values _every_q LBL: h* ARG0: x* RSTR: h* BODY: h*)
+(MRS_concept-label-feature_values _all_q LBL: h* ARG0: x* RSTR: h* BODY: h*)
 (iMMMMMRS_concept-label-feature_values _of_p LBL: h* ARG0: e* ARG1: x* ARG2: x*)
