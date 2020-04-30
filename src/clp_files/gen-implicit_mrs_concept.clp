@@ -5,22 +5,9 @@
 (defglobal ?*mrsdef* = mrs-def-fp)
 (defglobal ?*defdbug* = mrs-def-dbug)
 
-;Rules to stop generating any quantifier for saBI, hara, prawyeka
-;prawyeka baccA Kela rahe hEM. hara baccA Kela rahe hEM. saBI bacce Kela rahe hEM. prawyeka pedZa lambA hE.	
-;Each kid is playing.          Every kid is playing.     All kids are playing.     Each tree is tall.
-(defrule no_q
-(declare (salience 10000))
-(rel_name-ids viSeRya-viSeRaNa	?vi 	?qntfr)
-(id-concept_label	?qntfr	saBI_1|hara_8|prawyeka_3)
-=>
-(assert (id-no_quantifier_need ?vi))
-(printout ?*defdbug* "(rule-rel-values no_q id-no_quantifier_needed "?vi")"crlf)
-)
-
 ;Rules for common noun with the as a determiner : if (id-def ? yes), generate (id-MRS_Rel ?id _the_q)
 (defrule mrsDef_yes
 (id-def  ?id  yes)
-(not (id-no_quantifier_need ?id))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " _the_q )"crlf)
 (printout ?*defdbug* "(rule-rel-values mrsDef_yes implicit_mrs_concept id-MRS_concept "?id " _the_q )"crlf)
@@ -39,7 +26,6 @@
 (not (rel_name-ids viSeRya-r6 ?id ?r6))  ;mEM_kA_xoswa_bagIcA_meM_Kela_rahA_hE My friend is playing in the garden.
 (not (id-concept_label	?id	kOna_1)) ;Who won the match?
 (not (id-concept_label	?id	Gara_1))
-(not (id-no_quantifier_need ?id))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " _a_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  mrsDef_not implicit_mrs_concept id-MRS_concept "?id " _a_q)"crlf)
@@ -53,7 +39,6 @@
 (not (rel_name-ids viSeRya-dem ?id $?v))
 (test (eq ?n pl))
 (not(id-pron ?id yes))
-(not (id-no_quantifier_need ?id))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_pl_notDef implicit_mrs_concept id-MRS_concept "?id " udef_q)"crlf)
@@ -63,7 +48,6 @@
 (defrule mrs_mass_notDef
 (id-gen-num-pers ?id ?g ?n ?p)
 (id-mass ?id yes)
-(not (id-no_quantifier_need ?id))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values  mrs_mass_notDef implicit_mrs_concept id-MRS_concept "(+ ?id 10)" udef_q)"crlf)

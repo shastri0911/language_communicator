@@ -5,6 +5,26 @@
 (defglobal ?*mrs-dbug* = mrs-dbug)
 (defglobal ?*count* = 1)
 
+;(rel_name-ids viSeRya-viSeRaNa	20000	21000)
+;(id-concept_label	21000	WodZA_3)
+;(id-hin_concept-MRS_concept 21000 WodZA_3 _some_q) 
+;(MRS_info id-MRS_concept 20010 _a_q)
+;Rules to delete _a_q etc for concepts that already have some quantifiers like _some_q, _all_q, _every_q etc as viSeRana
+;prawyeka baccA Kela rahe hEM. hara baccA Kela rahe hEM. saBI bacce Kela rahe hEM. prawyeka pedZa lambA hE.	
+;Each kid is playing.          Every kid is playing.     All kids are playing.     Each tree is tall.
+(defrule rm-qcon4quantifier
+(declare (salience 10000))
+(rel_name-ids viSeRya-viSeRaNa	?vi 	?vina)
+(id-hin_concept-MRS_concept ?vina ?qntfr ?vinaq) 
+?f<-(MRS_info id-MRS_concept ?q_id  ?aq)
+(test (eq (+ 10 ?vi) ?q_id))
+(test (neq (str-index _q ?vinaq) FALSE))
+(test (neq (str-index _q ?aq) FALSE))
+=>
+(retract ?f)
+(printout ?*mrs-dbug* "(rule-rel-values   rm-qcon4quantifier  id-MRS_concept "?q_id" "?aq")"crlf)
+)
+
 ;This rule changes the ARG1 value like x* of the passive verbs when k1 is present for the verb to i*
 ;Ex. (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _kill_v_1 h19 e20 x21 x22)
 ;changes to
