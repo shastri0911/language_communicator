@@ -8,6 +8,7 @@
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_hE_1  be_ing  no  yes  pres -)
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   yA_1  ed  no  no  past -)
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   gA_1  will_0  no  no  fut -)
+(H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   gA_2  would_0  no  no  pres modal)
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   0_rahA_WA_1  was_ing  no  yes  past -)
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   yA_gayA_WA_1  was_en  no  no  past -)
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type   yA_gayA_WA_2  had_been_en  yes  no  past -)

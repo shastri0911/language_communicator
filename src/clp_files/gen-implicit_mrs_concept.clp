@@ -246,6 +246,17 @@
 (printout ?*defdbug* "(rule-rel-values  should_v_modal  id-MRS_concept "(+ ?id 100) "  _should_v_modal)"crlf)
 )
 
+;rule for generating  _would_v_modal
+;kyA wuma nahIM Keloge?
+;Would you not play?
+(defrule would_v_modal
+(kriyA-TAM ?id  gA_2)
+;(sentence_type  assertive|question|negation)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _would_v_modal)"crlf)
+(printout ?*defdbug* "(rule-rel-values  would_v_modal  id-MRS_concept "(+ ?id 100) "  _would_v_modal)"crlf)
+)
+
 ;rule for generating  _might_v_modal
 ;mEM Gara jA sakawA hUz
 ;He might go home.
