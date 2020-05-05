@@ -224,7 +224,7 @@
 (MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id def_implicit_q ?lbl1 ?arg01 ?rstr ?body)
 (MRS_info id-MRS_concept-LBL-ARG0 ?id time_n ?lbl2 ?arg02)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id ?mrs_time ?lbl3 ?arg03 ?arg13)
-(MRS_info ?rel ?id1 ?v ?lbl4 ?arg04 ?arg14 $?vars)
+(MRS_info ?rel ?id1 ?v ?lbl4 ?arg04 $?vars); It will rain tomorrow. kala varRA hogI.
 (rel_name-ids   ?relname        ?id1  ?id)
 (test (neq (str-index "_v_" ?v)FALSE))
 (test (or (eq ?mrs_time _yesterday_a_1) (eq ?mrs_time _today_a_1) (eq ?mrs_time _tomorrow_a_1)))

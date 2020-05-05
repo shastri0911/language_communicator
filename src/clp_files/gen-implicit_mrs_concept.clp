@@ -292,7 +292,7 @@
 ;bacce ko Pala KAnA cAhie.
 ;child must eat fruit.
 (defrule must_v_modal
-(kriyA-TAM	?id  nA_cAhie_2 | nA_hogA_1 | nA_pafegA_1)
+(kriyA-TAM	?id  nA_cAhie_2|nA_hogA_1|nA_padegA_1)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _must_v_modal)"crlf)
 (printout ?*defdbug* "(rule-rel-values  can_v_modal  id-MRS_concept "(+ ?id 100) "  _must_v_modal)"crlf)
