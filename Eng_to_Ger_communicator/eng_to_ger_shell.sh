@@ -5,7 +5,7 @@ $HOME/ace-0.9.31/ace -g $HOME/ace-0.9.31/erg-2018-x86-64-0.9.31.dat -Tf $1 > out
 
 python2.7 mrs_facts_gen.py output/$1_mul_mrs.txt clip.txt
 cp clip.txt mrs_facts.dat
-myclips -f eng_ger_rules.clp >/dev/null
+clips -f eng_ger_rules.clp >/dev/null
 python2.7 fetch_german.py ger_mrs.dat ger_facts.txt $lang_comm/dictionaries/concept_dictionary_user.txt german_dict
 python2.7 clip_to_mrs_copy.py ger_facts.txt mrs_generated
 #cd $HOME/german/german_src
