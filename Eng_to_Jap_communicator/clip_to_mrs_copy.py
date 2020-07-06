@@ -14,31 +14,12 @@ nameddic = {}
 qdict = {}
 lbl = ''
 arg = ''
-ab = {}
 
 
 def e_(li, xi):  # To split CLIPS fact and store information of verb
     word = li.split()
-    str1 = " [ e  SF: "+word[2]+" TENSE: "+word[3].replace(')', '')
-
-    print(word[3])
-    if ' +)' in li:
-        k = li.index(" +)")
-        str3 = li[k+1:]
-        wrd = str3.split()
-        str1 = str1+" STAT: "+wrd[0].replace(')', '')
-        #/[int str1
-    if ' -)' in li:
-        k = li.index(" -)")
-        str3 = li[k+1:]
-        wrd = str3.split()
-        str1 = str1+" STAT: "+wrd[0].replace(')', '')
-        #/[int str1
-
-    if 'apsv' in li:
-        str1 = str1+" --PSV: "+word[4]+" MOOD: "+word[5].replace(')', '')
-    else:
-        str1 = str1+""
+    str1 = " [ e  SF: "+word[2].replace(')',
+                                        '')+" TENSE: "+word[3].replace(')', '')
     file2.write(str1)
     file2.write(' ]')
     del mydict[xi]
@@ -171,7 +152,6 @@ def mrs_(li, xi):  # To store information of all the ARGs
 
             if (xi == word[i].replace(')', '')):
                 pr_(li, xi)
-
     del mrsdic[xi]
 
 
@@ -185,10 +165,7 @@ with open(fname, 'r') as file1:
     # To read CLIPS facts and call functions accordingly
     str1 = ''
     flag = 0
-    f = 0
     for line in file1:
-        #pos = file1.tell()
-        #print(pos)
         if (line.find('ltop-index') != -1):
             if (flag == 1):
                 _str1 = "[ LTOP: "
@@ -229,15 +206,10 @@ with open(fname, 'r') as file1:
             if (line.find('name-mrs_id-mrs_hndl-id') != -1):
                 word = line.split()
                 x = word[2]
-                if (word[1] == 'parg_d_rel'):
-                    f = 1
-            #	y=word[1]
                 if '_q' in line:
                     qdict[x] = line
-                #	print qdict
                 else:
                     namedic[x] = line
-            #		print namedic[x]
                 # if (word[1].find('_v_modal')!=-1):
                 #	lbl = word[3]
                 #	arg = word[2]
@@ -256,7 +228,6 @@ with open(fname, 'r') as file1:
                 word = line.split()
                 x = word[2]
                 nameddic[x] = line
-            #	print nameddic
 
             if (line.find('pr_mrs_id-pers-Num-Pt') != -1):
                 word = line.split()
@@ -281,34 +252,23 @@ with open(fname, 'r') as file1:
                 line5 = line
                 xm = word[1]
                 mrsdic[xm] = line5
-#	if (line.find('topic-or-focus_d_rel')!=-1):
 
     #print qdict
     for k, v in list(namedic.items()):
-        #	print "key: "+ k;
-        #	print "value: "+v;
+        #		print "key: "+ k;
+        #		print "value: "+v;
         if k in list(mydict.keys()):
             name_(v, k)
-
     for k, v in list(qdict.items()):
         name_(v, k)
-  #	print k
+
 #	if (new_flag == 1):
 #		print lbl,arg
 #		str1="\n [ topic-or-focus_d_rel<-1:-1> LBL: "+lbl+" ARG1: "+arg+" ARG0: e22 ] >\n"
 #	else:
 #		#print global lb,global ar
-    #	if(f == 1):
-        #	str1="\n [ topic-or-focus_d_rel<-1:-1> LBL: "+lbl+" ARG1: "+arg+" ARG0: e22 ARG2: "+k+" ] >\n"
-    #	else:
-    #	str1="\n [ topic-or-focus_d_rel<-1:-1> LBL: "+lbl+" ARG1: "+arg+" ARG0: e22 ] >\n"
-    if (line.find('topic-or-focus_d_rel') != -1):
-        line5 = line
-        word = line5.split()
-        str1 = "\n ["+word[0].replace('(', ' ')+""+word[1]+" "+word[2]+" "+word[3] + \
-            " "+word[4]+" "+word[5]+" "+word[6] + \
-            " "+word[7].replace(')', '')+" ] >\n"
-    #	str1="\n [ "+line+" ] >\n"
+#		str1="\n [ topic-or-focus_d_rel<-1:-1> LBL: "+lbl+" ARG1: "+arg+" ARG0: e22 ] >\n"
+        str1 = " >\n"
     file2.write(str1)
     new_str = new_str+'> ]'
     file2.write(new_str)

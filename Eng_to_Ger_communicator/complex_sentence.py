@@ -30,7 +30,7 @@ for line in file1:
                 myfile = open(os.path.join(path,'create-hindi-parser/chl_to_dmrs/output/'+sent+'_dev.csv_sent.txt'),'r')
                 myline = myfile.readline()
                 file3.write(myline)
-		print myline
+		print(myline)
 	if (line.find("s.g:\t")!=-1):
 		word=line.split("\t") 
 		str1=re.findall(r'\+.*?\+',word[1])
@@ -45,7 +45,7 @@ for line in file1:
 				str2=lines.split(",")
 				gerwrd=str2[5]
 				gerwrd=gerwrd.replace("_1\n","")
-				print gerwrd
+				print(gerwrd)
 
 file2.close()
 file3.close()
@@ -58,4 +58,4 @@ os.system("sh eng_to_ger_shell.sh " + fname3)
 F2=open(os.path.join(path2,fname3+'_out'),'r')
 myline1 = F1.readline()
 myline2 = F2.readline()
-print "\n" + myline1.replace('.\n','') + " " + gerwrd + " " + myline2.replace('\n','') 
+print("\n" + myline1.replace('.\n','') + " " + gerwrd + " " + myline2.replace('\n','')) 

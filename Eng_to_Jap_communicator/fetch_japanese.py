@@ -55,6 +55,7 @@ with open(fname3, 'r') as file1:
         line1 = string.split(',')
         # to put all concept dictionary entries in list seprated by comma
         split_lines.append(line1)
+
 string_str = []
 x = open(fname2, 'r+')
 mylines = x.readlines()
@@ -63,7 +64,7 @@ for word in engWrd:
         eng = wlist[2]  # english entry
         if word == eng.split('_')[0]:
             string_str.append(wlist[0])
-#		print string_str
+#print string_str
 wrd = ''
 f2 = open(fname4, 'r')
 line1 = f2.readlines()
@@ -73,5 +74,5 @@ for item in string_str:
         #print item,'----',wrd
         if (item == wrd):
             #	print string1
-            replaceAll('ger_facts.txt', string1.split(',')[
+            replaceAll('jap_facts.txt', string1.split(',')[
                        1], string1.split(',')[2].replace('\n', ''))
