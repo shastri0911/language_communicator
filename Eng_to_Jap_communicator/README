@@ -1,4 +1,4 @@
-#Readme to install German Parser
+#Readme to install Japanese Parser
 ################################
 
 #Pre-requisites:
@@ -18,7 +18,7 @@
    (Note: Grammar file for Japenese is jacy.dat)
 
 
-To generate German sentence:
+To generate Japanese sentence:
 ###########################
 
 	sh eng_to_jap_shell.sh demo
