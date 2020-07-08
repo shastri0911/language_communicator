@@ -16,6 +16,7 @@
 (load-facts "hin-clips-facts.dat")
 (load-facts "tam_mapping.dat")
 (load-facts "mrs-rel-features.dat")
+(load-facts "hin_concept-to-mrs_concept.dat")
 (open "implicit_mrs_concept.dat" mrs-def-fp "w")
 (open "implicit_mrs_concept_debug.dat" mrs-def-dbug "w")
 (run)

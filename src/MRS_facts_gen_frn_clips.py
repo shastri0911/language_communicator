@@ -23,7 +23,7 @@ def _mrs_info(l):
         ans.write(mrs_labels[i]+": "+mrs_values[i]+" ")
         if mrs_labels[i]=="ARG0": # arg0 field has been found
             arg0=mrs_values[i]
-            if (arg0 not in arg0_set) and (arg0 in arg0_gnp.keys()):
+            if (arg0 not in arg0_set) and (arg0 in list(arg0_gnp.keys())):
                 labels=arg0_gnp[arg0][0]
                 values=arg0_gnp[arg0][1]
                 arg0_set.append(arg0)
@@ -98,8 +98,8 @@ def main():
     # forming dict arg0_gnp from id_arg0 and id_gnp   ::::
     # dict arg0_gnp has :: { key= arg0  and value= two lists [labels,values]. firstlist i.e- labels contains the labels of the gnp . second list
     #                              i.e.- values  conatins the values of these labels}
-    for x in id_arg0.keys():
-        if x in id_gnp.keys():
+    for x in list(id_arg0.keys()):
+        if x in list(id_gnp.keys()):
             if id_arg0[x].startswith('x'):
                 arg0_gnp[id_arg0[x]]=id_gnp[x]
 

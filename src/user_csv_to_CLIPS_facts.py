@@ -167,7 +167,7 @@ for i in range(len(interChunkRels)):
                         myrel = 'rel_name-ids kriyA-' + idrel[1].replace('-', '_')
                         ans.write('('+ myrel + '\t' + kriId + '\t' + karakaId + ')\n')
                 except:
-                    print('Warning: Value Error')
+                    print('Warning: Value Error, converting string to float in user_csv_to_CLIPS_facts.py: 162: kriId = str(int(float(idrel[0]))*10000)')
 
 # Writing emphetic information
 for i in range(len(discorseRel)):

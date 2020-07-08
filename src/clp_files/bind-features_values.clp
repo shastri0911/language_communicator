@@ -4,6 +4,24 @@
 (defglobal ?*rstr-fp* = open-file)
 (defglobal ?*rstr-dbug* = debug_fp)
 
+
+;Rule for noun as adjective and noun : for (viSeRya-viSeRaNa ? ?)
+; Replace LBL value of compound with the LBL value of viSeRya
+; Replace ARG1 value of compound with ARG0 value of viSeRya
+; Replace ARG2 value of compound with ARG0 value of viSeRaNa
+(defrule compound-viya-viNa
+(rel_name-ids viSeRya-viSeRaNa ?viya ?viNa)
+(MRS_info ?rel1 ?viya ?c ?lbl1 ?arg0_viya)
+(MRS_info ?rel2 ?viNa ?co ?lbl2 ?arg0_viNa)
+?f<-(MRS_info ?rel3 ?cmpd compound ?lbl3 ?arg0_cmpd ?arg1_cmpd ?arg2_cmpd)
+(test (neq (str-index _n_ ?co) FALSE))
+(test (eq ?cmpd (+ ?viya 200)))
+=>
+;(retract ?f)
+(printout ?*rstr-fp* "(MRS_info  "?rel3 " " ?cmpd " compound " ?lbl1 " " ?arg0_cmpd " " ?arg0_viya " " ?arg0_viNa ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values compound-viya-viNa  MRS_info  "?rel3 " " ?cmpd " compound " ?lbl1 " " ?arg0_cmpd " " ?arg0_viya " " ?arg0_viNa ")"crlf)
+)
+
 ;Rule for adjective and noun : for (viSeRya-viSeRaNa 	? ?)
 ;	replace LBL value of viSeRaNa with the LBL value of viSeRya
 ;	Replace ARG1 value of viSeRaNa with ARG0 value of viSeRya
@@ -183,7 +201,7 @@
 (test (eq (sub-string (- (str-length ?endsWith_p) 1) (str-length ?endsWith_p) ?endsWith_p) "_p"))
 (test (neq (str-index "_n_" ?mrsCon2)FALSE))
 =>
-(retract ?f)
+;(retract ?f)
 (printout ?*rstr-fp* "(MRS_info  " ?rel_name " " ?prep " " ?endsWith_p " " ?lbl1 " " ?arg0 " " ?argv_0 " " ?argn_0 ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values prep-noun MRS_info "?rel_name " " ?prep " " ?endsWith_p " " ?lbl1" " ?arg0 " " ?argv_0 " " ?argn_0 ")"crlf)
 )

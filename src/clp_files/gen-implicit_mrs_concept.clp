@@ -297,3 +297,22 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _must_v_modal)"crlf)
 (printout ?*defdbug* "(rule-rel-values  can_v_modal  id-MRS_concept "(+ ?id 100) "  _must_v_modal)"crlf)
 )
+
+;written by Yash Goyal(IIT Varanasi) Date-06.05.20
+;rule for generating compound for concepts that have some noun like _left_n_1, _right_n_1, _half_n_of etc as viSeRaNa
+;Cexa bAeM wOliyA meM hE.
+;The hole is in the left towel.
+;(rel_name-ids viSeRya-viSeRaNa 20000 21000)
+;(id-hin_concept-MRS_concept 21000 bAeM_1 _left_n_1)
+(defrule compound-vi_n
+(declare (salience 10000))
+(rel_name-ids viSeRya-viSeRaNa ?vi ?vina)
+(id-hin_concept-MRS_concept ?vina ?noun ?vinan)
+(test (neq (str-index _n_ ?vinan) FALSE))
+=>
+(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?vi 200) "  compound)"crlf)
+(printout ?*defdbug* "(rule-rel-values    compound-vi_n  id-MRS_concept "(+ ?vi 200) "  compound)"crlf)
+
+(printout ?*mrsdef* "(MRS_info  id-MRS_concept "(+ ?vina 10) "  udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values   compound-vi_n  id-MRS_concept "(+ ?vi 10) "  udef_q)"crlf)
+)

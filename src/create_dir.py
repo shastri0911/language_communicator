@@ -23,10 +23,10 @@ for line in open(sys.argv[2]):
             else:
                 os.mkdir(var)
         except OSError:
-            print("Creation of the directory %s failed" % var)
+            print(("Creation of the directory %s failed" % var))
             f2.write("failed")
         else:
-            print("Successfully created the directory %s " % var)
+            print(("Successfully created the directory %s " % var))
             f2.write(var)
             
 
