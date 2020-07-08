@@ -17,13 +17,13 @@ lne=len(li)
 for j in li:
 	if j=='"':
 		str1=li.replace(j,'')
-		print str1
+		print(str1)
 		f2.write(str1)
 		break
 	#	f2.write(li.replace(j,''))
         elif (li.find('n\'t')):
                 str1=li.replace('\'','no')
-                print str1
+                print(str1)
                 f2.write(str1)
                 break
 
