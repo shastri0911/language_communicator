@@ -43,7 +43,7 @@ for i in range(len(fr)):
     featVals = fr[i].strip().split()
     for j in range(len(featVals)):
         if featVals[j].endswith(':'):
-            if featVals[j+1] not in bindings.keys():
+            if featVals[j+1] not in list(bindings.keys()):
                 if fr[i].strip().startswith('['):
                     bindings[featVals[j+1]] = [(featVals[1], featVals[j])]
                 else:
@@ -52,9 +52,9 @@ for i in range(len(fr)):
                 vals = (bindings[featVals[j+1]]) 
                 bindings[featVals[j+1]] = (vals, featVals[1], featVals[j])
 
-for k in bindings.keys():
+for k in list(bindings.keys()):
     if len(bindings[k]) > 1:
-        print k, bindings[k]
+        print((k, bindings[k]))
 
 
 
