@@ -76,7 +76,7 @@ for key in kriTAM.keys():
 idConcept = {}
 for i in range(len(conceptDict)):
     con = conceptDict[i]
-    mycons = re.split('[@~\*]?', con)
+    mycons = re.split('[@~\*]+', con)
     mycons.reverse()
     c = 0
     for j in range(len(mycons)):
@@ -112,7 +112,7 @@ for i in range(len(wid)):
 # Writing intra-chunk relations
 for i in range(len(intraChunkRels)):
     if intraChunkRels[i] != '':
-        idsRels = re.split('[@~\*]?', intraChunkRels[i])
+        idsRels = re.split('[@~\*]+', intraChunkRels[i])
         idsRels.reverse()
         for j in range(len(idsRels)):
             idrel = idsRels[j].split(':')      
@@ -125,7 +125,7 @@ for i in range(len(intraChunkRels)):
 # Writing inter chunk relations
 for i in range(len(interChunkRels)):
     if interChunkRels[i] != '':
-        idsRels = re.split('[@~\*]?', interChunkRels[i])
+        idsRels = re.split('[@~\*]+', interChunkRels[i])
         if 'samAnAXi' in idsRels: # Assmption: there would be only two occurences of samAnAXi in a sentence. This part of program would generate two samAnAXi facts, one of them would be duplicate which will be deleted automatically by CLIPS while loading the facts' file.
              sam1 = [i for i, n in enumerate(interChunkRels) if n == 'samAnAXi'][0]
              sam2 = [i for i, n in enumerate(interChunkRels) if n == 'samAnAXi'][1]
@@ -167,7 +167,7 @@ for i in range(len(interChunkRels)):
                         myrel = 'rel_name-ids kriyA-' + idrel[1].replace('-', '_')
                         ans.write('('+ myrel + '\t' + kriId + '\t' + karakaId + ')\n')
                 except:
-                    print('Warning: Value Error, converting string to float in user_csv_to_CLIPS_facts.py: 162: kriId = str(int(float(idrel[0]))*10000)')
+                    print('Sukhada Warning: Value Error')
 
 # Writing emphetic information
 for i in range(len(discorseRel)):
