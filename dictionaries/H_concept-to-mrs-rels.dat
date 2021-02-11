@@ -1,6 +1,6 @@
 (concept_label-concept_in_Eng-MRS_concept A_1 come_1 _come_v_1)
 (concept_label-concept_in_Eng-MRS_concept A_2 ply_2 _ply_v_1)
-(concept_label-concept_in_Eng-MRS_concept A_3 know_3 _now_a_1)
+(concept_label-concept_in_Eng-MRS_concept A_3 know_3 _know_v_1)
 (concept_label-concept_in_Eng-MRS_concept ABA_1 glory_4 _glory_n_1)
 (concept_label-concept_in_Eng-MRS_concept aba_1 now_1 _now_a_1)
 (concept_label-concept_in_Eng-MRS_concept abAbIla_1 swallow_5 _swallow_n_1)
@@ -15113,4 +15113,3 @@
 (concept_label-concept_in_Eng-MRS_concept Xo_1 clean_3  _clean_v_1)
 (concept_label-concept_in_Eng-MRS_concept XonA_1 wash_1 _wash_n_1)
 (concept_label-concept_in_Eng-MRS_concept XOwa_1 clean_4  _clean_a_of)
-
