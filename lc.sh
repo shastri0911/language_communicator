@@ -49,4 +49,5 @@ sed -n wdebug.merge mrs_info_binding_features_values_debug.dat hin_concept-to-mr
 python3 $var/src/MRS_facts_gen_frn_clips.py file.merge $file_name"_mrs"
 
 #$HOME/ace-0.9.31/ace -g $HOME/ace-0.9.31/erg-2018-x86-64-0.9.31.dat -e $file_name"_mrs" 
+echo "Calling ACE parser for generating English sentence"
 $HOME/ace-0.9.24/ace -g $HOME/ace-0.9.24/erg-1214-x86-64-0.9.24.dat -e $file_name"_mrs" 

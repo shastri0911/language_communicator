@@ -295,9 +295,31 @@
 (kriyA-TAM	?id  nA_cAhie_2|nA_hogA_1|nA_padegA_1)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _must_v_modal)"crlf)
-(printout ?*defdbug* "(rule-rel-values  can_v_modal  id-MRS_concept "(+ ?id 100) "  _must_v_modal)"crlf)
+(printout ?*defdbug* "(rule-rel-values  must_v_modal  id-MRS_concept "(+ ?id 100) "  _must_v_modal)"crlf)
 )
 
+
+;rule for generating  _used+to_v_qmodal
+;vaha xillI meM rahawA WA.
+;He used to live in Xilli.
+(defrule _used+to_v_qmodal
+(kriyA-TAM      ?id  wA_WA_1)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _used+to_v_qmodal)"crlf)
+(printout ?*defdbug* "(rule-rel-values  _used+to_v_qmodal  id-MRS_concept "(+ ?id 100) "  _used+to_v_qmodal)"crlf)
+)
+
+
+
+;rule for generating  _have_v_qmodal
+;Rahesh ko seba KAnA hE.
+;Ramesh has to eat an apple.
+(defrule _have_v_qmodal
+(kriyA-TAM	?id  nA_hE_1)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _have_v_qmodal)"crlf)
+(printout ?*defdbug* "(rule-rel-values  _have_v_qmodal  id-MRS_concept "(+ ?id 100) "  _have_v_qmodal)"crlf)
+)
 ;written by Yash Goyal(IIT Varanasi) Date-06.05.20
 ;rule for generating compound for concepts that have some noun like _left_n_1, _right_n_1, _half_n_of etc as viSeRaNa
 ;Cexa bAeM wOliyA meM hE.

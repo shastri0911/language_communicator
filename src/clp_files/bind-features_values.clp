@@ -567,7 +567,7 @@ then
 (kriyA-TAM ?kri ?tam)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?modalV  ?mrs_modal  ?lbl  ?arg0  ?h)
 (sentence_type  assertive|question|negation)
-(test (neq (str-index _v_modal ?mrs_modal) FALSE))
+(test (or (neq (str-index _v_modal ?mrs_modal) FALSE) (neq (str-index _v_qmodal ?mrs_modal) FALSE)));_used+to_v_qmodal
 =>
 (assert (asserted_LTOP-INDEX-for-modal))
 (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)

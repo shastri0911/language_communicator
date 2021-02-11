@@ -129,7 +129,7 @@
 (declare (salience 100))
 (MRS_info ?rel  ?id ?mrsModal  ?lbl ?arg0 ?arg1 $?vars)
 (MRS_info ?rel1  ?id1 ?mrsV ?lbl1 ?arg01 ?arg11 $?var)
-(test (neq (str-index _v_modal ?mrsModal) FALSE))
+(test (or (neq (str-index _v_modal ?mrsModal) FALSE) (neq (str-index _v_qmodal ?mrsModal) FALSE))) ;_used+to_v_qmodal
 (test (neq (str-index _v_ ?mrsV) FALSE))
 (not (MRS_info ? ? neg $?))
 (test (neq ?id ?id1))

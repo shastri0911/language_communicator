@@ -263,7 +263,6 @@ a. karaka relation between a verb and its participants:
 		सह-कर्ता			ras-k1
 		destiantion		k2p
 		अनुभव-कर्ता		k4a
-		कर्ता-समानाधिकरण		k1s
 		कर्म-समानाधिकरण		k2s
 		frequency		k7tf	(e.g. प्रतिदिन)
 
@@ -300,7 +299,7 @@ Row 8:
 	propn,def,,
 	[m sg a],[- sg a],[m sg a],
 	,,3.3:संख्या-विशेषण~3.3:विशेषण,
-	4:k1,4:k7p,ras-k1,
+	4:k1,4:k7p,4:ras-k1,
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 Row 9: Discourse Relations
