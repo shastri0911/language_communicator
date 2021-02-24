@@ -143,6 +143,25 @@
 
 )
 
+;rAma sonA cAhawA hE.
+;Rama wants to sleep.
+(defrule LTOP-nA_cAhawA_hE
+(declare (salience 100))
+(MRS_info ?rel  ?id ?mrscon  ?lbl ?arg0 ?arg1 $?vars)
+(MRS_info ?rel1  ?id1 ?mrsV ?lbl1 ?arg01 ?arg11 ?arg12 $?var)
+(kriyA-TAM	?id	nA_cAhawA_hE_1)
+(test (neq (str-index _v_ ?mrsV) FALSE))
+(test (eq (+ ?id 100) ?id1))
+=>
+    (assert (Restr-Restricted-fact-generated))
+    (printout ?*rstr-rstd* "(Restr-Restricted h0 " ?lbl1 ")" crlf)
+    (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-nA_cAhawA_hE  Restr-Restricted h0 "?lbl1 ")"crlf)
+
+    (printout ?*rstr-rstd* "(Restr-Restricted " ?arg12 " "?lbl ")" crlf)
+    (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-nA_cAhawA_hE  Restr-Restricted " ?arg12 " "?lbl ")"crlf)
+
+)
+
 
 
 (defrule print-sf_etc

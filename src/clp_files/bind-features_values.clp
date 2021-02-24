@@ -532,6 +532,24 @@
 (printout ?*rstr-dbug* "(rule-rel-values kriImperPronArg MRS_info " ?rel1 " "?kri" " ?con " "?lbl" " ?arg0 " " ?arg01 " "(implode$ (create$ $?var))")"crlf)
 )
 
+;for the TAM nA_cAhawA_hE_1
+;rAma sonA cAhawA hE.
+;Rama wants to sleep.
+(defrule nA_cAhawA_hE
+(kriyA-TAM ?kri nA_cAhawA_hE_1)
+(MRS_info ?rel ?kri  ?mrscon $?var ?arg1)
+?f1<-(MRS_info ?rel-1 ?kri-1  $?vars ?arg1-1 ?arg-2)
+(test (eq (+ ?kri 100) ?kri-1))
+(test (neq (str-index "_v_" ?mrscon) FALSE))
+(not (already_modified ?kri-1 ARG1))
+=>
+(retract ?f1)
+(assert (already_modified ?kri-1 ARG1 ))
+(assert (MRS_info  ?rel-1 ?kri-1 $?vars ?arg1 ?arg-2))
+(printout ?*rstr-dbug* "(rule-rel-values nA_cAhawA_hE MRS_info " ?rel-1 " "?kri-1" " (implode$ (create$ $?vars)) " " ?arg1 " " ?arg-2 ")"crlf)
+)
+
+
 ;for question sentence information
 (defrule kri-tam-q
 (kriyA-TAM ?kri ?tam)
@@ -547,6 +565,7 @@
 (MRS_info ?rel ?kri_id ?mrsCon ?lbl ?arg0 $?vars)
 (not (id-guNavAcI    ?id_adj   yes))	;this condition stops generating LTOP-INDEX for predicative adjectives. E.g. Rama is good.
 (not (asserted_LTOP-INDEX-for-modal))
+(not (kriyA-TAM ?kri_id nA_cAhawA_hE_1))
 =>
 (if (or (neq (str-index possible_ ?mrsCon) FALSE) (neq (str-index sudden_ ?mrsCon) FALSE))
 then

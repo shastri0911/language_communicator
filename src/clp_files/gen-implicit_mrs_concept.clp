@@ -330,6 +330,16 @@
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _have_v_qmodal)"crlf)
 (printout ?*defdbug* "(rule-rel-values  _have_v_qmodal  id-MRS_concept "(+ ?id 100) "  _have_v_qmodal)"crlf)
 )
+;To generate "_want_v_1" MRS concept for the TAM "nA_cAhawA_hE_1" 
+;rAma sonA cAhawA hE.
+;RAma wants to sleep.
+(defrule _want_v_1
+(kriyA-TAM      ?id  nA_cAhawA_hE_1)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) "  _want_v_1)"crlf)
+(printout ?*defdbug* "(rule-rel-values  _want_v_1  id-MRS_concept "(+ ?id 100) "  _want_v_1)"crlf)
+)
+
 ;written by Yash Goyal(IIT Varanasi) Date-06.05.20
 ;rule for generating compound for concepts that have some noun like _left_n_1, _right_n_1, _half_n_of etc as viSeRaNa
 ;Cexa bAeM wOliyA meM hE.

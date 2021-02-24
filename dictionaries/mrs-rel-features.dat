@@ -9290,7 +9290,7 @@
 (MRS_concept-label-feature_values _wand_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _wane_v_1 LBL: h* ARG0: e* ARG1: x*)
 (MRS_concept-label-feature_values _wanton_a_1 LBL: h* ARG0: e* ARG1: x*)
-(MRS_concept-label-feature_values _want_v_1 LBL: h* ARG0: e* ARG1: x* ARG2: x*)
+(MRS_concept-label-feature_values _want_v_1 LBL: h* ARG0: e* ARG1: x* ARG2: h*)
 (MRS_concept-label-feature_values _warbler_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _warden_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _ward_n_1 LBL: h* ARG0: x*)
