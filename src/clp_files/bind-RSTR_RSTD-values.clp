@@ -149,7 +149,7 @@
 (declare (salience 100))
 (MRS_info ?rel  ?id ?mrscon  ?lbl ?arg0 ?arg1 $?vars)
 (MRS_info ?rel1  ?id1 ?mrsV ?lbl1 ?arg01 ?arg11 ?arg12 $?var)
-(kriyA-TAM	?id	nA_cAhawA_hE_1)
+(kriyA-TAM	?id	nA_cAhawA_hE_1|yA_gayA_1)
 (test (neq (str-index _v_ ?mrsV) FALSE))
 (test (eq (+ ?id 100) ?id1))
 =>

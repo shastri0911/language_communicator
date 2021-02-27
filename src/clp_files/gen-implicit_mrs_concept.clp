@@ -340,6 +340,18 @@
 (printout ?*defdbug* "(rule-rel-values  _want_v_1  id-MRS_concept "(+ ?id 100) "  _want_v_1)"crlf)
 )
 
+;To generate "_get_v_state" MRS concept for the TAM "yA_gayA_1" 
+;KAnA mere xvArA KAyA gayA.
+;The food got eaten by me.
+(defrule _get_v_state
+(kriyA-TAM      ?id yA_gayA_1)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 100) " _get_v_state)"crlf)
+(printout ?*defdbug* "(rule-rel-values  _get_v_state  id-MRS_concept "(+ ?id 100) " _get_v_state)"crlf)
+)
+
+
+
 ;written by Yash Goyal(IIT Varanasi) Date-06.05.20
 ;rule for generating compound for concepts that have some noun like _left_n_1, _right_n_1, _half_n_of etc as viSeRaNa
 ;Cexa bAeM wOliyA meM hE.

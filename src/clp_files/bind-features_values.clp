@@ -174,6 +174,30 @@
 (printout ?*rstr-dbug* "(rule-rel-values v-k2  MRS_info "?rel_name " " ?kriyA " " ?mrsCon " " ?lbl " "?arg0 " " ?arg1 " " ?argma_0 " "(implode$ (create$ $?v))")"crlf)
 )
 
+
+;(rel_name-ids kriyA-k2	30000	10000)
+;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30000 _eat_v_1 h21 e22 x23 x24)
+;(MRS_info id-MRS_concept-LBL-ARG0 10000 _food_n_1 h19 x20)
+;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30100 _get_v_state h7 e8 x9 h10)
+
+(defrule v-k2-yA-gayA_1
+(rel_name-ids   kriyA-k2        ?kriyA ?karma)
+(MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 $?v)
+(MRS_info ?rel2 ?karma ?mrsCon2 ?lbl2 ?argma_0 $?vars1)
+?f<-(MRS_info ?rel3 ?get_v_id ?getVState ?lbl3 ?getA0 ?getA1 ?A2)
+;(test (eq (str-index _q ?mrsCon2) FALSE))
+(test (neq (str-index _v_ ?mrsCon) FALSE))
+(test (eq ?get_v_id (+ ?kriyA 100)))
+(not (modified_Arg1 ?getA1))
+=>
+(retract ?f)
+(assert (modified_Arg1 ?argma_0))
+(assert (MRS_info  ?rel3  ?get_v_id ?getVState  ?lbl3 ?getA0 ?argma_0  ?A2))
+(printout ?*rstr-dbug* "(rule-rel-values v-k2-yA-gayA_1 "?rel3 " " ?get_v_id " " ?getVState " " ?lbl3 " "?getA0 " "?argma_0 " " ?A2")"crlf)
+)
+
+
+
 ;Rule for verb and its arguments(when  karta, karma and sampradaan are present),Replace ARG3 value of kriyA with ARG0 value of sampradaan and ARG2 value of kriyA with ARG0 value of karma
 (defrule v-k4
 (rel_name-ids	kriyA-k4       	?kriyA ?k4)
@@ -566,6 +590,7 @@
 (not (id-guNavAcI    ?id_adj   yes))	;this condition stops generating LTOP-INDEX for predicative adjectives. E.g. Rama is good.
 (not (asserted_LTOP-INDEX-for-modal))
 (not (kriyA-TAM ?kri_id nA_cAhawA_hE_1))
+(not (kriyA-TAM ?kri_id yA_gayA_1))
 =>
 (if (or (neq (str-index possible_ ?mrsCon) FALSE) (neq (str-index sudden_ ?mrsCon) FALSE))
 then
