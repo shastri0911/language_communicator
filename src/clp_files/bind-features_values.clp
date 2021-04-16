@@ -257,6 +257,59 @@
 (printout ?*rstr-dbug* "(rule-rel-values v-home MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?id" def_implicit_q "?lbl1" "?arg2" "?rstr" "?body ")"crlf)
 )
 
+(defrule v-there
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id loc_nonsp ?lbl ?arg0 ?arg1 ?arg2)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id def_implicit_q ?lbl1 ?arg01 ?rstr ?body)
+(MRS_info id-MRS_concept-LBL-ARG0 ?id place_n ?lbl2 ?arg02)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _there_a_1 ?lbl3 ?arg03 ?arg13)
+(rel_name-ids	AXAra-AXeya	?adhar  ?adhey)
+(MRS_info id-MRS_concept-LBL-ARG0 ?adhey ?mrs ?l ?a0)
+(not (modified loc_nonsp))
+;(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id1 ?v ?lbl4 ?arg04 ?arg14)
+;(test (neq (str-index "_v_" ?v)FALSE))
+=>
+(retract ?f)
+(assert (modified loc_nonsp))
+(assert (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id loc_nonsp  ?lbl ?arg0 ?a0  ?arg02))
+;(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id " loc_nonsp " ?lbl " " ?arg0" " ?a0 " " ?arg02 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values v-there MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id" loc_nonsp "?lbl" "?arg0" "?a0" "?arg02")"crlf)
+
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0  "?id" place_n "?lbl3" "?arg02 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values v-there MRS_info id-MRS_concept-LBL-ARG0  "?id" place_n "?lbl3" "?arg02 ")"crlf)
+
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id " _there_a_1 "?lbl3"  "?arg03" "?arg02 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values v-there MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id " _there_a_1 "?lbl3"  "?arg03" "?arg02 ")"crlf)
+
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?id" def_implicit_q "?lbl1" "?arg02" "?rstr" "?body ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values v-there MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?id" def_implicit_q "?lbl1" "?arg02" "?rstr" "?body ")"crlf)
+)
+
+
+
+
+(defrule v-thereeeeeeeeeee
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id loc_nonsp ?lbl ?arg0 ?arg1 ?arg2)
+(MMMMMM MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id def_implicit_q ?lbl1 ?arg01 ?rstr ?body)
+(MRS_info id-MRS_concept-LBL-ARG0 ?id place_n ?lbl2 ?arg02)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id _there_a_1 ?lbl3 ?arg03 ?arg13)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id1 ?v ?lbl4 ?arg04 ?arg14)
+;(test (neq (str-index "_v_" ?v)FALSE))
+=>
+(retract ?f)
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id " loc_nonsp " ?lbl4 " " ?arg0" " ?arg04 " " ?arg2 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values v-there MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?id " loc_nonsp " ?lbl4 " " ?arg0 " " ?arg04 " " ?arg2 ")"crlf)
+
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0  "?id" place_n "?lbl3" "?arg2 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values v-there MRS_info id-MRS_concept-LBL-ARG0  "?id" place_n "?lbl3" "?arg2 ")"crlf)
+
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id " _there_a_1 "?lbl3"  "?arg03" "?arg2 ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values v-there MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?id " _there_a_1 "?lbl3"  "?arg03" "?arg2 ")"crlf)
+
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?id" def_implicit_q "?lbl1" "?arg02" "?rstr" "?body ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values v-there MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY "?id" def_implicit_q "?lbl1" "?arg2" "?rstr" "?body ")"crlf)
+)
+
+
 ;written by sakshi yadav (NIT-Raipur) date-27.05.19
 ;Rule for verb and word yesterday,today,tomorrow is present :
 ;Replace LBL of loc_nonsp with LBL of verb and  ARG1 of loc_nonsp with ARG0 of verb and LBL of place_n with LBL of home_p and ARG1 of mrs_time  ,ARG0 of time_n home_p,ARG0 of de_implicit_q with ARG2 of loc_nonsp
@@ -362,6 +415,36 @@
 
 (printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY  " ?id_q " def_explicit_q " ?lbl1 " " ?arg00 " " ?rstr " " ?body ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values r6 MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY  " ?id_q " def_explicit_q " ?lbl1 " " ?arg00 " " ?rstr" " ?body ")"crlf)
+)
+; (rel_name-ids	AXAra-AXeya	20000  40000)
+; (MRS_info id-MRS_concept-LBL-ARG0 40000 _school_n_1 h28 x29)
+; (MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY  40010 def_explicit_q h11 x29 h13 h14)
+; (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 20000 loc_nonsp h23 e20 e24 x22)
+; (MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY 20000 def_implicit_q h15 x16 h17 h18)
+; (MRS_info id-MRS_concept-LBL-ARG0-ARG1 20000 _there_a_1 h23 e24 x25)
+; (MRS_info id-MRS_concept-LBL-ARG0 20000 place_n h26 x27)
+(defrule adhar-adheya
+(rel_name-ids	AXAra-AXeya	?adhar  ?adheya)
+(MRS_info id-MRS_concept-LBL-ARG0 ?adheya ?mrs ?l ?a0)
+(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id_q def_explicit_q ?lbl1 ?arg01 ?rstr1 ?body1)
+?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?adhar loc_nonsp ?lbl ?arg0 ?a1 ?a2)
+?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?adhar def_implicit_q ?lbl2 ?a02 ?rstr ?body)
+(MRS_info ?rel                             ?adheya ?mrsCon ?lbl6 ?arg00 $?v)
+?f2<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?adhar _there_a_1 ?lbl7 ?a07 ?a17)
+?f3<-(MRS_info id-MRS_concept-LBL-ARG0 ?adhar place_n ?lbl8 ?a08)
+=>
+(retract ?f ?f1 ?f2 ?f3)
+(assert (MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2  ?adhar  loc_nonsp  ?lbl ?arg0 ?arg00 ?a17))
+(printout ?*rstr-dbug* "(rule-rel-values adhar-adheya  MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2  "?adhar" loc_nonsp "?lbl" "?arg0" "?arg00" "?a17")"crlf)
+
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY  " ?adhar" def_implicit_q "?lbl2 " " ?a17 " " ?rstr " " ?body ")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values adhar-adheya MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY  "?adhar" def_implicit_q "?lbl2" "?a17" "?rstr" "?body")"crlf)
+
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 " ?adhar " _there_a_1 " ?lbl7" "?a07" "?a17")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values adhar-adheya MRS_info id-MRS_concept-LBL-ARG0-ARG1  " ?adhar" _there_a_1 " ?lbl7 " " ?a07 " " ?a17")"crlf)
+
+(printout ?*rstr-fp* "(MRS_info id-MRS_concept-LBL-ARG0 " ?adhar " place_n "?lbl7" "?a17")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values adhar-adheya MRS_info id-MRS_concept-LBL-ARG0 "?adhar" place_n " ?lbl7 " " ?a17 ")"crlf)
 )
 
 
@@ -577,7 +660,7 @@
 ;for question sentence information
 (defrule kri-tam-q
 (kriyA-TAM ?kri ?tam)
-(sentence_type  question)
+(sentence_type  question|pass-question)
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type  ?tam ?e_tam ?perf ?prog ?tense ?)
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " ques " ?tense " indicative " ?prog " " ?perf ")"crlf)
@@ -636,15 +719,27 @@ then
 (defrule Existential-LTOP
 (id-concept_label       ?v   state_existential)
 ?f<-(rel_name-ids   AXAra-AXeya        ?id1  ?id2)
-(rel_name-ids   AXAra-AXeya        ?id1  ?id2)
+;(rel_name-ids   AXAra-AXeya        ?id1  ?id2)
 (MRS_info ?rel ?id3 ?endsWith_p ?lbl ?arg0 ?arg1 ?arg2)
-(test (eq (sub-string (- (str-length ?endsWith_p) 1) (str-length ?endsWith_p) ?endsWith_p) "_p"))
+;(test  (eq (sub-string (- (str-length ?endsWith_p) 1) (str-length ?endsWith_p) ?endsWith_p) "_p"))
+(test  (or (eq (sub-string (- (str-length ?endsWith_p) 1) (str-length ?endsWith_p) ?endsWith_p) "_p")
+           (eq ?endsWith_p "loc_nonsp")))
 =>
 (retract ?f)
     (printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
     (printout ?*rstr-dbug* "(rule-rel-values Existential-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
 ) 
  
+(defrule there-LTOP
+(id-concept_label       ?id   state_existential)
+?f<-(rel_name-ids   AXAra-AXeya        ?id1  ?id2)
+(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?id1 loc_nonsp  ?lbl ?arg0 $?args)
+=>
+(printout ?*rstr-fp* "(LTOP-INDEX h0 "?arg0 ")" crlf)
+(printout ?*rstr-dbug* "(rule-rel-values there-LTOP LTOP-INDEX h0 "?arg0 ")"crlf)
+) 
+
+
 (defrule printFacts
 (declare (salience -9000))
 (MRS_info ?rel ?kri ?mrsCon $?vars)

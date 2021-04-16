@@ -66,7 +66,7 @@
 ;want to bind LBL of '_yesterday_a_1|_today_a_1|_tomorrow_a_1' with RSTR of 'def_implicit_q
 (defrule dummy
 ?f<-(MRS_info ?rel1 ?id def_implicit_q ?lbl1 ?x ?rstr $?vars)
-(MRS_info ?rel2 ?id _yesterday_a_1|_today_a_1|_tomorrow_a_1 ?lbl2 ?ARG_0 $?v)
+(MRS_info ?rel2 ?id _there_a_1|_yesterday_a_1|_today_a_1|_tomorrow_a_1 ?lbl2 ?ARG_0 $?v)
 =>
 (retract ?f)
 (printout ?*rstr-rstd* "(Restr-Restricted     "?rstr  "  " ?lbl2 ")"crlf)
@@ -84,6 +84,15 @@
 (printout ?*rstr-rstd* "(Restr-Restricted  h0 "?lbl ")" crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values  LTOP-neg-rstd  Restr-Restricted  h0 "?lbl ")"crlf)
 )
+
+;(defrule LTOP-there_a_1
+;(id-concept_label	?id	state_existential)
+;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?loc loc_nonsp ?lbl ?a0 ? ? )
+;=>
+;(printout ?*rstr-rstd* "(Restr-Restricted  h0 "?lbl ")" crlf)
+;(printout ?*rstr-rstd-dbg* "(rule-rel-values  LTOP-there_a_1  Restr-Restricted  h0 "?a0 ")"crlf)
+;)
+
 
 ; written by sakshi yadav (NIT Raipur) date- 02.06.19
 ;want to bind RSTR of def_explicit_q  with LBL of poss

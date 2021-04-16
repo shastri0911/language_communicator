@@ -8,7 +8,7 @@
 (defrule mrsPrep
 (rel_name-ids ?rel ?kri ?k-id)
 (Karaka_Relation-Preposition    ?karaka  ?prep)
-(not (id-concept_label	?k-id	?hiConcept&kahAz_1|kaba_1|somavAra|janavarI|ParavarI|mArca|aprELa|maI|jUna|juLAI|agaswa|siwaMbara|aktUbara|navaMbara|xisaMbara|maMgalavAra|buXavAra|guruvAra|SukravAra|SanivAra|ravivAra|Aja_1|kala_1|kala_2))
+(not (id-concept_label	?k-id	?hiConcept&kahAz_1|kaba_1|somavAra|janavarI|ParavarI|mArca|aprELa|maI|jUna|juLAI|agaswa|siwaMbara|aktUbara|navaMbara|xisaMbara|maMgalavAra|buXavAra|guruvAra|SukravAra|SanivAra|ravivAra|Aja_1|kala_1|kala_2|vahAz_1))
 (not (rel_name-ids kriyA-k4 ?kri ?k-id))
 (not (generated_prep_for ?k-id))
 (test (neq (str-index "-" ?rel) FALSE))
@@ -55,6 +55,7 @@
 (defrule in_p_AXAra_AXeya
 (rel_name-ids   AXAra-AXeya     ?AXAra_id  ?AXeya_id)
 (not (generated_prep_for ?AXAra_id))
+(not (id-concept_label	?AXAra_id vahAz_1))
 
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept " (+ ?AXAra_id 1) " _in_p)"crlf)

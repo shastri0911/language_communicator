@@ -120,6 +120,23 @@
 
 )
 
+;Ex. 
+(defrule mrs_there
+(id-concept_label ?id vahAz_1|vahAz+para_1)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " place_n)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_there  id-MRS_concept "?id " place_n)"crlf)
+
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " _there_a_1)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_there id-MRS_concept "?id " _there_a_1)"crlf)
+
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " loc_nonsp)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_there  id-MRS_concept "?id " loc_nonsp)"crlf)
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " def_implicit_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_there  id-MRS_concept "?id " def_implicit_q)"crlf)
+)
+
+
 ;written by sakshi yadav (NIT-Raipur)
 ;date-27.05.19
 ;rule for sentence -consists of word 'home'
@@ -203,7 +220,7 @@
 
 
 (defrule mrs_parg_d
-(sentence_type  pass-assertive)
+(sentence_type  pass-assertive|pass-question)
 (kriyA-TAM ?kri ?tam)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?kri " parg_d)"crlf)
