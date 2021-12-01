@@ -10,7 +10,7 @@
 (id-def  ?id  yes)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " _the_q )"crlf)
-(printout ?*defdbug* "(rule-rel-values mrsDef_yes implicit_mrs_concept id-MRS_concept "?id " _the_q )"crlf)
+(printout ?*defdbug* "(rule-rel-values mrsDef_yes id-MRS_concept "(+ ?id 10)" _the_q )"crlf)
 )
 
 ;Rule for a as a determiner : if the is not present,is not a mass noun and not plural then generate (id-MRS_Rel ?id _a_q)
@@ -28,7 +28,7 @@
 (not (id-concept_label	?id	Gara_1))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " _a_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values  mrsDef_not implicit_mrs_concept id-MRS_concept "?id " _a_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values  mrsDef_not id-MRS_concept "?id " _a_q)"crlf)
 )
 
 ;Rule for plural noun : if (?n is pl) generate ((id-MRS_Rel ?id _udef_q)
@@ -41,7 +41,7 @@
 (not(id-pron ?id yes))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " udef_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_pl_notDef implicit_mrs_concept id-MRS_concept "?id " udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_pl_notDef id-MRS_concept "?id " udef_q)"crlf)
 )
 
 ;Rule for mass noun : if (id-mass ?id yes) , generate (id-MRS_Rel ?id _udef_q)
@@ -50,7 +50,7 @@
 (id-mass ?id yes)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values  mrs_mass_notDef implicit_mrs_concept id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values  mrs_mass_notDef id-MRS_concept "(+ ?id 10)" udef_q)"crlf)
 )
 
 ;rule for generating  _this_q_dem
@@ -73,7 +73,7 @@
 (rel_name-ids kriyA-neg  ?kid ?negid)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?negid " neg)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_neg_notDef implicit_mrs_concept id-MRS_concept "?negid " neg)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_neg_notDef id-MRS_concept "?negid " neg)"crlf)
 )
 
 ;Rule for proper noun: if ((id-propn ?id yes) is present, generate (id-MRS_concept ?id proper_q) and  (id-MRS_concept ?id named)
@@ -100,6 +100,20 @@
 
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " which_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_what  id-MRS_concept "?id " which_q)"crlf)
+)
+
+;rule for interrogative sentences for 'who',
+;generates (id-MRS_concept "?id " person)
+;	   (id-MRS_concept "?id " which_q)
+(defrule mrs_inter_who
+(id-concept_label ?id kOna_1)
+(sentence_type  question)
+=>
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " person)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_who  id-MRS_concept "?id " person)"crlf)
+
+(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " which_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_who  id-MRS_concept "?id " which_q)"crlf)
 )
 
 ;rule for interrogative sentences for 'where',
@@ -184,7 +198,7 @@
 ;written by sakshi yadav(NIT Raipur) Date-7.06.19
 ;Generates new facts for days of weeks then generate (MRS_info id-MRS_concept ?id _on_p_temp) and (MRS_info id-MRS_concept ?id dofw) and  (MRS_info id-MRS_concept ?id proper_q) 
 (defrule daysofweeks
-(id-concept_label ?id somavAra|maMgalavAra|buXavAra|guruvAra|SukravAra|SanivAra|ravivAra)
+(id-concept_label ?id somavAra|maMgalavAra|buXavAra|guruvAra|SukravAra|SanivAra|ravivAra|bqhaspawi_1|bqhaspawivAra_1|buGa_1|buXa_1|buXavAra_1|caMxravAra_1|gurUvAra_1|guruvAra_1|iwavAra_1|jumA_1|jumerAwa_1|jummA_1|maMgala_1|maMgalavAra_1|maMgalavAsara_1|ravivAra_1|ravixina_1|sanIcara_2|SanivAra_1|soma_1|somavAra_1|Sukra_2|SukravAra_1)
 =>
 ;(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " dofw)"crlf)
 ;(printout ?*defdbug* "(rule-rel-values  daysofweeks id-MRS_concept "?id " dofw)"crlf)
@@ -230,13 +244,13 @@
 
 
 ;rule for interrogative sentences for 'who'
-(defrule mrs_inter_who
-(id-concept_label ?id kOna_1)
-(sentence_type  question)
-=>
-(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " which_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_who  id-MRS_concept "?id " which_q)"crlf)
-)
+;(defrule mrs_inter_who
+;(id-concept_label ?id kOna_1)
+;(sentence_type  question)
+;=>
+;(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " which_q)"crlf)
+;(printout ?*defdbug* "(rule-rel-values mrs_inter_who  id-MRS_concept "?id " which_q)"crlf)
+;)
 
 ;rule for interrogative sentences for 'when'
 (defrule mrs_inter_when
@@ -244,13 +258,13 @@
 (sentence_type  question)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " which_q)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_who  id-MRS_concept "?id " which_q)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_when  id-MRS_concept "?id " which_q)"crlf)
 
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " time_n)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_who  id-MRS_concept "?id " time_n)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_when  id-MRS_concept "?id " time_n)"crlf)
 
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " loc_nonsp)"crlf)
-(printout ?*defdbug* "(rule-rel-values mrs_inter_what  id-MRS_concept "?id " loc_nonsp)"crlf)
+(printout ?*defdbug* "(rule-rel-values mrs_inter_when  id-MRS_concept "?id " loc_nonsp)"crlf)
 )
 
 ;rule for generating  _should_v_modal

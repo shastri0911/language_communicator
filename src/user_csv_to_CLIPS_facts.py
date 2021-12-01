@@ -51,8 +51,8 @@ for i in range(len(group)-1):
         headIdPP[id] = vib[1:]
 
 # Writing viSeRya_id-viSeRya_vibhaktis
-for key in headIdPP.keys():
-    ans.write('(viSeRya-PSP\t'+ str(key) +'\t'+ headIdPP[key]+')\n')
+#for key in headIdPP.keys():
+#    ans.write('(viSeRya-PSP\t'+ str(key) +'\t'+ headIdPP[key]+')\n')
 
 #Creating viSeRya_ids and their TAMs
 kriTAM = {}
@@ -97,7 +97,18 @@ for i in range(len(conceptDict)):
 
 # Writing id-concept_label 
 for k in idConcept.keys():
-    ans.write('(id-concept_label\t'+ k +'\t'+idConcept[k]+')\n')
+    if '{' in idConcept[k]:
+        #Computing constructions and concept labels from them
+        constructions = idConcept[k].split('<')
+        constructionTrigger =  idConcept[k].split('[')[1].split(']')[0]
+        ans.write('(id-construction_trigger\t'+ k +'\t'+constructionTrigger+')\n')
+        for i in constructions:
+            if '>' in i:
+                concept = i.split('>')[0]
+                ans.write('(id-concept_label\t'+ k +'\t'+concept+')\n')
+                ans.write('(id-construction\t'+ k +'\t'+idConcept[k]+')\n')
+    else:
+        ans.write('(id-concept_label\t'+ k +'\t'+idConcept[k]+')\n')
 
 # Writing gender,number,person:
 for i in range(len(gnp)):

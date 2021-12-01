@@ -482,7 +482,8 @@
 (printout ?*rstr-fp* "(MRS_info  " ?rel2 " "?id " " loc_nonsp " " ?lilbl " " ?arg0 " " ?liarg0 " " ?parg0 ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values ques-where MRS_info  " ?rel2 " "?id " " loc_nonsp " " ?lilbl " " ?arg0 " " ?liarg0 " " ?parg0 ")"crlf)
 
-(printout ?*rstr-fp* "(MRS_info  " ?rel_name " "?id " " which_q " " ?whlbl " " ?parg0 ")"crlf)
+(printout ?*rstr-fp* "(MRS_info  " ?rel_name " "?id " " which_q " " ?whlbl " " ?parg0 " " (implode$ (create$ $?v)) ")"crlf)
+;(printout ?*rstr-fp* "(MRS_info  " ?rel_name " "?id " " which_q " " ?whlbl " " ?parg0 ")"crlf)
 (printout ?*rstr-dbug* "(rule-rel-values ques-where MRS_info  " ?rel_name " "?id " " which_q " " ?whlbl " " ?parg0 ")"crlf)
 )
 
@@ -540,6 +541,7 @@
 ;Rule for numerical adjectives. Replace CARG value of cardinal number with English number and LBL value of the same fact with LBL of viSeRya, and ARG1 value with the ARG0 value of viSeRya.
 ;Ex. rAma xo kiwAbaeM paDa rahA hE.
 (defrule saMKyA_vi
+(id-concept_label ?num ?hnum)
 (rel_name-ids viSeRya-saMKyA_viSeRaNa	?vi     ?num)
 (concept_label-concept_in_Eng-MRS_concept ?hnum ?enum card)
 (MRS_info  id-MRS_concept-LBL-ARG0-ARG1-CARG ?num card ?lbl ?numARG0 ?ARG1 ?CARG)
@@ -549,11 +551,11 @@
 (printout ?*rstr-dbug* "(rule-rel-values saMKyA_vi id-MRS_concept-LBL-ARG0-ARG1-CARG "?num" card "?vilbl" "?numARG0" "?viarg0" "?enum")"crlf)
 )
 
-
 ;Rule for numerical adjectives. Replace 
 ;CARG value of ordinal number with English number and LBL value of the same fact with LBL of viSeRya and ARG1 value with ARG0 value of viSeRya.
 ;Ex. rAma pahalI kiwAba paDa rahA hE.
 (defrule kramavAcI_vi
+(id-concept_label ?num ?hnum)
 (rel_name-ids viSeRya-kramavAcI_viSeRaNa   ?vi     ?num)
 (concept_label-concept_in_Eng-MRS_concept ?hnum ?enum ord)
 (MRS_info  id-MRS_concept-LBL-ARG0-ARG1-CARG ?num ord ?lbl ?numARG0 ?ARG1 ?CARG)

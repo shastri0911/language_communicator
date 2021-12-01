@@ -20,3 +20,10 @@ for f in files :
     fw.write('\n')
     fw.close()
 
+
+"""
+fw1 = open('my_temp1.txt', 'w')
+cmnd = 'grep -v' + " Calling ACE parser for generating English " + 'my_temp.txt' + '>my-verified-out.txt'
+myinpSent = subprocess.run([cmnd], shell=True, stdout=fw1, text=True)
+"""
+
