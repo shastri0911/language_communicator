@@ -1,10 +1,10 @@
 #rAma ne KAnA nahIM KAyA WA
-#rAma_ne,KAnA_0,KA-yA_WA,nahIM,.
-rAma,KAnA_1,KA_1-yA_WA_1,nahIM_2
+#rAma_ne,KAnA_0,nahIM,KA-yA_WA.
+rAma,KAnA_1,nahIM_2,KA_1-yA_WA_1
 1,2,3,4
 propn,def,,
 [m sg a],[- sg a],
 ,,,
-3:k1,3:k2,
-,,,3:neg
+4:k1,4:k2,
+,,4:neg,
 negation

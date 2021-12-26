@@ -1,10 +1,10 @@
 #kyA wuma nahIM keloge?
-#kyA_0,wuma_0,Kela-gA,nahIM,?
-,wuma,Kela_1-gA_2,nahIM_1
+#kyA_0,wuma_0,nahIM,Kela-gA?
+,wuma,nahIM_1,Kela_1-gA_2
 1,2,3,4
 yes_no_qsn,pron,,
 ,[- - m],,
 ,,,
-,3:k1,,
-,,,3:neg
+,4:k1,,
+,,4:neg,
 question
