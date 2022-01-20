@@ -56,9 +56,9 @@ Run following command to open the bashrc file:
 Compile:
 -----------
 
-a. cd $lang_comm/clips_core_source_640/core
-b. make -f makefile
-c. mv clips $lang_comm/bin/
+a. `cd $lang_comm/clips_core_source_640/core`  
+b. `make -f makefile`  
+c. `mv clips $lang_comm/bin/`  
 
 
 4. RUN Language Communicator:
