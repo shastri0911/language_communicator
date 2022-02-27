@@ -10,7 +10,10 @@
 (concept_label-concept_in_Eng-MRS_concept ?conLabel ?enCon ?mrsConcept)
 =>
 (assert (id-hin_concept-MRS_concept ?id ?conLabel ?mrsConcept))
+(printout ?*mrs-dbug* "(rule-rel-values mrs-rels id-hin_concept-MRS_concept "?id " " ?conLabel " "?mrsConcept ")"crlf)
 )
+
+
 ;Deletes the MRS concept fact of stative verb "be" if Predicative adjective exists.
 ;e.g #rAma acCA hE. (Rama is good).
 (defrule state-pred-adj

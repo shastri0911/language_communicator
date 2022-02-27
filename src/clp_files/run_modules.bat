@@ -23,6 +23,21 @@
 (close mrs-def-fp)
 (close mrs-def-dbug)
 (clear)
+
+;---------------------------------------------------------------
+(load "global_path.clp")
+(bind ?*path* (str-cat ?*path* "/src/clp_files/gen-implicit_mrs_concept-comp.clp"))
+(load ?*path*)
+(load-facts "hin-clips-facts.dat")
+(load-facts "mrs-rel-features.dat")
+(load-facts "hin_concept-to-mrs_concept.dat")
+(open "implicit_mrs_concept_compound.dat" samasa-fp "w")
+(open "implicit_mrs_concept_compound_debug.dat" samasa-dbug-fp "w")
+(run)
+(close samasa-fp)
+(close samasa-dbug-fp)
+(clear)
+
 ;---------------------------------------------------------------
 (load "global_path.clp")
 (bind ?*path* (str-cat ?*path* "/src/clp_files/gen-implicit_mrs_concept-prep.clp"))
@@ -59,6 +74,7 @@
 (load-facts "implicit_mrs_concept.dat")
 (load-facts "implicit_mrs_concept-prep.dat")
 (load-facts "implicit_mrs_concept-pron.dat")
+(load-facts "implicit_mrs_concept_compound.dat")
 (open "mrs_feature_info.dat" mrs-file "w")
 (open "mrs_feature_info_debug.dat" mrs-dbug "w")
 (run)

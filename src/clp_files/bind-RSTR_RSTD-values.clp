@@ -40,9 +40,9 @@
 (test (eq (sub-string 1 1 (implode$ (create$ ?id1))) (sub-string 1 1 (implode$ (create$ ?id2)))))
 (test (eq (sub-string (- (str-length ?endsWith_q) 1) (str-length ?endsWith_q) ?endsWith_q) "_q"))
 (test (neq (sub-string (- (str-length ?mrsCon) 1) (str-length ?mrsCon) ?mrsCon) "_p"))
+(not (Restr-Restricted-fact-generated_for_comp ?id1))
 =>
 (retract ?f)
-;(retract ?f1)
 (printout ?*rstr-rstd* "(Restr-Restricted     "?rstr  "  " ?lbl2 ")"crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values mrs-info_q  Restr-Restricted  "?rstr"  "?lbl2 ")"crlf)
 
@@ -169,6 +169,27 @@
     (printout ?*rstr-rstd* "(Restr-Restricted " ?arg12 " "?lbl ")" crlf)
     (printout ?*rstr-rstd-dbg* "(rule-rel-values LTOP-nA_cAhawA_hE  Restr-Restricted " ?arg12 " "?lbl ")"crlf)
 
+)
+
+;for compounds 
+;Ex. 307:   usane basa+addA xeKA.
+(defrule comp_udefq
+(declare (salience 200))
+(MRS_info ?rel   ?id  compound  ?cl $?vars)
+?f<-(MRS_info ?rel1   ?id1 udef_q    ?ul ?ua0 ?urstr ?ubody)
+?f1<-(MRS_info ?rel2  ?id2 _the_q|_a_q     ?tl ?ta0 ?trstr ?tbody)
+(MRS_info      ?rel3  ?id3 ?dep_mrs  ?dep_lbl $?v)
+(test (eq (sub-string 1 1 (str-cat ?id)) (sub-string 1 1 (str-cat ?id1))))
+(test (eq (sub-string 1 1 (str-cat ?id)) (sub-string 1 1 (str-cat ?id3))))
+(test (eq (+ ?id 998) ?id3))
+=>
+    (assert (Restr-Restricted-fact-generated_for_comp ?id1))
+    (assert (Restr-Restricted-fact-generated_for_comp ?id2))
+    (printout ?*rstr-rstd* "(Restr-Restricted " ?trstr " "?cl ")" crlf)
+    (printout ?*rstr-rstd-dbg* "(rule-rel-values comp_udefq  Restr-Restricted "?trstr " "?cl ")"crlf)
+
+    (printout ?*rstr-rstd* "(Restr-Restricted " ?urstr " "?dep_lbl ")" crlf)
+    (printout ?*rstr-rstd-dbg* "(rule-rel-values comp_udefq  Restr-Restricted " ?urstr " "?dep_lbl ")"crlf)
 )
 
 
