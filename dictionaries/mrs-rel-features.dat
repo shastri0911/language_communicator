@@ -17256,7 +17256,7 @@
 (MRS_concept-label-feature_values _shoot_v_1 LBL: h* ARG0: x* RSTR: h* BODY: h*)
 (MRS_concept-label-feature_values _shopkeeper/NN_u_unknown LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _shopkeeping/NN_u_unknown LBL: h* ARG0: x*)
-(MRS_concept-label-feature_values _shop_n_of LBL: h* ARG0: e* ARG1: x* ARG2: x*)
+;(MRS_concept-label-feature_values _shop_n_of LBL: h* ARG0: e* ARG1: x* ARG2: x*)
 (MRS_concept-label-feature_values _shop_n_of LBL: h* ARG0: x* ARG1: i*)
 (MRS_concept-label-feature_values _shopper_n_1 LBL: h* ARG0: x*)
 (MRS_concept-label-feature_values _shoreless/JJ_u_unknown LBL: h* ARG0: e* ARG1: x*)

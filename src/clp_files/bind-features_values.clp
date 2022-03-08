@@ -35,10 +35,10 @@
 
 
 ;Rule for adjective and noun : for (viSeRya-viSeRaNa 	? ?)
-;	replace LBL value of viSeRaNa with the LBL value of viSeRya
-;	Replace ARG1 value of viSeRaNa with ARG0 value of viSeRya
+;	replace LBL value of viSeRaNa/adv with the LBL value of viSeRya
+;	Replace ARG1 value of viSeRaNa/adv with ARG0 value of viSeRya
 (defrule viya-viNa
-(rel_name-ids viSeRya-viSeRaNa ?viya ?viNa)
+(rel_name-ids viSeRya-viSeRaNa|viSeRya-intf ?viya ?viNa)
 (MRS_info ?rel1 ?viya ?c ?lbl1 ?arg0_viya  $?var)
 (MRS_info ?rel2 ?viNa ?co ?lbl2 ?arg0_viNa ?arg1_viNa $?vars)
 (test (eq (str-index _q ?co) FALSE))  ;prawyeka baccA Kela rahe hEM. saBI bacce Kela rahe hEM. kuCa bacce koI Kela Kela sakawe hEM. 
