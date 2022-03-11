@@ -17,13 +17,17 @@ for f in files :
     inpSent = subprocess.run([sent], shell=True, stdout=fw, text=True)
     myout = subprocess.run([cmd], shell=True, capture_output=True, text=True)
     ot = subprocess.run(['grep', '-v', 'Creating'], stdout=fw, text=True, input=myout.stdout)
-    fw.write('\n')
+    #fw.write('\n')
     fw.close()
 
 
-"""
-fw1 = open('my_temp1.txt', 'w')
-cmnd = 'grep -v' + " Calling ACE parser for generating English " + 'my_temp.txt' + '>my-verified-out.txt'
-myinpSent = subprocess.run([cmnd], shell=True, stdout=fw1, text=True)
-"""
+fr = open('my_temp.txt', 'r')
+fw1 = open('my_temp-1.txt', 'w')
+f = fr.readlines()
+for i in range(len(f)):
+    if f[i].startswith("Calling ACE parser for generating English sentence"):
+        pass
+    else:
+        fw1.write(f[i])
 
+fw1.close()

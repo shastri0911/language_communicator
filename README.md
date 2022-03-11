@@ -1,6 +1,6 @@
 System Pre-requisites:
 ------------------------
-Download and Install ubuntu 18.04 from the below link (any version will work):
+Download and Install ubuntu 20.04 from the below link (any version above 20.04 will work):
 https://ubuntu.com/download/desktop
 
 Update Ubuntu
@@ -23,10 +23,11 @@ git clone https://github.com/shastri0911/language_communicator.git
 Pre-requisites:
 --------------
 1. pydelphin needs to be installed in $HOME/
-2. Ace parser 0.24 version in $HOME/
+2. Ace parser 0.34 version in $HOME/
     (Note:  Link: http://sweaglesw.org/linguistics/ace/download/
-       download ace-0.9.24-x86-64.tar.gz and erg-1214-x86-64-0.9.24.dat.bz2 from the above link. 
+       download ace-0.9.34-x86-64.tar.gz and erg-1214-x86-64-0.9.34.dat.bz2 from the above link. 
        Keep erg-1214-x86-64-0.9.24.dat.bz2 in ACE directory.
+       Keep the erg-1214-x86-64-0.9.34.dat.bz2 in ACE directory and extract it.
 	)
 3. Clips
     1. Download zip file : (https://sourceforge.net/projects/clipsrules/files/CLIPS/6.40_Beta_1/clips_core_source_640.zip/download)
