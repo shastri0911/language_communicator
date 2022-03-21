@@ -1,10 +1,11 @@
 #mEM Delhi meM hUz.
-#mEM_0,Delhi_meM,hUz,.
+#mEM, Delhi meM, hUz,.
 mEM,Delhi,state_existential-pres
 1,2,3
-pron,propn,
+pron,place,
 [- sg u],[- sg a],
 ,,
 AXeya,AXAra,
 ,,
-assertive
+,,
+affirmative

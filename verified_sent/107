@@ -1,10 +1,11 @@
 #mEM rUsI bola sakawA hUz.
-#mEM_0,rUsI_0,bola-0_sakawA_hE,.
+#mEM, rUsI, bola sakawA hUz,.
 mEM,rUsI,bola_4-0_sakawA_hE_2
 1,2,3
-pron,propn,
+pron,per,
 [- sg u],[- sg -],
 ,,
 3:k1,3:k2,
 ,,
-assertive
+,,
+affirmative

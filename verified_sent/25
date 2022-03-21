@@ -1,5 +1,5 @@
 #ladake ne KAnA nahIM KAyA.
-#ladakA_ne,KAnA_0,nahIM,KA-yA.
+#ladake ne, KAnA, nahIM, KAyA.
 ladakA_1,KAnA_1,nahIM_1,KA_1-yA_1
 1,2,3,4
 def,mass,,
@@ -7,4 +7,5 @@ def,mass,,
 ,,,
 4:k1,4:k2,,
 ,,,4:neg
-negation
+def,,,
+negative

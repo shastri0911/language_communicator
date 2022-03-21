@@ -1,10 +1,11 @@
 #ladake ne nayI kiwAba paDI.
-#ladakA_ne,nayA~kiwAba_0,paDa-yA,.
-ladakA_1,nayA_1~kiwAba_1,paDa_1-yA_1
+#ladake ne, nayI kiwAba, paDI,.
+ladakA_1,nayA_1 kiwAba_1,paDa_1-yA_1
 1,2,3
-def,,
+,,
 [m sg a],[- sg a],
-,2.2:viSeRaNa,
+,2.2:mod,
 3:k1,3:k2,
 ,,
-assertive
+def,,
+affirmative

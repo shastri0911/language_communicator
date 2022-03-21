@@ -8,8 +8,8 @@
 (rel_name-ids ?rel	?compid ?dep)
 (id-hin_concept-MRS_concept ?compid ?comp ?comp_mrs)
 (test (eq (sub-string 1 1 (str-cat ?compid)) (sub-string 1 1 (str-cat ?dep))))
-(test (neq (str-index "+"  ?comp) FALSE))
-
+;(test (neq (str-index "+"  ?comp) FALSE))
+(test (neq (str-index "+"  ?comp_mrs) FALSE)) ;312: usane muJe KeloM meM pramANa pawra xiyA.
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?compid 2) " compound)"crlf)
 (printout ?*defdbug* "(rule-rel-values samasa id-MRS_concept " (+ ?compid 2)" compound)"crlf)

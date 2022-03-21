@@ -1,10 +1,11 @@
 #pariNAma burA WA
-#pariNAma_1, burA_2,WA
+#pariNAma, burA, WA,.
 pariNAma_1, burA_2, state_copula-past
 1,2,3
-def,guNavAcI,
+,guNavAcI,
 [- sg a],,
 ,,
 samAnAXi,samAnAXi,
 ,,
-assertive
+def,,
+affirmative

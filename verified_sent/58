@@ -1,10 +1,11 @@
 #rAma john ke liye Sahara se AyA.
-#rAma_0,John_ke_lie,Sahara_se,A-yA,.
+#rAma, John ke lie, Sahara se, AyA,.
 rAma,John,Sahara_1,A_1-yA_1
 1,2,3,4
-propn,propn,def,
+per,per,,
 [- sg a],[- sg a],[- sg a],
 ,,,
 4:k1,4:rt,4:k5,
 ,,,
-assertive
+,,def,
+affirmative

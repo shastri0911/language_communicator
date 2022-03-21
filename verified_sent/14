@@ -1,5 +1,5 @@
 #kyA Apa jA rahe hEM?
-#kyA_0,Apa_0,jA-0_rahA_hE,?
+#kyA, Apa, jA rahe hEM,?
 ,Apa,jA_1-0_rahA_hE_1
 1,2,3
 yes_no_qsn,pron,
@@ -7,4 +7,5 @@ yes_no_qsn,pron,
 ,,
 ,3:k1,
 ,,
-question
+,,
+interrogative

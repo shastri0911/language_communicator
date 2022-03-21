@@ -1,10 +1,11 @@
 #saBI bacce Kela rahe hEM.
-#saBI~baccA_0,Kela-0_rahA_hE,.
-saBI_1~baccA_2,Kela_1-0_rahA_hE_1
+#saBI bacce, Kela rahA hEM,.
+saBI_1 baccA_2,Kela_1-0_rahA_hE_1
 1,2
 ,
 [- pl a],
-1.2:viSeRaNa,
+1.2:mod,
 2:k1,
 ,
-assertive
+,
+affirmative

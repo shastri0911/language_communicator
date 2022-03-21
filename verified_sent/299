@@ -1,5 +1,5 @@
 #mEM ArAma kara sakawA hUz.
-#mEM_0,ArAma+kara-sakawA_hUz,.
+#mEM, ArAma kara sakawA hUz,.
 mEM,ArAma+kara_2-0_sakawA_hE_1
 1,2
 pron,
@@ -7,4 +7,5 @@ pron,
 ,
 2:k1,
 ,
-assertive
+,
+affirmative

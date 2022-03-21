@@ -1,10 +1,11 @@
 #rAma dAktara nahIM hE.
-#rAma_0,nahIM,dAktara_0,hE.
+#rAma, dAktara,  nahIM, hE.
 rAma,dAktara_1,nahIM_1,state_copula-pres
 1,2,3,4
-propn,,,
+per,,,
 [m sg a],[- sg a],,
 ,,,
 samAnAXi,samAnAXi,4:neg,
 ,,,
-negation
+,,,
+negative

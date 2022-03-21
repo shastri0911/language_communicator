@@ -1,10 +1,11 @@
 #mEM xillI meM hUz.
-#mEM_0,xillI_meM,hE,.
-mEM,xillI,state_existential-pres
+#mEM, xillI meM, huz,.
+mEm,xillI,state_existential-pres
 1,2,3
-pron,propn,
+pron,per,
 [- sg u],[- sg a],
 ,,
 AXeya,AXAra,
 ,,
-assertive
+,,
+affirmative

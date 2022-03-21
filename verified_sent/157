@@ -1,10 +1,11 @@
 #usake xvArA KAnA KAyA gayA WA.
-#usa_ke_xvAra_1,kAnA,KA-yA_gayA_WA,.
+#usake xvAra, kAnA, KAyA gayA WA,.
 vaha,KAnA_1,KA_1-yA_gayA_WA_2
 1,2,3
-pron,def,
+pron,,
 [m sg a],[- sg a],
 ,,
 3:k1,3:k2,
 ,,,
-pass-assertive
+,def,
+pass-affirmative

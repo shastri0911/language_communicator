@@ -1,10 +1,11 @@
-#rAma Sahara meM WA
-#rAMa_0,Sahara_meM,0_WA_1,.
+#rAma Sahara meM WA.
+#rAMa, Sahara meM, WA,.
 rAma,Sahara_1,state_existential-past
 1,2,3
-propn,def,
+per,def,
 [m sg a],[- sg a],
 ,,
 AXeya,AXAra,
 ,,
-assertive
+,def,
+affirmative

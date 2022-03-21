@@ -1,5 +1,5 @@
 #kyA mEM ApakI sahAyawA kara sakawA hUz?
-#kyA_0,mEM_0,Apa_0,sahAyawA+kara-0_sakawA_hE,?
+#kyA, mEM, ApakI, sahAyawA kara sakawA hUz,?
 ,mEM,Apa,sahAyawA+kara_1-0_sakawA_hE_2
 1,2,3,4
 yes_no_qsn,pron,pron,
@@ -7,4 +7,5 @@ yes_no_qsn,pron,pron,
 ,,,
 ,4:k1,4:k2,
 ,,,
-question
+,,,
+interrogative

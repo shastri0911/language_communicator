@@ -1,10 +1,11 @@
 #xOdZa SurU ho gaI.
-#xOdZa,SurU+kara-gayA,.
+#xOdZa, SurU ho gaI,.
 xOdZa_1,SurU+kara_1-0_gayA_1
 1,2
-def,
+,
 [- sg a],
 ,
 2:k1,
 ,
-assertive
+def,
+affirmative

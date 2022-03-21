@@ -1,10 +1,11 @@
 #mere xvArA KAnA KAyA gayA WA.
-#mEM_ke_xvAra_1,kAnA,KA-yA_gayA_WA,.
+#mere xvAra, kAnA, KAyA gayA WA,.
 mEM,KAnA_1,KA_1-yA_gayA_WA_1
 1,2,3
-pron,def,
+pron,,
 [- sg u],[- sg a],
 ,,
 3:k1,3:k2,
 ,,,
-pass-assertive
+,def,
+pass-affirmative

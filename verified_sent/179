@@ -1,10 +1,11 @@
 #kyA rAma dAktara hE ?
-#kyA_0,rAma_0,dAktara_0,hE,?
+#kyA, rAma, dAktara, hE,?
 ,rAma,dAktara_1,state_copula-pres
 1,2,3,4
-yes_no_qsn,propn,,
+yes_no_qsn,per,,
 ,[m sg a],[- sg a],
 ,,,
 ,samAnAXi,samAnAXi,
 ,,,
-question
+,,,
+interrogative

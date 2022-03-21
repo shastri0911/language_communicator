@@ -1,10 +1,11 @@
 #KaragoSa GAsa KAwA hE.
-#KaragoSa_0,GAsa_0,KA-wA_hE,.
+#KaragoSa, GAsa, KAwA hE,.
 KaragoSa_1,GAsa_1,KA_1-wA_hE_1
 1,2,3
-def,mass,
+,mass,
 [- sg a],[- sg a],
 ,,
 3:k1,3:k2,
 ,,
-assertive
+def,,
+affirmative

@@ -1,5 +1,5 @@
 #Apa kahAz rahawe hEM?
-#Apa_0,kahAz_0,raha-wA_hE,?
+#Apa, kahAz, rahawe hEM,?
 Apa,kahAz_1,raha_1-wA_hE_1 
 1,2,3
 pron,,
@@ -7,4 +7,5 @@ pron,,
 ,,
 3:k1,3:k7p,
 ,,
-question
+,,
+interrogative

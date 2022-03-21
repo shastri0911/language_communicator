@@ -1,10 +1,11 @@
 #vaha bahuwa aBimAnI WA.
-#vaha, bahuwa aBimAnI_3, WA,.
-vaha,bahuwa_7~aBimAnI_3,state_copula-past
+#vaha, bahuwa aBimAnI, WA,.
+vaha,bahuwa_7 aBimAnI_3,state_copula-past
 1,2,3
 pron,guNavAcI,
 [m sg a],,
 ,2.2:intf,
 samAnAXi,samAnAXi,
 ,,
-assertive
+,,
+affirmative

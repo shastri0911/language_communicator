@@ -1,10 +1,11 @@
 #ladakA xillI meM hE.
-#ladakA_0,xillI_meM,hE,.
+#ladakA, xillI meM, hE,.
 ladakA_1,xillI,state_existential-pres
 1,2,3
-def,propn,
+,per,
 [m sg a],[- sg a],
 ,,
 AXeya,AXAra,
 ,,
-assertive
+def,,
+affirmative

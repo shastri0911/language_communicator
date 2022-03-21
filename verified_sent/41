@@ -1,10 +1,11 @@
 #mEMne aMXe ladake ko XIre se XakkA mArA.
-#mEM_ne,aMXA~ladakA_ko,XIre_se,XakkA+mAra-yA,.
-mEM,aMXA_1~ladakA_1,XIre+se_1,XakkA+mAra_1-yA_1
+#mEMne, aMXe ladake ko, XIre se, XakkA mArA,.
+mEM,aMXA_1 ladakA_1,XIre+se_1,XakkA+mAra_1-yA_1
 1,2,3,4
-pron,def,,
+pron,,,
 [- sg u],[m sg a],,
-,2.2:viSeRaNa,,
-4:k1,4:k2,4:kriyA-viSeRaNa,
+,2.2:mod,,
+4:k1,4:k2,4:kr_vn,
 ,,,
-assertive
+,def,,
+affirmative

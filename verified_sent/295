@@ -1,10 +1,11 @@
 #usane kaCuA ke lie xUra se paryavekRaNa kiyA.
-#vaha_ne,kaCuA_ke_lie,xUra_se,paryavekRaNa+kara-yA,.
+#usane, kaCuA ke lie, xUra se, paryavekRaNa kiyA,.
 vaha,kaCuA_1,xUra_5,paryavekRaNa+kara_1-yA_1
 1,2,3,4
-pron,def,def,
+pron,,,
 [m sg a],[- sg a],[- sg a],
 ,,,
 4:k1,4:rt,4:k5,
 ,,,
-assertive
+,def,def,
+affirmative

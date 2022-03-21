@@ -1,10 +1,11 @@
 #mEM usase eka kiwAba le rahA hUz.
-#mEM_0,vaha_se,eka~kiwAba_0,le-0_rahA_hE,.
-mEM,vaha,eka_1~kiwAba_1,le_1-0_rahA_hE_1
+#mEM, usase, eka kiwAba, le rahA hUz,.
+mEM,vaha,eka_1 kiwAba_1,le_1-0_rahA_hE_1
 1,2,3,4
 pron,pron,,
 [m sg u],[m sg a],[- sg a],
-,,3.2:saMKyA-viSeRaNa,
+,,3.2:ord,
 4:k1,4:k5,4:k2,
 ,,,
-assertive
+,,,
+affirmative

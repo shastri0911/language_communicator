@@ -1,5 +1,5 @@
 #vaha aBimAnI WA.
-#vaha_0,aBimAnI_0,WA,.
+#vaha, aBimAnI, WA,.
 vaha,aBimAnI_3,state_copula-past
 1,2,3
 pron,guNavAcI,
@@ -7,4 +7,5 @@ pron,guNavAcI,
 ,,
 samAnAXi,samAnAXi,
 ,,
-assertive
+,,
+affirmative

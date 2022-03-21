@@ -38,7 +38,7 @@
 ;	replace LBL value of viSeRaNa/adv with the LBL value of viSeRya
 ;	Replace ARG1 value of viSeRaNa/adv with ARG0 value of viSeRya
 (defrule viya-viNa
-(rel_name-ids viSeRya-viSeRaNa|viSeRya-intf ?viya ?viNa)
+(rel_name-ids mod|intf ?viya ?viNa)
 (MRS_info ?rel1 ?viya ?c ?lbl1 ?arg0_viya  $?var)
 (MRS_info ?rel2 ?viNa ?co ?lbl2 ?arg0_viNa ?arg1_viNa $?vars)
 (test (eq (str-index _q ?co) FALSE))  ;prawyeka baccA Kela rahe hEM. saBI bacce Kela rahe hEM. kuCa bacce koI Kela Kela sakawe hEM. 
@@ -48,8 +48,8 @@
 )
 
 ;Replace LBL values of kriyA_viSeRaNa with the LBL value of kriyA, and Replace ARG1 values of kriyA_viSeRaNa with the ARG0 value of kriyA. Ex. "I walk slowly." 
-(defrule kriyA-kriyA_viSeRaNa
-(rel_name-ids kriyA-kriyA_viSeRaNa ?kri ?kri_vi)
+(defrule kr_vn
+(rel_name-ids kr_vn ?kri ?kri_vi)
 (MRS_info ?rel1 ?kri ?mrsconkri ?lbl1 ?arg0  ?arg1 $?var)
 (MRS_info  ?rel2 ?kri_vi ?mrsconkrivi ?lbl2 ?arg0_2 ?arg1_2 $?vars)
 =>
@@ -157,7 +157,7 @@
 ;replace ARG2 of kriyA with ARG0 of karwA
 (defrule v-k1
 ;(declare (salience 10))
-(rel_name-ids	kriyA-k1	?kriyA ?karwA)
+(rel_name-ids	k1	?kriyA ?karwA)
 ?f<-(MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 $?v)
 (MRS_info ?rel1 ?karwA ?mrsCon1 ?lbl1 ?argwA_0 $?vars)
 (test (eq (str-index _q ?mrsCon1) FALSE))
@@ -173,7 +173,7 @@
 
 ;Rule for verb and its arguments(when both karta and karma are present),Replace ARG1 value of kriyA with ARG0 value of karwA and ARG2 value of kriyA with ARG0 value of karma
 (defrule v-k2
-(rel_name-ids	kriyA-k2       	?kriyA ?karma)
+(rel_name-ids	k2       	?kriyA ?karma)
 ?f<-(MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 $?v)
 (MRS_info ?rel2 ?karma ?mrsCon2 ?lbl2 ?argma_0 $?vars1)
 (test (eq (str-index _q ?mrsCon2) FALSE))
@@ -194,7 +194,7 @@
 ;(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 30100 _get_v_state h7 e8 x9 h10)
 
 (defrule v-k2-yA-gayA_1
-(rel_name-ids   kriyA-k2        ?kriyA ?karma)
+(rel_name-ids   k2        ?kriyA ?karma)
 (MRS_info ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 $?v)
 (MRS_info ?rel2 ?karma ?mrsCon2 ?lbl2 ?argma_0 $?vars1)
 ?f<-(MRS_info ?rel3 ?get_v_id ?getVState ?lbl3 ?getA0 ?getA1 ?A2)
@@ -213,7 +213,7 @@
 
 ;Rule for verb and its arguments(when  karta, karma and sampradaan are present),Replace ARG3 value of kriyA with ARG0 value of sampradaan and ARG2 value of kriyA with ARG0 value of karma
 (defrule v-k4
-(rel_name-ids	kriyA-k4       	?kriyA ?k4)
+(rel_name-ids	k4       	?kriyA ?k4)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2-ARG3 ?kriyA ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 ?arg3 )
 (MRS_info ?rel2 ?k4 ?mrsCon2 ?lbl2 ?argk4_0 $?vars1)
 (test (eq (str-index _q ?mrsCon2) FALSE))
@@ -363,7 +363,7 @@
 (rel_name-ids   samAnAXi        ?s-id1  ?s-id2)
 (id-concept_label  ?k-id   ?hiConcept&Aja_1|kala_1|kala_2)
 ?f<-(MRS_info ?rel_name ?v_id ?mrsCon ?lbl ?arg0 ?arg1 ?arg2 )
-;(not(rel_name-ids kriyA-k7  ?kri   ?k-id))
+;(not(rel_name-ids k7  ?kri   ?k-id))
 (MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id def_implicit_q ?lbl1 ?arg01 ?rstr ?body)
 (MRS_info id-MRS_concept-LBL-ARG0 ?id time_n ?lbl2 ?arg02)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?id ?mrs_time ?lbl3 ?arg03 ?arg13)
@@ -416,7 +416,7 @@
 ;Ex. My friend is playing in the garden.
 ;Ex. The necklace is in the woman's neck. 
 (defrule r6
-(rel_name-ids viSeRya-r6	?id	?id1)
+(rel_name-ids r6	?id	?id1)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?idposs poss ?lbl ?arg0 ?arg1 ?arg2)
 ?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?id_q def_explicit_q ?lbl1 ?arg01 ?rstr ?body)
 (MRS_info ?rel                             ?id ?mrsCon ?lbl6 ?arg00 $?v)  
@@ -525,7 +525,8 @@
 
 ;Rule for binding proper noun (proper_q) and named ARG0 values. And, replace CARG value with proper name present in the sent. 
 ;Ex. rAma_jA_rahA_hE.  kyA_rAma_jA_rahA_hE?
-(defrule propn
+(defrule 
+propn
 (declare (salience 1000))
 (id-concept_label	?id	?properName)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-CARG ?id ?named ?h1 ?x2 ?carg)
@@ -555,7 +556,7 @@
 ;Ex. rAma xo kiwAbaeM paDa rahA hE.
 (defrule saMKyA_vi
 (id-concept_label ?num ?hnum)
-(rel_name-ids viSeRya-saMKyA_viSeRaNa	?vi     ?num)
+(rel_name-ids ord	?vi     ?num)
 (concept_label-concept_in_Eng-MRS_concept ?hnum ?enum card)
 (MRS_info  id-MRS_concept-LBL-ARG0-ARG1-CARG ?num card ?lbl ?numARG0 ?ARG1 ?CARG)
 (MRS_info ?rel ?vi ?mrscon ?vilbl ?viarg0 $?v)
@@ -569,7 +570,7 @@
 ;Ex. rAma pahalI kiwAba paDa rahA hE.
 (defrule kramavAcI_vi
 (id-concept_label ?num ?hnum)
-(rel_name-ids viSeRya-kramavAcI_viSeRaNa   ?vi     ?num)
+(rel_name-ids card   ?vi     ?num)
 (concept_label-concept_in_Eng-MRS_concept ?hnum ?enum ord)
 (MRS_info  id-MRS_concept-LBL-ARG0-ARG1-CARG ?num ord ?lbl ?numARG0 ?ARG1 ?CARG)
 (MRS_info ?rel ?vi ?mrscon ?vilbl ?viarg0 $?v)
@@ -597,7 +598,7 @@
 ;for asssertive sentence information
 (defrule kri-tam-asser
 (kriyA-TAM ?kri ?tam)
-(sentence_type  assertive|pass-assertive)
+(sentence_type  affirmative|pass-affirmative)
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type ?tam ?e_tam ?perf ?prog ?tense ?typ)
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf  ")"crlf)
@@ -607,7 +608,7 @@
 ;for negation sentence information
 (defrule kri-tam-neg
 (kriyA-TAM ?kri ?tam)
-(sentence_type  negation)
+(sentence_type  negative)
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type ?tam ?e_tam ?perf ?prog ?tense ?)
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " prop " ?tense " indicative " ?prog " " ?perf ")"crlf)
@@ -675,7 +676,7 @@
 ;for question sentence information
 (defrule kri-tam-q
 (kriyA-TAM ?kri ?tam)
-(sentence_type  question|pass-question)
+(sentence_type  interrogative|pass-interrogative)
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type  ?tam ?e_tam ?perf ?prog ?tense ?)
 =>
 (printout ?*rstr-fp* "(id-SF-TENSE-MOOD-PROG-PERF "?kri " ques " ?tense " indicative " ?prog " " ?perf ")"crlf)
@@ -708,7 +709,7 @@ then
 (H_TAM-E_TAM-Perfective_Aspect-Progressive_Aspect-Tense-Type  ?tam ?e_tam ?perf ?prog ?tense modal)
 (kriyA-TAM ?kri ?tam)
 (MRS_info id-MRS_concept-LBL-ARG0-ARG1 ?modalV  ?mrs_modal  ?lbl  ?arg0  ?h)
-(sentence_type  assertive|question|negation)
+(sentence_type  affirmative|interrogative|negative)
 (test (or (neq (str-index _v_modal ?mrs_modal) FALSE) (neq (str-index _v_qmodal ?mrs_modal) FALSE)));_used+to_v_qmodal
 =>
 (assert (asserted_LTOP-INDEX-for-modal))

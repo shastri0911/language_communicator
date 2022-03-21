@@ -1,5 +1,5 @@
 #kyA wuma nahIM keloge?
-#kyA_0,wuma_0,nahIM,Kela-gA,?
+#kyA, wuma, nahIM, keloge,?
 ,wuma,nahIM_1,Kela_1-gA_1,
 1,2,3,4
 yes_no_qsn,pron,,
@@ -7,4 +7,5 @@ yes_no_qsn,pron,,
 ,,,
 ,4:k1,,
 ,,,4:neg
-question
+,,,
+interrogative

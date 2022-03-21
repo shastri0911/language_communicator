@@ -1,5 +1,5 @@
 #muJe Gara jAnA cAhie.
-#mEM_0,Gara_0,jA-nA_cAhie,.
+#muJe, Gara, jAnA cAhie,.
 mEM,Gara_1,jA_1-nA_cAhie_1
 1,2,3
 pron,,
@@ -7,4 +7,5 @@ pron,,
 ,,
 3:k1,3:k2,
 ,,
-assertive
+,,
+affirmative

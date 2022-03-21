@@ -1,5 +1,5 @@
 #kyA Apa AeMge?
-#kyA_0,Apa_0,A-gA,?
+#kyA, Apa, AeMge,?
 ,Apa,A_1-gA_2
 1,2,3
 yes_no_qsn,pron,
@@ -7,4 +7,5 @@ yes_no_qsn,pron,
 ,,
 ,3:k1,
 ,,
-question
+,,
+interrogative

@@ -1,5 +1,5 @@
 #muJe buKAra hE.
-#mEM_ko,buKAra_0,hE,.
+#muJe, buKAra, hE,.
 mEM,buKAra_1,state_anuBUwi-pres
 1,2,3
 pron,mass,
@@ -7,4 +7,5 @@ pron,mass,
 ,,
 anuBAvaka,anuBava,
 ,,
-assertive
+,,
+affirmative

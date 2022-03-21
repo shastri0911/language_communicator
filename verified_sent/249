@@ -1,10 +1,11 @@
 #usane calaciwra xeKA.
-#vaha_ne,calaciwra_1,xeKa-yA,.
+#usane, calaciwra, xeKa,.
 vaha,calaciwra_1,xeKa_3-yA_1
 1,2,3
-pron,def,
+pron,,
 [m sg a],[- sg a],
 ,,,
 3:k1,3:k2,
 ,,
-assertive
+,def,
+affirmative

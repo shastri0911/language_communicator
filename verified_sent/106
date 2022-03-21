@@ -1,5 +1,5 @@
 #muJe kala AnA hogA.
-#mEM_0,kala_0,A-,nA_hogA.
+#muJe, kala, AnA hogA,.
 mEM_1,kala_2,A_1-nA_hogA_1
 1,2,3
 pron,,
@@ -7,4 +7,5 @@ pron,,
 ,,
 3:k1,3:k7t
 ,,
-assertive
+,,
+affirmative

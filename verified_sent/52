@@ -1,10 +1,11 @@
 #mEM usake lie Sahara se AyA.
-#mEM_0,vaha_ke_lie,Sahara_se,A-yA,.
+#mEM, usake lie, Sahara se, AyA,.
 mEM,vaha,Sahara_1,A_1-yA_1
 1,2,3,4
-pron,pron,def,
+pron,pron,,
 [- sg u],[m sg a],[- sg a],
 ,,,
 4:k1,4:rt,4:k5,
 ,,,
-assertive
+,,def,
+affirmative

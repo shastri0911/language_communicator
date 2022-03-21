@@ -1,10 +1,11 @@
 #KaragoSa ne GAsa nahIM KAyA WA
-#KaragoSa_ne,GAsa_1,nahIM,KA-yA,.
+#KaragoSa ne, GAsa, nahIM, KAyA WA,.
 KaragoSa_1,GAsa_1,nahIM,KA_1-yA_WA_2
 1,2,3,4
-def,mass,,
+,mass,,
 [m sg a],[- sg a],,
 ,,,
-3:k1,3:k2,,
-,,3:neg,
-negation
+4:k1,4:k2,,
+,,4:neg,
+def,,,
+negative

@@ -1,10 +1,11 @@
 #ayAn acCA ladZakA WA
-#ayAn_0,acCA~ladZakA_0,WA,.
-ayAn,acCA_1~ladZakA_1,state_copula-past
+#ayAn, acCA ladZakA, WA,.
+ayAn,acCA_1 ladZakA_1,state_copula-past
 1,2,3
-propn,,
+per,,
 [m sg a],[- sg a],
-,2.2:viSeRaNa,
+,2.2:mod,
 samAnAXi,samAnAXi,
 ,,
-assertive
+,,
+affirmative

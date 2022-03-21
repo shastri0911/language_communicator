@@ -1,5 +1,5 @@
 #vaha Gara jA sakawA hE.
-#vaha_0,Gara_0,jA-0_sakawA_hE,.
+#vaha, Gara, jA sakawA hE,.
 vaha_1,Gara_1,jA_1-0_sakawA_hE_1
 1,2,3
 pron,,
@@ -7,4 +7,5 @@ pron,,
 ,,
 3:k1,3:k2,
 ,,
-assertive
+,,
+affirmative

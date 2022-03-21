@@ -1,10 +1,11 @@
 #rAma xillI meM hE.
-#rAma_0,xillI_meM,hE,.
+#rAma, xillI meM, hE,.
 rAma,xillI,state_existential-pres
 1,2,3
-propn,propn,
+per,per,
 [m sg a],[- sg a],
 ,,
 AXeya,AXAra,
 ,,
-assertive
+,,
+affirmative

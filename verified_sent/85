@@ -1,10 +1,11 @@
 #mere pAsa kiwAba hE.
-#mEM_ke_pAsa,kiwAba_0,hE.
+#mere pAsa, kiwAba, hE,.
 mEM,kiwAba_1,state_possession-pres
 1,2,3
-pron,def,
+pron,,
 [- sg u],[- sg a],
 ,,
 possessor,possessed,
 ,,
-assertive
+,def,
+affirmative

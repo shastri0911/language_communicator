@@ -1,10 +1,11 @@
 #KaragoSa GAsa KA rahA WA 
-#KaragoSa_1,GAsa_0,KA-0_rahA_WA_1,.
+#KaragoSa, GAsa, KA rahA WA,.
 KaragoSa_1,GAsa_1,KA_1-0_rahA_WA_1
 1,2,3
 def,mass,
 [m sg a],[- sg a],
-1.1:viSeRaNa~1.1:viSeRaNa,,
+1.1:mod 1.1:mod,,
 3:k1,3:k2,
 ,,
-assertive
+def,,
+affirmative

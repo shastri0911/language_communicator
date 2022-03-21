@@ -1,10 +1,11 @@
 #bacce koI Kela nahIM KeleMge.
-#baccA_0,koI~Kela,nahIM,Kela-gA.
-baccA_2,koI_1~Kela_2,nahIM_1,Kela_1-gA_1
+#bacce, koI Kela, nahIM, KelaMge.
+baccA_2,koI_1 Kela_2,nahIM_1,Kela_1-gA_1
 1,2,3,4
 ,,,
 [- pl a],[- sg a],,
-,2.2:viSeRaNa,,
-4:k1,4:k2,4:neg,
+,2.2:mod,
+4:k1,4:k2,,
+,,4:neg,
 ,,,
-negation
+negative

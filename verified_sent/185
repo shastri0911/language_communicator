@@ -1,10 +1,11 @@
 #SaharI rAjA jaMgala AyA.
-#SaharI~rAjA,jaMgala,A-yA,.
-SaharI_1~rAjA_1, jaMgala_1, A_1-yA_1
+#SaharI rAjA, jaMgala, AyA,.
+SaharI_1 rAjA_1, jaMgala_1, A_1-yA_1
 1,2,3
-def,def,
+,,
 [m sg a],[- sg a],
-1.2:viSeRaNa,,
+1.2:mod,,
 3:k1,3:k2p,
 ,,
-assertive
+def,def,
+affirmative

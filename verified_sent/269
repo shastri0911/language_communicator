@@ -1,10 +1,11 @@
 #riweSa ke pAsa KaragoSa WA
-#riweSa_ke pAsa_0,KaragoSa-0_WA_1,.
+#riweSa ke pAsa, KaragoSa WA,.
 riweSa,KaragoSa_1,state_possession-past
 1,2,3
-propn,,
+per,,
 [m sg -],[m sg -],
 ,,
 possessor,possessed
 ,,
-assertive
+,,
+affirmative

@@ -20,10 +20,12 @@
 (not (id-mass ?id yes))
 (test (neq ?n  pl))
 (not(id-pron ?id yes))
-(not(id-propn ?id yes))
-(not (rel_name-ids viSeRya-saMKyA_viSeRaNa ?id $?v))
-(not (rel_name-ids viSeRya-dem ?id $?v1))
-(not (rel_name-ids viSeRya-r6 ?id ?r6))  ;mEM_kA_xoswa_bagIcA_meM_Kela_rahA_hE My friend is playing in the garden.
+(not(id-org ?id yes))
+(not(id-per ?id yes))
+(not(id-place ?id yes))
+(not (rel_name-ids ord ?id $?v))
+(not (rel_name-ids dem ?id $?v1))
+(not (rel_name-ids r6 ?id ?r6))  ;mEM_kA_xoswa_bagIcA_meM_Kela_rahA_hE My friend is playing in the garden.
 (not (id-concept_label	?id	kOna_1)) ;Who won the match?
 (not (id-concept_label	?id	Gara_1))
 =>
@@ -36,7 +38,7 @@
 (id-gen-num-pers ?id ?g ?n ?p)
 (not (id-def ?id yes))
 (not (id-mass ?id yes))
-(not (rel_name-ids viSeRya-dem ?id $?v))
+(not (rel_name-ids dem ?id $?v))
 (test (eq ?n pl))
 (not(id-pron ?id yes))
 =>
@@ -70,7 +72,7 @@
 
 ;rAma dAktara nahIM hE.	 rAma xillI meM nahIM hE. #usane KAnA nahIM KAyA. #use Gara nahIM jAnA cAhie.
 (defrule mrs_neg_notDef
-(rel_name-ids kriyA-neg  ?kid ?negid)
+(rel_name-ids neg  ?kid ?negid)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?negid " neg)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_neg_notDef id-MRS_concept "?negid " neg)"crlf)
@@ -78,7 +80,7 @@
 
 ;Rule for proper noun: if ((id-propn ?id yes) is present, generate (id-MRS_concept ?id proper_q) and  (id-MRS_concept ?id named)
 (defrule mrs_propn
-(id-propn  ?id yes)
+(or (id-per  ?id yes) (id-place  ?id yes) (id-org  ?id yes))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "(+ ?id 10) " proper_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_propn  id-MRS_concept "(+ ?id 10)" proper_q)"crlf)
@@ -93,7 +95,7 @@
 ;	   (id-MRS_concept "?id " which_q)
 (defrule mrs_inter_what
 (id-concept_label ?id kyA_1)
-(sentence_type  question)
+(sentence_type  interrogative)
 =>
 ;(printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " thing)"crlf)
 ;(printout ?*defdbug* "(rule-rel-values mrs_inter_what  id-MRS_concept "?id " thing)"crlf)
@@ -107,7 +109,7 @@
 ;	   (id-MRS_concept "?id " which_q)
 (defrule mrs_inter_who
 (id-concept_label ?id kOna_1)
-(sentence_type  question)
+(sentence_type  interrogative)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " person)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_who  id-MRS_concept "?id " person)"crlf)
@@ -121,7 +123,7 @@
 ;          (id-MRS_concept "?id " which_q)
 (defrule mrs_inter_where
 (id-concept_label ?id kahAz_1)
-(sentence_type  question)
+(sentence_type  interrogative)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " place_n)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_what  id-MRS_concept "?id " place_n"crlf)
@@ -224,7 +226,7 @@
 ;Generates new facts for years of centuries then generate (MRS_info id-MRS_concept ?id _in_p_temp) and  (MRS_info id-MRS_concept ?id proper_q) 
 (defrule yearsofcenturies
 (id-concept_label ?id ?num)
-(rel_name-ids kriyA-k7t ?kri  ?id&:(numberp ?id))
+(rel_name-ids k7t ?kri  ?id&:(numberp ?id))
 (not (id-concept_label  ?k-id   ?hiConcept&kahAz_1|kaba_1|Aja_1|kala_1|kala_2))
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " proper_q)"crlf)
@@ -234,7 +236,7 @@
 
 
 (defrule mrs_parg_d
-(sentence_type  pass-assertive|pass-question)
+(sentence_type  pass-affirmative|pass-interrogative)
 (kriyA-TAM ?kri ?tam)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?kri " parg_d)"crlf)
@@ -255,7 +257,7 @@
 ;rule for interrogative sentences for 'when'
 (defrule mrs_inter_when
 (id-concept_label ?id kaba_1)
-(sentence_type  question)
+(sentence_type  interrogative)
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept "?id " which_q)"crlf)
 (printout ?*defdbug* "(rule-rel-values mrs_inter_when  id-MRS_concept "?id " which_q)"crlf)

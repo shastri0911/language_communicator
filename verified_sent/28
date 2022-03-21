@@ -1,5 +1,5 @@
 #mEM Aja AyA.
-#mEM_0,Aja_0,A-yA,.
+#mEM, Aja, AyA,.
 mEM,Aja_1,A_1-yA_1
 1,2,3
 pron,,
@@ -7,4 +7,5 @@ pron,,
 ,,
 3:k1,3:k7t,
 ,,
-assertive
+,,
+affirmative

@@ -19,6 +19,7 @@ gnp = hinUsrCsv[5].strip().split(',')            # row 6: GNP info
 intraChunkRels = hinUsrCsv[6].strip().split(',') # row 7: intra chunk relations
 interChunkRels = hinUsrCsv[7].strip().split(',') # row 8: inter chunk relations
 discorseRel = hinUsrCsv[8].strip().split(',')    # row 9: discourse relations
+speakerView = hinUsrCsv[9].strip().split(',')    # row 10: Speaker's view
 
 def get_emphatic_word(s):
     ''' Given a string of a chunk/group, this function will return 
@@ -33,7 +34,7 @@ def get_emphatic_word(s):
     '''
     if '*' in s:
         emphMore = s.split('*')
-        emph = re.split(r'[@/~/+]', emphMore[1])
+        emph = re.split(r',', emphMore[1])
         return(emph[0])
 
 # Creating viSeRya_ids and their vibhaktis
@@ -58,15 +59,9 @@ for i in range(len(group)-1):
 kriTAM = {}
 for i in range(len(conceptDict)):
     id = (i+1)*10000
-    vib = ''
     if '-' in conceptDict[i]:
-        TAM = conceptDict	[i].split('-')[1].split('_')
-        for w in TAM:
-            if '*' in w:  # paDa-0_rahA*hI_hE 
-                vib = vib + '_' + w.split('*')[0] 
-            else: #r Ama_ne, kala_0, eka@acCA*hI~ladakA_ke_sAWa
-                vib = vib + '_' + w
-        kriTAM[id] = vib[1:]
+        TAM = conceptDict[i].split('-')[1]
+        kriTAM[id] = TAM
 
 # Writing viSeRya_ids and their TAM value
 for key in kriTAM.keys():
@@ -76,7 +71,7 @@ for key in kriTAM.keys():
 idConcept = {}
 for i in range(len(conceptDict)):
     con = conceptDict[i]
-    mycons = re.split('[@~\*]+', con)
+    mycons = re.split(' ', con)
     mycons.reverse()
     c = 0
     for j in range(len(mycons)):
@@ -118,19 +113,21 @@ for i in range(len(gnp)):
 # Writing POS values
 for i in range(len(wid)):
     if pos[i] != '':
+
+#        for j in 
         ans.write('(id-'+pos[i]+'\t' + str((i+1)*10000) + '\t' + 'yes)\n')
 
 # Writing intra-chunk relations
 for i in range(len(intraChunkRels)):
     if intraChunkRels[i] != '':
-        idsRels = re.split('[@~\*]+', intraChunkRels[i])
+        idsRels = re.split(';', intraChunkRels[i])
         idsRels.reverse()
         for j in range(len(idsRels)):
             idrel = idsRels[j].split(':')      
             visheshyaId = str(int(float(idrel[0]))*10000)
             viNaId = str(int(float(idrel[0]))) + '.' + str(j+1)
             visheshanaId = str(int(float(viNaId)*10000))
-            myrel = 'rel_name-ids viSeRya-' + idrel[1].replace('-', '_')
+            myrel = 'rel_name-ids ' + idrel[1].replace('-', '_')
             ans.write('('+ myrel + '\t' + visheshyaId + '\t' + visheshanaId + ')\n')
 
 # Writing inter chunk relations
@@ -171,12 +168,8 @@ for i in range(len(interChunkRels)):
                 try:
                     kriId = str(int(float(idrel[0]))*10000)
                     karakaId = str((i+1)*10000)
-                    if 'r6' in idrel:
-                        myrel = 'rel_name-ids viSeRya-' + idrel[1].replace('-', '_')
-                        ans.write('('+ myrel + '\t' + kriId + '\t' + karakaId + ')\n')
-                    else:
-                        myrel = 'rel_name-ids kriyA-' + idrel[1].replace('-', '_')
-                        ans.write('('+ myrel + '\t' + kriId + '\t' + karakaId + ')\n')
+                    myrel = 'rel_name-ids ' + idrel[1].replace('-', '_')
+                    ans.write('('+ myrel + '\t' + kriId + '\t' + karakaId + ')\n')
                 except:
                     print('Sukhada Warning: Value Error')
 
@@ -184,18 +177,19 @@ for i in range(len(interChunkRels)):
 for i in range(len(discorseRel)):
     if discorseRel[i] != '':
         idrel = discorseRel[i].split(':')
-        if idrel[1] == 'neg':
-            kriId = str(int(float(idrel[0]))*10000)
-            negId = str((i+1)*10000)
-            ans.write('(rel_name-ids kriyA-neg\t' + kriId + '\t' + negId + ')\n')
-        elif idrel[1] == 'co-ref':
-            kriId = str(int(float(idrel[0]))*10000)
-            corefId = str((i+1)*10000)
-            ans.write('(viSeRya-co_reference\t' + kriId + '\t' + corefId + ')\n')
+        headId = str(int(float(idrel[0]))*10000)
+        depId = str((i+1)*10000)
+        ans.write('(rel_name-ids ' +idrel[1]+ ' ' + headId + '\t' + depId + ')\n')
 
 for k in idConcept.keys():
     if k.endswith('100'):
         ans.write('(viSeRya-emp\t'+ str(int(k)-100) +'\t'+ k +')\n')
 
+# Writing Speaker's View values
+for i in range(len(wid)):
+    if speakerView[i] != '':
+        ans.write('(id-'+speakerView[i]+'\t' + str((i+1)*10000) + '\t' + 'yes)\n')
+
+
 # writing sentence type
-ans.write('(sentence_type\t' + hinUsrCsv[9].strip() + ')\n')
+ans.write('(sentence_type\t' + hinUsrCsv[10].strip() + ')\n')

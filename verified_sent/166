@@ -1,10 +1,11 @@
-#aMgUra rasIle  We
-#aMgUra_0,rasIlA,We,.
+#aMgUra rasIle  We.
+#aMgUra, rasIle, We,.
 aMgUra_1,rasIlA_1,state_copula-past
 1,2,3
-def,guNavAcI,
+,guNavAcI,
 [- pl a],,
 ,,
 samAnAXi,samAnAXi,
 ,,
-assertive
+def,,
+affirmative

@@ -1,10 +1,11 @@
 #vaha rAmapura meM rahawA WA.
-#vaha_0, rAmapura_meM, raha-wA_WA_1,.
+#vaha, rAmapura meM, rahawA WA,.
 vaha,rAmapura,raha_1-wA_WA_1
 1,2,3
-pron,propn,
+pron,place,
 [m sg a],,
 ,,
 3:k1,3:k7p,
 ,,
-assertive
+,,
+affirmative

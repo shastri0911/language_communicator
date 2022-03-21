@@ -1,10 +1,11 @@
 #rAma ke pAsa WodZA pAnI hE.
-#rAma_ke_pAsa,WodZA~pAnI_0,hE,.
-rAma,WodZA_2~pAnI_1,state_possession-pres
+#rAma ke pAsa, WodZA pAnI, hE,.
+rAma,WodZA_2 pAnI_1,state_possession-pres
 1,2,3
-propn,,
-[m sg a],[- sg a],
-,2.2:viSeRaNa,
+per ,mass,
+[m sg a],,
+,2.2:mod,
 possessor,possessed,
 ,,
-assertive
+,,
+affirmative

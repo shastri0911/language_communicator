@@ -328,11 +328,11 @@ Rama did not eat the food.
 Rama didn't eat the food.
 Rama did not eat the food.
 
-#rAma Sahara meM WA
+#rAma Sahara meM WA.
 151
 Rama was in the city.
 
-#xillI A
+#xillI A.
 152
 Come to Xilli.
 Come to Xilli.
@@ -347,15 +347,10 @@ Rama had performed the job.
 154
 Rama has eaten the food.
 
-# BEravanAWa   mAz_vERNo ke xvArA katarA  meM mArA gayA hE.
+#BEravanAWa mAz vERNo ke xvArA katarA  meM mArA gayA hE.
 155
 Beravanawa has been killed by Maz verno, in Katara.
 Beravanawa has been killed by Maz verno in Katara.
-
-#mere xvArA KAnA KAyA gayA WA.
-1555
-The food was eaten by myself.
-The food was eaten by me.
 
 #rAvaNa rAma ke xvArA laMkA meM mArA gayA hE.
 156
@@ -399,7 +394,7 @@ The food was eaten by me.
 163
 The fox was hungry.
 
-#usane eka Kewa xeKa
+#usane eka Kewa xeKA
 164
 He saw a field.
 It saw a field.
@@ -410,7 +405,7 @@ They saw a field.
 165
 The field had abundant grapes.
 
-#aMgUra rasIle  We
+#aMgUra rasIle  We.
 166
 The grapes were juicy.
 
@@ -447,7 +442,7 @@ I saw the new boy.
 171
 I saw the blind boy.
 
-#Sivama aMXe ladake ko XIre se XakkA mArA.
+#Sivama ne aMXe ladake ko XIre se XakkA mArA.
 172
 Sivama kicked the blind boy, slowly.
 Sivama kicked the blind boy, slow.
@@ -469,12 +464,13 @@ I read a good book.
 
 #XarAwala SikRA meM hE.
 176
+The surface is in the education.
 
 #rAma ke pAsa lABa hE.
 177
 Rama has the advantage.
 
-#jaMgala meM Sera WA
+#jaMgala meM Sera WA.
 178
 A lion was in the forest.
 
@@ -489,7 +485,7 @@ Is Rama a Dr.?
 18
 The boy is reading a book.
 
-#muJe so nA cAhie
+#muJe sonA cAhie
 180
 I should sleep.
 
@@ -617,8 +613,8 @@ Food was eaten by me.
 
 #ladakA vixyAlaya ke bagIce meM kiwAba paDa rahA hE.
 201
-The boy is studying a book, in the school's garden.
-The boy is studying a book in the school's garden.
+The boy is reading a book, in the school's garden.
+The boy is reading a book in the school's garden.
 
 #rAjA ne senA ko AxeSa xiyA.
 202
@@ -865,7 +861,7 @@ He went in the city to a school.
 He went, to a school in the city.
 He went to a school in the city.
 
-#rAma Delhi meM raha wA hE
+#rAma Delhi meM rahawA hE
 238
 Rama lives in Delhi.
 In Delhi lives Rama.
@@ -1104,6 +1100,7 @@ He was searching the rabbits in the houses.
 
 #KaragoSa guma gayA WA.
 275
+The rabbit had missed.
 
 #riweSa ro rahA WA.
 276
@@ -1137,6 +1134,8 @@ The rabbit was hungry.
 
 #KaragoSa ne GAsa nahIM KAyA WA
 282
+The rabbit had not eaten grass.
+The rabbit had not eaten grass.
 
 #merI bA muJe KAnA xewI hE 
 283
@@ -1252,7 +1251,7 @@ I am coming, home.
 I am coming home.
 I am coming home.
 
-#KaragoSa sogayA.
+#KaragoSa so gayA.
 300
 The rabbit slept.
 
@@ -1310,6 +1309,10 @@ I came, from the city for John.
 I came from the city for John.
 I came, for John from the city.
 I came for John from the city.
+
+#usane pramANa pawra xeKA.
+310
+He saw the certificate.
 
 #mEM kala AUzgA.
 32
@@ -1519,7 +1522,7 @@ I slowly walk.
 My friend is playing in the garden.
 My friend is playing, in the garden.
 
-#mere liye juMgala se Pala lAo!
+#mere liye jaMgala se Pala lAo!
 57
 Bring fruits for me from the forest.
 Bring fruits, for me from the forest.
@@ -1600,7 +1603,7 @@ She did not eat food.
 66
 He will help a blind man.
 
-#vaha kaba jA rahA hE.
+#vaha kaba jA rahA hE?
 67
 When is he going?
 When is he going?
@@ -1759,7 +1762,7 @@ He can go, home.
 97
 Monday is the first day.
 
-#hAra mahilA ke gale meM hE
+#hAra mahilA ke gale meM hE.
 98
 The necklace is in the woman's neck.
 
@@ -1771,9 +1774,4 @@ Will you not play?
 You won't play?
 Will you not play?
 You will not play?
-
-Index_CSV_dict Index_CSV_dict.zip
-Index_CSV_dict.zip  directory does not exist 
-Index_CSV_dict.zip
-usage: /home/sukhada/ace-0.9.24/ace [-1 | -n COUNT] [-R] [-f] [-e] [-g grammar-to-load] [-G grammar-to-save] [sentences-file] [--license-info] 
 

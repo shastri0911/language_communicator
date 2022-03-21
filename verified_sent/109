@@ -1,5 +1,5 @@
 #Apa kahAz raha sakawe ho?
-#Apa_0,kahAz_0,raha-0_sakawA_hE,?
+#Apa, kahAz, raha sakawe ho,?
 Apa,kahAz_1,raha_1-0_sakawA_hE_2
 1,2,3
 pron,,
@@ -7,4 +7,5 @@ pron,,
 ,,
 3:k1,3:k2,
 ,,
-question
+,,
+interrogative

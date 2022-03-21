@@ -1,10 +1,11 @@
-#usane eka Kewa xeKa
-#vaha_0,eka@Kewa_0,xeKa-yA,.
-vaha,eka_1@Kewa_1,xeKa_1-yA_1
+#usane eka Kewa xeKA
+#usane, eka Kewa, xeKA,.
+vaha,eka_1 Kewa_1,xeKa_1-yA_1
 1,2,3
 pron,,
 [- sg a],[- sg a],
-,2.2:saMKyA-viSeRaNa,
+,2.2:ord,
 3:k1,3:k2,
 ,,
-assertive
+,,
+affirmative

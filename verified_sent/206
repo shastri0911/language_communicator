@@ -1,5 +1,5 @@
 #use Gara nahIM jAnA cAhie.
-#vaha_0,Gara_0,jA-nA_cAhie,nahIM.
+#use, Gara nahIM, jAnA cAhie,.
 vaha_1,Gara_1,jA_1-nA_cAhie_1,nahIM
 1,2,3,4
 pron,,,
@@ -7,4 +7,5 @@ pron,,,
 ,,,
 3:k1,3:k2,
 ,,,3:neg
-negation
+,,,
+negative

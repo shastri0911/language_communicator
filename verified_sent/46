@@ -1,10 +1,11 @@
 #mEMne pahalI kiwAba paDI.
-#mEM_ne,pahalA@kiwAba_0,paDa-yA,.
-mEM,pahalA_1@kiwAba_1,paDa_1-yA_1
+#mEMne, pahalI kiwAba, paDI,.
+mEM,pahalA_1 kiwAba_1,paDa_1-yA_1
 1,2,3
-pron,def,
+pron,,
 [- sg u],[- sg a],
-,2.2:kramavAcI-viSeRaNa,
+,2.2:card,
 3:k1,3:k2,
 ,,
-assertive
+,def,
+affirmative

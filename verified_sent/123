@@ -1,5 +1,5 @@
 #mEM kala Kela KelUMgA.
-#mEM_0,kala_0,Kela_0,Kela-gA,.
+#mEM, kala, Kela, KelUMgA,.
 mEM,kala_2,Kela_2,Kela_1-gA_1
 1,2,3,4
 pron,,,
@@ -7,4 +7,5 @@ pron,,,
 ,,,
 4:k1,4:k7,4:k2,
 ,,,
-assertive
+,,,
+affirmative

@@ -1,10 +1,11 @@
 #ladakA Sahara se AyA hE.
-#ladakA_0,Sahara_se,A-yA_hE,.
+#ladakA, Sahara se, AyA hE,.
 ladakA_1,Sahara_1,A_1-yA_hE_1
 1,2,3
-def,def,
+,,
 [m sg a],[- sg a],
 ,,
 3:k1,3:k5,
 ,,
-assertive
+def,def,
+affirmative

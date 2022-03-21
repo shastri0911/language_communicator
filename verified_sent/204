@@ -1,10 +1,11 @@
 #haMsa sabaka sIKa gaye.
-#haMsa sabaka_0 sIKa-gaye,.
+#haMsa, sabaka, sIKa gaye,.
 haMsa_1, sabaka_1, sIKa_6-yA_1
 1,2,3
-def,,
+,,
 [- pl a],[- sg a],
 ,,
 3:k1, 3:k2,
 ,,
-assertive
+def,,
+affirmative

@@ -1,5 +1,5 @@
-#vaha kaba jA rahA hE.
-#vaha_0,kaba_0,jA-0_rahA_hE,?
+#vaha kaba jA rahA hE?
+#vaha, kaba, jA rahA hE,?
 vaha,kaba_1,jA_1-0_rahA_hE_1
 1,2,3
 pron,,
@@ -7,4 +7,5 @@ pron,,
 ,,
 3:k1,3:k7t,
 ,,
-question
+,,
+interrogative

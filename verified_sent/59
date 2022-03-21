@@ -1,10 +1,11 @@
 #rAma xo kiwAbeM paDa rahA hE.
-#rAma_0,xo@kiwAba_0,paDa-0_rahA_hE,.
-rAma,xo_1@kiwAba_1,paDa_1-0_rahA_hE_1
+#rAma, xo kiwAbeM, paDa rahA hE,.
+rAma,xo_1 kiwAba_1,paDa_1-0_rahA_hE_1
 1,2,3
-propn,,
+per,,
 [- sg a],[- pl a],
-,2.2:saMKyA-viSeRaNa,
+,2.2:ord,
 3:k1,3:k2,
 ,,
-assertive
+,,
+affirmative

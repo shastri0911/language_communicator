@@ -1,10 +1,11 @@
 #vaha acCA dAktara hE
-#vaha_0,acCA~dAktara_1,hE,.
-vaha,acCA_1~dAktara_1,state_copula-pres
+#vaha, acCA dAktara, hE,.
+vaha,acCA_1 dAktara_1,state_copula-pres
 1,2,3
 pron,,
 [m sg a],[- sg a],
-,2.2:viSeRaNa,
+,2.2:mod,
 samAnAXi,samAnAXi
 ,,
-assertive
+,,
+affirmative

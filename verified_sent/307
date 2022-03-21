@@ -1,10 +1,11 @@
 #usane basa+addA xeKA.
-#usane,basa+addA,xeKa-yA,.
+#usane, basa+addA, xeKA,.
 vaha,basa_1+addA_1,xeKa_1-yA_1
 1,2,3
-pron,def,
+pron,,
 [m sg a],[- sg a],
 ,2.2:rt,
 3:k1,3:k2,
 ,,
-assertive
+,def,
+affirmative

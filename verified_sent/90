@@ -1,5 +1,5 @@
 #kyA wumhe buKAra hE?
-#kyA_0,wuma_ko,buKAra_0,hE,?
+#kyA, wumhe, buKAra, hE,?
 ,wuma,buKAra_1,state_anuBUwi-pres
 1,2,3
 yes_no_qsn,pron,mass,
@@ -7,4 +7,5 @@ yes_no_qsn,pron,mass,
 ,,,
 ,anuBAvaka,anuBava,
 ,,,
-question
+,,,
+interrogative

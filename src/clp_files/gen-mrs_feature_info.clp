@@ -14,7 +14,7 @@
 ;Each kid is playing.          Every kid is playing.     All kids are playing.     Each tree is tall.
 (defrule rm-qcon4quantifier
 (declare (salience 10000))
-(rel_name-ids viSeRya-viSeRaNa	?vi 	?vina)
+(rel_name-ids mod	?vi 	?vina)
 (id-hin_concept-MRS_concept ?vina ?qntfr ?vinaq) 
 ?f<-(MRS_info id-MRS_concept ?q_id  ?aq)
 (test (eq (+ 10 ?vi) ?q_id))
@@ -32,7 +32,7 @@
 ;Ex. Ravana was killed by Rama.
 (defrule passive-v-k1
 (declare (salience 200))
-?f1<-(sentence_type	pass-assertive)
+?f1<-(sentence_type	pass-affirmative)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?kri ?mrscon ?lbl ?arg0 ?arg1 ?arg2)
 (not (rel_name-ids kriyA-k1	?kri	?k1))
 =>

@@ -1,5 +1,5 @@
 #mEM kala AyA.
-#mEM_0,kala_0,A-yA,.
+#mEM, kala, AyA,.
 mEM,kala_1,A_1-yA_1
 1,2,3
 pron,,
@@ -7,4 +7,5 @@ pron,,
 ,,
 3:k1,3:k7t
 ,,
-assertive
+,,
+affirmative

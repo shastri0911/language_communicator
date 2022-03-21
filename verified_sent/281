@@ -1,10 +1,11 @@
 #KaragoSa BUKA WA
-#KaragoSa_0,bahuwa~BUKA_0_WA_0,.
+#KaragoSa, BUKA, WA,.
 KaragoSa_1,BUKA_1,state_copula-past
 1,2,3
-def,guNavAcI,
+,guNavAcI,
 [- sg a],,
 ,,
 samAnAXi,samAnAXi,
 ,,
-assertive
+def,,
+affirmative

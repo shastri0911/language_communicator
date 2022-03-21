@@ -1,10 +1,11 @@
 #KaragoSa Waka gayA.
-#KaragoSa,Waka+jA-yA_gayA,.
+#KaragoSa, Waka gayA,.
 KaragoSa_1,Waka+jA_1-yA_gayA_1
 1,2
-def,
+,
 [- sg a],
 ,
 2:k2,
 ,
-pass-assertive
+def,
+pass-affirmative

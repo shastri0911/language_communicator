@@ -1,10 +1,11 @@
 #kyA wuma xillI meM ho?
-#kyA_0,wuma_0,xillI_meM,hE,?
+#kyA, wuma, xillI meM, ho,?
 kyA,wuma,xillI,state_existential-pres
 1,2,3,4
-yes_no_qsn,pron,propn,
+yes_no_qsn,pron,per,
 ,[- - m],[- sg a],
 ,,,
 ,AXeya,AXAra,
 ,,,
-question
+,,,
+interrogative

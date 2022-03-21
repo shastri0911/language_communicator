@@ -1,10 +1,11 @@
 #ayAn ne use pAnI xeyA.
-#ayAn_ne,vaha_ko,pAnI_1,xe-yA,.
+#ayAn ne, use, pAnI, xeyA,.
 ayAn,vaha,pAnI_1,xe_1-yA_1
 1,2,3,4
-propn,pron,mass,
+per,pron,mass,
 [m sg a],[m sg a],[- sg a],
 ,,,
 4:k1,4:k4,4:k2,
 ,,,
-assertive
+,,,
+affirmative

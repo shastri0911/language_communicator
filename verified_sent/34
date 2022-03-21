@@ -1,5 +1,5 @@
 #mEM kiwAbeM paDa rahA hUz.
-#mEM_0,kiwAba_0,paDa-0_rahA_hE,.
+#mEM, kiwAbeM, paDa rahA hUz,.
 mEM,kiwAba_1,paDa_1-0_rahA_hE_1
 1,2,3
 pron,,
@@ -7,4 +7,5 @@ pron,,
 ,,
 3:k1,3:k2,
 ,,
-assertive
+,,
+affirmative

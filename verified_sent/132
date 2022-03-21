@@ -1,10 +1,11 @@
 #prawyeka pedZa lambA hE.
-#prawyeka~pedZa_0,lambA,hE,.
-prawyeka_1~pedZa_1,lambA_4,state_copula-pres
+#prawyeka pedZa, lambA, hE,.
+prawyeka_1 pedZa_1,lambA_4,state_copula-pres
 1,2
 ,guNavAcI,
-[- sg a],,
-1.2:viSeRaNa,,
+[- sg ],,
+1.2:mod,,
 samAnAXi,samAnAXi,
 ,,
-assertive
+,,
+affirmative

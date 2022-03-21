@@ -1,10 +1,11 @@
 #rAma ke pAsa lABa hE.
-#rAma_ke_pAsa,lABa_3,hE.
+#rAma ke pAsa, lABa, hE.
 rAma,lABa_3,state_possession-pres
 1,2,3
-propn,def,
+per,,
 [m sg a],[- sg a],
 ,,
 possessor,possessed,
 ,,
-assertive
+,def,
+affirmative

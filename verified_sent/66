@@ -1,10 +1,11 @@
 #vaha aMXe AxamI kI sahAyawA karegA.
-#vaha_0,aMXA~AxamI_kA,sahAyawA+kara-gA,.
-vaha,aMXA_1~AxamI_1,sahAyawA+kara_1-gA_1
+#vaha, aMXA AxamI kI, sahAyawA karagA,.
+vaha,aMXA_1 AxamI_1,sahAyawA+kara_1-gA_1
 1,2,3
 pron,,
 [m sg a],[m sg a],
-,2.2:viSeRaNa,
+,2.2:mod,
 3:k1,3:k2,
 ,,
-assertive
+,,
+affirmative

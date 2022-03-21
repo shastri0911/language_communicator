@@ -1,10 +1,11 @@
 #wAlAba meM haMsa hE.
-#wAlAba_meM,haMsa,hE-0_hE_1,.
+#wAlAba meM, haMsa, hE,.
 wAlAba_2,haMsa_1, state_existential-pres
 1,2,3
-def,,
+,,
 [- sg a],[- pl a],
 ,,
 AXAra,AXeya,
 ,,
-assertive
+def,,
+affirmative

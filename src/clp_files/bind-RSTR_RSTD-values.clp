@@ -98,7 +98,7 @@
 ;want to bind RSTR of def_explicit_q  with LBL of poss
 (defrule defexpq
 ;(declare (salience 1000))
-(rel_name-ids viSeRya-r6	?id  ?id1)
+(rel_name-ids r6	?id  ?id1)
 (MRS_info ?rel1 ?idposs poss ?lbl2 ?ARG_0 ?ARG1 ?ARG2)
 ?f<-(MRS_info ?rel2 ?id_q def_explicit_q ?lbl1 ?x ?rstr $?v)
 =>
