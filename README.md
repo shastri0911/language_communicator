@@ -26,7 +26,6 @@ Pre-requisites:
 2. Ace parser 0.34 version in $HOME/
     (Note:  Link: http://sweaglesw.org/linguistics/ace/download/
        download ace-0.9.34-x86-64.tar.gz and erg-1214-x86-64-0.9.34.dat.bz2 from the above link. 
-       Keep erg-1214-x86-64-0.9.24.dat.bz2 in ACE directory.
        Keep the erg-1214-x86-64-0.9.34.dat.bz2 in ACE directory and extract it.
 	)
 3. Clips
