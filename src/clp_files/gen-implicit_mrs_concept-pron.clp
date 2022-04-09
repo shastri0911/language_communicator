@@ -19,6 +19,7 @@
 ; Ex. Sahara jAo
 (defrule pron4imper
 (sentence_type imperative)
+(not (and (id-pron  ?id  yes) (rel_name-ids k1 ? ?id))) ;#Apa Sahara jAo!
 =>
 (printout ?*mrsdef* "(MRS_info id-MRS_concept -10000 pronoun_q)"crlf) 
 (printout ?*defdbug* "(rule-rel-values pron4imper id-MRS_concept -10000  pronoun_q )"crlf)

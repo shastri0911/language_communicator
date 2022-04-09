@@ -43,6 +43,20 @@
 (printout ?*mrs-dbug* "(rule-rel-values passive-v-k1 MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 "?kri" "?mrscon" "?lbl" "?arg0" "?a1" "?arg2")"crlf)
 )
 
+;Changing the ARG0 value (e*) to i* for imperative(-nagetive) sentences.
+;(MRS_concept-label-feature_values neg LBL: h* ARG0: e* ARG1: h*)
+;Ex. 320 Sahara mawa jAo!  =  Don't go to the city.
+(defrule imper-neg
+(declare (salience 2200))
+(sentence_type	imperative)
+(rel_name-ids neg	?kri	?negid)
+?f<-(MRS_concept-label-feature_values neg LBL: h* ARG0: e* ARG1: h*)
+=>
+(retract ?f)
+(printout ?*mrs-fp* "(MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?negid" neg  h1 i2 h3)"crlf)
+(printout ?*mrs-dbug* "(rule-rel-values imper-neg MRS_info id-MRS_concept-LBL-ARG0-ARG1 "?negid" neg  h1 i2 h3)"crlf)
+(bind ?*count* (+ ?*count* 3))
+)
 
 ;Rule for generating initial mrs info for concepts in file "id-concept_label-mrs_concept.dat"
 (defrule mrs-info

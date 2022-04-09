@@ -3,20 +3,35 @@
 (defglobal ?*rstr-rstd* = open-rstr)
 (defglobal ?*rstr-rstd-dbg* = debug_rstr)
 
-
-;Restrictor-Restricted for neg: in (MRS_info ?rel1 ?id1 neg ?lbl ?ARG0 ?ARG1),  ARG1 value of kriyA should be equal to ARG0 value of karwA 
-(defrule neg-rstd
-?f<-(MRS_info ?rel1 ?id1 neg ?lbl ?ARG0  ?ARG1)
-(MRS_info ?rel2 ?k1  ?mrsCon2 ?k1_lbl ?V_A1  $?v)
-(MRS_info ?rel3 ?kri ?mrsConVerb ?V_lbl  ?V_A0  ?V_A1 $?vars)
-(LTOP-INDEX h0 ?V_A0)
-;(LTOP-INDEX h0 ?index)
-;(test (neq (str-index ?index ?V_A0) FALSE))
+;changing the ARG0 value (i.e. e*) of neg to i300
+(defrule neg-arg0-i
+(sentence_type  imperative)
+(rel_name-ids neg ?kri	?negId)
+?f<-(MRS_info ?rel1 ?negId neg ?lbl ?arg0  ?ARG1)
+(not (modified_ARG0_value_to_i ?negId))
 =>
-(retract ?f) ;#rAma ne pATa nahIM paDA.
+(retract ?f) 
+(assert (modified_ARG0_value_to_i ?negId))
+(bind ?i (str-cat "i" (sub-string 2 (str-length ?arg0) ?arg0)))  
+(assert (MRS_info ?rel1 ?negId neg ?lbl ?i  ?ARG1))
+(printout ?*rstr-rstd-dbg* "(rule-rel-values neg-arg0-i MRS_info "?rel1" "?negId" neg "?lbl" "?i" " ?ARG1")"crlf)
+)
+
+
+
+;Restrictor-Restricted between ARG1 value neg and LBL value of verb
+;Ex. 236: "ayAn ne KAnA nahIM KAyA WA." = Ayan had not eaten food.
+;    25: "ladake ne KAnA nahIM KAyA." = The boy did not eat food.	
+(defrule neg-rstd
+(rel_name-ids neg ?kri	?negId)
+?f<-(MRS_info ?rel1 ?negId neg ?lbl ?  ?ARG1)
+(MRS_info ?rel3 ?kri ?mrsConVerb ?V_lbl  ?V_A0  ?V_A1 $?vars)
+=>
+(retract ?f) 
 (printout ?*rstr-rstd* "(Restr-Restricted     "?ARG1  "  " ?V_lbl ")"crlf)
 (printout ?*rstr-rstd-dbg* "(rule-rel-values neg-rstd Restr-Restricted  "?ARG1"  "?V_lbl")"crlf)
 )
+
 
 ; Ex. mEM so nahIM sakawA hUz.
 ; Ex. I can not sleep. I cannot sleep. I can't sleep.

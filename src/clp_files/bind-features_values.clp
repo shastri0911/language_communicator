@@ -7,16 +7,18 @@
 
 
 ;for compounds 
-;Ex. usane basa+addA xeKA.
+;Ex. 307:   usane basa+addA xeKA.
+;Ex. 311:   #usane rAma ke kAryAlaya kI AXAraSilA raKI.
 (defrule comp
 (declare (salience 100))
-(rel_name-ids ?samasaRel	?head	?dep)
+(id-hin_concept-MRS_concept ?head ?hc ?mrsConComp)
 (MRS_info id-MRS_concept-LBL-ARG0 ?dep ?d ?dl ?da0)
 (MRS_info id-MRS_concept-LBL-ARG0 ?head ?h ?hl ?ha0)
 ?f1<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?udf udef_q ?ul ?ua0 ?rstr ?body)
 ?f2<-(MRS_info id-MRS_concept-LBL-ARG0-RSTR-BODY ?adq ?atheq ?ql ?qa0 ?qstr ?qody)
 ?f<-(MRS_info id-MRS_concept-LBL-ARG0-ARG1-ARG2 ?comp compound ?cl ?ca0 ?ca1 ?ca2)
 (not (compound_mapped ?comp))
+(test (neq (str-index "+"  ?mrsConComp) FALSE)) 
 (test (eq (+ ?head 10) ?adq))
 (test (or (neq (str-index _the_q ?atheq) FALSE)
           (neq (str-index _a_q ?atheq) FALSE)))
@@ -168,7 +170,7 @@
 (assert (modified_k1 ?karwA))
 (assert (MRS_info  ?rel_name ?kriyA ?mrsCon ?lbl ?arg0 ?argwA_0 $?v))
 ;(printout ?*rstr-fp* "(MRS_info  "?rel_name " " ?kriyA " " ?mrsCon " " ?lbl " " ?arg0 " " ?argwA_0 " "(implode$ (create$ $?v))")"crlf)
-(printout ?*rstr-dbug* "(rule-rel-values v-k1 "?rel_name " " ?kriyA " " ?mrsCon " " ?lbl " " ?argwA_0 " "(implode$ (create$ $?v))")"crlf)
+(printout ?*rstr-dbug* "(rule-rel-values v-k1 "?rel_name " "?kriyA" "?mrsCon" "?lbl" "?arg0" "?argwA_0" "(implode$ (create$ $?v))")"crlf)
 )
 
 ;Rule for verb and its arguments(when both karta and karma are present),Replace ARG1 value of kriyA with ARG0 value of karwA and ARG2 value of kriyA with ARG0 value of karma
